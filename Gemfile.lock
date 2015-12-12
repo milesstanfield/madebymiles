@@ -255,7 +255,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara (~> 2.2.1)
+  capybara
   capybara-webkit (~> 1.1.0)
   coffee-rails (~> 4.1.0)
   database_cleaner

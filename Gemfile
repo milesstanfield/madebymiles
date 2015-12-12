@@ -74,7 +74,7 @@ group :test do
   gem 'webmock'
   gem 'excon', '<0.39.0'
   # For testing the full stack
-  gem 'capybara', '~> 2.2.1'
+  gem 'capybara'
   gem 'capybara-webkit', '~> 1.1.0'
   # To controll a browser
   gem 'selenium-webdriver'
