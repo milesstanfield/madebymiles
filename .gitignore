@@ -15,3 +15,12 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore .DS_Store (OS X tempfiles)
+.DS_Store
+
+# Ignore .env (local development environment vairables)
+.env
+
+# carrier wave uploads
+public/uploads
