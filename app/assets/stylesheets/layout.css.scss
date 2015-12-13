@@ -7,6 +7,14 @@
 .l-content-padding {
   padding: 0 20px;
 }
+.l-vertical-padding-large {
+  padding-top: calc( #{$nav-height} - 10px);
+  padding-bottom: calc( #{$nav-height} - 10px);
+}
+.l-float-left {
+  float: left;
+}
+
 
 // NAV
 .l-nav-height {
@@ -24,13 +32,25 @@
 
 
 // SPLASH
-.l-splash-padding {
-  padding-top: calc( #{$nav-height} - 10px);
-  padding-bottom: calc( #{$nav-height} - 10px);
-}
-.l-splash-line {
+.l-splash-line-width {
   width: 2px;
 }
 .l-splash-info-padding {
-  padding: 0 20px;
+  padding: 0 40px;
+}
+
+
+// ABOUT
+.l-about-text-margin {
+  margin-left: calc(#{$profile-head-width} + 20px);
+}
+.l-profile-head-width {
+  width: $profile-head-width;
+}
+
+
+// OTHER
+.l-cog {
+  height: 18px;
+  top: 2px;
 }

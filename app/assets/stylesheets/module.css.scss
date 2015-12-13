@@ -7,6 +7,10 @@
 .m-color-light-grey {
   color: $light-grey;
 }
+.m-color-dark-grey {
+  color: $dark-grey;
+}
+
 
 // BACKGROUND COLORS
 .m-bg-light-blue {
@@ -18,6 +22,9 @@
 .m-bg-orange {
   background: $orange;
 }
+.m-bg-light-grey {
+  background: $light-grey;
+}
 
 
 // FONT SIZES
@@ -26,10 +33,18 @@
   letter-spacing: -4px;
   line-height: 53px;
 }
-.m-font-medium {
-  font-size: 19px;
+.m-font-large, .m-font-medium {
   letter-spacing: -0.5px;
   line-height: 28px;
+}
+.m-font-large {
+  font-size: 25px;
+}
+.m-font-medium {
+  font-size: 19px;
+}
+.m-font-small {
+  font-size: 13px;
 }
 
 
@@ -46,7 +61,7 @@
 }
 
 
-// ASSORTED
+// OTHER
 .m-underline-white {
   border-bottom: 2px solid white;
 }

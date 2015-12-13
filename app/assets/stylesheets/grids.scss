@@ -5,7 +5,9 @@ body {
 [class*=col-] {
   display: inline-block;
 }
-
+.col-1-1 {
+  width: 100%;
+}
 .col-1-2 {
   width: 50%;
 }
