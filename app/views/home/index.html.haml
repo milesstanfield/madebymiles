@@ -12,9 +12,12 @@
 %div{data: {name: "about"}}
   = render "layouts/header", text: "about"
   .l-max-content-width.l-simple-center.l-content-padding
-    .l-vertical-padding-large
+    .l-vertical-margin-large
       .l-float-left
         = image_tag "profile_head.png", class: "l-profile-head-width"
         .l-text-center.m-font-small.m-font-thin.m-color-dark-grey= "Miles Stanfield"
       .m-font-medium.m-font-thin.m-color-dark-grey.l-about-text-margin
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
+
+    .l-vertical-margin-large.l-text-center
+      = render "layouts/button", text: "more", path: "/"
