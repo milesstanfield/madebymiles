@@ -31,6 +31,9 @@
 .l-v-align-top {
   vertical-align: top;
 }
+.l-v-align-middle {
+  vertical-align: middle;
+}
 .l-no-wrap {
   white-space: nowrap;
 }

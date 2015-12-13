@@ -2,10 +2,13 @@
 
 // GENERAL
 .l-max-content-width {
-  max-width: 1120px;
+  max-width: 1000px;
+}
+.l-content-padding {
+  padding: 0 20px;
 }
 
-
+// NAV
 .l-nav-height {
   height: $nav-height;
 }
@@ -13,8 +16,21 @@
   height: 45px;
 }
 .l-nav-tab-text {
-  top: 21px;
+  top: 20px;
 }
 .l-nav-tab-padding {
+  padding: 0 15px;
+}
+
+
+// SPLASH
+.l-splash-padding {
+  padding-top: calc( #{$nav-height} - 10px);
+  padding-bottom: calc( #{$nav-height} - 10px);
+}
+.l-splash-line {
+  width: 2px;
+}
+.l-splash-info-padding {
   padding: 0 20px;
 }

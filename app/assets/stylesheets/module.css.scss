@@ -4,16 +4,32 @@
 .m-color-white {
   color: white;
 }
+.m-color-light-grey {
+  color: $light-grey;
+}
 
 // BACKGROUND COLORS
 .m-bg-light-blue {
   background: $light-blue;
 }
+.m-bg-dark-grey {
+  background: $dark-grey;
+}
+.m-bg-orange {
+  background: $orange;
+}
 
 
 // FONT SIZES
+.m-font-largest {
+  font-size: 59px;
+  letter-spacing: -4px;
+  line-height: 53px;
+}
 .m-font-medium {
   font-size: 19px;
+  letter-spacing: -0.5px;
+  line-height: 28px;
 }
 
 

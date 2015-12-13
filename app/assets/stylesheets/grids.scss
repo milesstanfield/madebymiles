@@ -1,0 +1,11 @@
+body {
+  font-size: 0;
+}
+
+[class*=col-] {
+  display: inline-block;
+}
+
+.col-1-2 {
+  width: 50%;
+}

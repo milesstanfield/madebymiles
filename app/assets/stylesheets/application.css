@@ -15,5 +15,6 @@
  *= require "module"
  *= require "commons"
  *= require "action"
+ *= require "grids"
  *= require_self
  */
