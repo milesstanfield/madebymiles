@@ -13,5 +13,6 @@
  *= require "base"
  *= require "layout"
  *= require "module"
+ *= require "commons"
  *= require_self
  */

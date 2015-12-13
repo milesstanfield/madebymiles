@@ -1,5 +1,30 @@
 @import "variables";
 
+// FONT COLORS
+.m-color-white {
+  color: white;
+}
+
+// BACKGROUND COLORS
 .m-bg-light-blue {
   background: $light-blue;
+}
+
+
+// FONT SIZES
+.m-font-medium {
+  font-size: 22px;
+}
+
+
+// FONTS
+.m-font-thin {
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 300;
+}
+.m-font-bold {
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 700;
 }

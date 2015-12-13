@@ -1,0 +1,9 @@
+%nav.m-bg-light-blue
+  .l-max-content-width.l-simple-center
+    .l-relative.l-nav-height
+      = link_to "/" do
+        = image_tag "madebymiles_logo.png", class: "l-nav-logo-height l-vertical-center l-absolute"
+
+      .l-right.l-absolute.l-vertical-center
+        - Navigation.tabs.each do |nav_tab|
+          = link_to nav_tab.text, nav_tab.path, class: "m-font-medium m-font-thin m-color-white"
