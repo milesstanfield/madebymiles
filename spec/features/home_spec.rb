@@ -1,5 +1,4 @@
 require "spec_helper.rb"
-require "rails_helper.rb"
 
 describe "home page", type: :feature do
   it "has a splash section" do
