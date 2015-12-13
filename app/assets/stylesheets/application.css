@@ -14,5 +14,6 @@
  *= require "layout"
  *= require "module"
  *= require "commons"
+ *= require "action"
  *= require_self
  */

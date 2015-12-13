@@ -19,13 +19,15 @@ describe Navigation do
     it "returns active classes if controller name matches tab text" do
       vc = double(:vc, controller_name: "home")
       controller = double(:controller, view_context: vc)
-      expect(described_class.tab_classes(controller, "home")).to eq "m-font-bold m-underline-white m-color-white"
+      active_classes = "m-font-bold m-underline-white m-color-white m-font-medium l-nav-tab-text l-relative"
+      expect(described_class.tab_classes(controller, "home")).to eq active_classes
     end
 
     it "returns inactive classes if controller name does not match tab text" do
       vc = double(:vc, controller_name: "home")
       controller = double(:controller, view_context: vc)
-      expect(described_class.tab_classes(controller, "about")).to eq "m-font-thin m-color-white"
+      inactive_classes = "m-font-thin m-color-white m-font-medium l-nav-tab-text l-relative"
+      expect(described_class.tab_classes(controller, "about")).to eq inactive_classes
     end
   end
 

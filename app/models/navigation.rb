@@ -26,11 +26,11 @@ class Navigation
     end
 
     def active_tab_classes
-      "m-font-bold m-underline-white m-color-white"
+      "m-font-bold m-underline-white m-color-white m-font-medium l-nav-tab-text l-relative"
     end
 
     def inactive_tab_classes
-      "m-font-thin m-color-white"
+      "m-font-thin m-color-white m-font-medium l-nav-tab-text l-relative"
     end
 
   end

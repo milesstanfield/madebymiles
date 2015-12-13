@@ -1,10 +1,11 @@
-
 %nav.m-bg-light-blue
   .l-max-content-width.l-simple-center
     .l-relative.l-nav-height
       = link_to "/" do
         = image_tag "madebymiles_logo.png", class: "l-nav-logo-height l-vertical-center l-absolute"
 
-      .l-right.l-absolute.l-vertical-center.m-font-medium
+      .l-right.l-absolute.l-height-100
         - Navigation.tabs.each do |nav_tab|
-          = link_to nav_tab.text, nav_tab.path, class: Navigation.tab_classes(controller, nav_tab.text)
+          = link_to nav_tab.path, class: "l-nav-tab-padding l-height-100 l-inline-block a-nav-tab-hovered" do
+            %span{class: Navigation.tab_classes(controller, nav_tab.text)}
+              = nav_tab.text
