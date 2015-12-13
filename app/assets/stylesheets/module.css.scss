@@ -1,5 +1,11 @@
 @import "variables";
 
+// GENERAL
+.m-underline-white {
+  border-bottom: 2px solid white;
+}
+
+
 // FONT COLORS
 .m-color-white {
   color: white;
@@ -13,7 +19,7 @@
 
 // FONT SIZES
 .m-font-medium {
-  font-size: 22px;
+  font-size: 19px;
 }
 
 
