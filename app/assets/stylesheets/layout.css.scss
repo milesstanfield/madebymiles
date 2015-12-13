@@ -2,8 +2,14 @@
 
 // GENERAL
 .l-max-content-width {
-  max-width: 1000px;
+  max-width: 950px;
 }
+.l-float-left {
+  float: left;
+}
+
+
+// SPACING
 .l-content-padding {
   padding: 0 20px;
 }
@@ -15,8 +21,14 @@
   padding-top: calc( #{$nav-height} - 10px);
   padding-bottom: calc( #{$nav-height} - 10px);
 }
-.l-float-left {
-  float: left;
+.l-top-margin-small {
+  margin-top: 10px;
+}
+.l-margin-bottom {
+  margin-bottom: 20px;
+}
+.l-top-margin-large {
+  margin-top: calc( #{$nav-height} - 10px);
 }
 
 
@@ -48,7 +60,7 @@
 .l-about-text-margin {
   margin-left: calc(#{$profile-head-width} + 20px);
 }
-.l-profile-head-width {
+.l-about-head-width {
   width: $profile-head-width;
 }
 
@@ -58,6 +70,30 @@
   height: 18px;
   top: 2px;
 }
+.l-square-parent, .l-16-9-parent {
+  width: 100%;
+}
+.l-square-parent {
+  padding-bottom: 100%;
+}
+.l-16-9-parent {
+  padding-bottom: 56.25%;
+}
+.l-sized-child {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .l-button-padding {
   padding: 10px 25px;
+}
+.l-card-padding {
+  padding: 20px;
+}
+.l-card-more-vertical-margin {
+  margin-top: calc( #{$nav-height} - 27px);
+  margin-bottom: calc( #{$nav-height} - 20px);
 }

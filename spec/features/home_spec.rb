@@ -27,4 +27,37 @@ describe "home page", type: :feature do
         have_css("a[href='/']")
     end
   end
+
+
+  context "blog section" do
+    before do
+      ["rails", "rspec", "git", "heroku", "bash", "haml", "scss"].each_with_index do |tag_name, index|
+        post = FactoryGirl.create(:post, title: "Why you should use #{tag_name}",
+          path: "/blog/why-you-should-use-#{tag_name}", use: "blog", created_at: Time.now - (index + 1).hours)
+        post.tags.create(name: "#{tag_name}tag")
+      end
+    end
+    before(:each) do
+      visit "/"
+    end
+    it "has a header and more button" do
+      within "[data-name='blog']" do
+        expect(page).to have_content("blog") &&
+          have_css("img[src='/assets/cog_orange.png']") &&
+          have_content("more") &&
+          have_css("a[href='/']")
+      end
+    end
+    it "has 6 cards with content in order by created_at" do
+      within "[data-name='blog']" do
+        cards = page.all("[data-name='card']")
+        expect(cards.count).to eq 6
+        within(cards[0]) do
+          expect(page).to have_content("Why you should use rails") &&
+            have_content("tags:") &&
+            have_content("railstag")
+        end
+      end
+    end
+  end
 end

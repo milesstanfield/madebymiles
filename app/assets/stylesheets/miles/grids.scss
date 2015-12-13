@@ -1,0 +1,29 @@
+body {
+  font-size: 0;
+}
+
+.miles-gutters {
+  margin: 0px -10px;
+}
+.miles-gutters [class*=miles-col-] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+[class*=miles-col] {
+  display: inline-block;
+}
+
+
+.miles-col-1-1 {
+  width: 100%;
+}
+.miles-col-1-2 {
+  width: 50%;
+}
+.miles-col-1-3 {
+  width: 33.33333333%;
+}
