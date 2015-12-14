@@ -18,7 +18,7 @@
       .m-font-medium.m-font-thin.m-color-dark-grey.l-about-text-margin
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
     .l-vertical-margin-large.l-text-center
-      = render "layouts/button", text: "more", path: "/"
+      = render "layouts/button", text: "more about me", path: "/about"
 
 
 %div{data: {name: "blog"}}
@@ -40,4 +40,4 @@
                     = image_tag "arrow_button.png", class: "l-absolute l-right l-bottom l-arrow-button-width"
 
     .l-card-more-vertical-margin.l-text-center
-      = render "layouts/button", text: "more", path: "/"
+      = render "layouts/button", text: "more blog posts", path: "/posts/blog"

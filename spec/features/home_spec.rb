@@ -24,7 +24,7 @@ describe "home page", type: :feature do
           but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
           in the 1960s with the release of Letraset sheets containing") &&
         have_content("more") &&
-        have_css("a[href='/']")
+        have_css("a[href='/about']")
     end
   end
 
@@ -45,7 +45,7 @@ describe "home page", type: :feature do
         expect(page).to have_content("blog") &&
           have_css("img[src='/assets/cog_orange.png']") &&
           have_content("more") &&
-          have_css("a[href='/']")
+          have_css("a[href='/posts/blog']")
       end
     end
     it "has 6 cards with content in order by created_at" do
