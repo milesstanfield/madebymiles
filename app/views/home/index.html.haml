@@ -13,7 +13,7 @@
   .l-max-content-width.l-simple-center.l-content-padding
     .l-vertical-margin-large
       .l-float-left
-        = image_tag "profile_head.png", class: "l-about-head-width"
+        .profile_head
         .l-text-center.m-font-small.m-font-thin.m-color-dark-grey.l-top-margin-small= "Miles Stanfield"
       .m-font-medium.m-font-thin.m-color-dark-grey.l-about-text-margin
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
@@ -37,7 +37,7 @@
                     - post.tags.each do |tag|
                       = link_to tag.name, tagged_posts_path(tag.name), class: "l-inline-block l-tag m-font-thin m-font-small m-color-white m-bg-dark-blue a-hover-bg-blue"
                   = link_to post.slug do
-                    = image_tag "arrow_button.png", class: "l-absolute l-right l-bottom l-arrow-button-width"
+                    .arrow_button.l-absolute.l-right.l-bottom
 
     .l-card-more-vertical-margin.l-text-center
       = render "layouts/button", text: "more blog posts", path: "/posts/blog"

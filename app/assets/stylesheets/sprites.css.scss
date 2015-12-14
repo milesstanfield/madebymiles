@@ -1,0 +1,19 @@
+@import 'variables';
+div.arrow_button { width: 39px; height: 39px; background-position: 0px -43px; }
+ div.arrow_button:hover { width: 39px; height: 39px; background-position: -39px -43px; }
+.cog_orange { width: 16px; height: 18px; background-position: -78px -54px; }
+.madebymiles_logo { width: 164px; height: 45px; background-position: -94px -40px; }
+.profile_head { width: 126px; height: 126px; background-position: -258px 0px; }
+      div.arrow_button, div.arrow_button:hover, .cog_orange, .madebymiles_logo, .profile_head {
+        background-repeat: no-repeat;
+        background-image: url(image_path('sprites.png'));
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+          background-image: url(image_path('sprites_2x.png'));
+          -webkit-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
+          -moz-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
+          -ms-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
+          -o-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
+          background-size: 384px 126px;
+        }
+      }
+    

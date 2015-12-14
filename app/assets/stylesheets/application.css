@@ -16,5 +16,6 @@
  *= require "commons"
  *= require "action"
  *= require "miles/grids"
+ *= require "sprites"
  *= require_self
  */

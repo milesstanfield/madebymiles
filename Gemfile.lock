@@ -180,6 +180,7 @@ GEM
     rb-readline (0.5.3)
     rdoc (4.2.0)
       json (~> 1.4)
+    rmagick (2.15.4)
     rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -223,6 +224,7 @@ GEM
     spring (1.5.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
+    sprite-factory (1.7.1)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -278,6 +280,7 @@ DEPENDENCIES
   rails (= 4.2.4)
   rails_12factor
   rb-readline
+  rmagick
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -285,6 +288,7 @@ DEPENDENCIES
   shoulda-matchers
   spring
   spring-commands-rspec
+  sprite-factory
   uglifier (>= 1.3.0)
   vcr
   web-console (~> 2.0)

@@ -33,6 +33,12 @@ gem "haml-rails"
 # 12 Factor gem for Heroku
 gem "rails_12factor", group: :production
 
+# for sprites
+group :assets do
+  gem 'sprite-factory'
+  gem 'rmagick'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

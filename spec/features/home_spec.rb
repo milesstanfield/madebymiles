@@ -16,8 +16,8 @@ describe "home page", type: :feature do
     visit "/"
     within "[data-name='about']" do
       expect(page).to have_content("about") &&
-        have_css("img[src='/assets/cog_orange.png']") &&
-        have_css("img[src='/assets/profile_head.png']") &&
+        have_css(".cog_orange") &&
+        have_css(".profile_head") &&
         have_content("Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
           printer took a galley of type and scrambled it to make a. It has survived not only five centuries,
@@ -43,7 +43,7 @@ describe "home page", type: :feature do
     it "has a header and more button" do
       within "[data-name='blog']" do
         expect(page).to have_content("blog") &&
-          have_css("img[src='/assets/cog_orange.png']") &&
+          have_css(".cog_orange") &&
           have_content("more") &&
           have_css("a[href='/posts/blog']")
       end
@@ -60,7 +60,7 @@ describe "home page", type: :feature do
               have_content("tags:") &&
               have_content("#{tag_name}tag") &&
               have_css("a[href='/posts/tagged/#{tag_name}tag']") &&
-              have_css("img[src='/assets/arrow_button.png']")
+              have_css(".arrow_button")
           end
         end
 

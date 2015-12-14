@@ -36,9 +36,6 @@
 .l-nav-height {
   height: $nav-height;
 }
-.l-nav-logo-height {
-  height: 45px;
-}
 .l-nav-tab-text {
   top: 20px;
 }
@@ -60,14 +57,10 @@
 .l-about-text-margin {
   margin-left: calc(#{$profile-head-width} + 20px);
 }
-.l-about-head-width {
-  width: $profile-head-width;
-}
 
 
 // OTHER
-.l-cog {
-  height: 18px;
+.l-cog-adj {
   top: 2px;
 }
 .l-square-parent, .l-16-9-parent {
@@ -100,7 +93,4 @@
 .l-tag {
   padding: 5px;
   margin: 5px 10px 5px 0px;
-}
-.l-arrow-button-width {
-  width: 40px;
 }
