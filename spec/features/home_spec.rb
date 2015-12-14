@@ -59,7 +59,8 @@ describe "home page", type: :feature do
               have_css("a[href='/posts/#{slug_date_portion}/why-you-should-use-#{tag_name}']") &&
               have_content("tags:") &&
               have_content("#{tag_name}tag") &&
-              have_css("a[href='/posts/tagged/#{tag_name}tag']")
+              have_css("a[href='/posts/tagged/#{tag_name}tag']") &&
+              have_css("img[src='/assets/arrow_button.png']")
           end
         end
 
