@@ -3,7 +3,10 @@
 .a-nav-tab-hovered:hover {
   background: $active-light-blue;
 }
-.a-button-hover-blue:hover {
+.a-hover-bg-blue:hover {
   background: $light-blue;
   color: white;
+}
+.a-hover-blue:hover {
+  color: $light-blue;
 }

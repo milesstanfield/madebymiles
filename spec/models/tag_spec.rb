@@ -16,4 +16,11 @@ describe Tag do
       expect(record.send("#{attribute}")).to eq 123
     end
   end
+
+  it "does not create a duplicate named tag (unique)" do
+    Tag.create(name: "foo")
+    expect(Tag.count).to eq 1
+    Tag.create(name: "foo")
+    expect(Tag.count).to eq 1
+  end
 end

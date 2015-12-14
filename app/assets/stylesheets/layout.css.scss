@@ -94,6 +94,10 @@
   padding: 20px;
 }
 .l-card-more-vertical-margin {
-  margin-top: calc( #{$nav-height} - 27px);
+  margin-top: calc( #{$nav-height} - 30px);
   margin-bottom: calc( #{$nav-height} - 20px);
+}
+.l-tag {
+  padding: 5px;
+  margin: 5px;
 }
