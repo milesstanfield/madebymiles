@@ -56,10 +56,10 @@ class SpriteStyleFormatter
         background-image: #{options.sprites_rails_helper};
         @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
           background-image: #{options.retina_sprites_rails_helper};
-          -webkit-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
-          -moz-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
-          -ms-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
-          -o-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
+          -webkit-background-size: REPLACE_WITH_SPRITE_PNG_WIDTH REPLACE_WITH_SPRITE_PNG_HEIGHT;
+          -moz-background-size: REPLACE_WITH_SPRITE_PNG_WIDTH REPLACE_WITH_SPRITE_PNG_HEIGHT;
+          -ms-background-size: REPLACE_WITH_SPRITE_PNG_WIDTH REPLACE_WITH_SPRITE_PNG_HEIGHT;
+          -o-background-size: REPLACE_WITH_SPRITE_PNG_WIDTH REPLACE_WITH_SPRITE_PNG_HEIGHT;
           background-size: REPLACE_WITH_SPRITE_PNG_WIDTH REPLACE_WITH_SPRITE_PNG_HEIGHT;
         }
       }

@@ -9,10 +9,10 @@ div.arrow_button { width: 39px; height: 39px; background-position: 0px -43px; }
         background-image: url(image_path('sprites.png'));
         @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
           background-image: url(image_path('sprites_2x.png'));
-          -webkit-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
-          -moz-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
-          -ms-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
-          -o-background-size: REPLACE_ME_WITH_SPRITE_PNG_WIDTH REPLACE_ME_WITH_SPRITE_PNG_HEIGHT;
+          -webkit-background-size: 384px 126px;
+          -moz-background-size: 384px 126px;
+          -ms-background-size: 384px 126px;
+          -o-background-size: 384px 126px;
           background-size: 384px 126px;
         }
       }
