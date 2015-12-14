@@ -7,4 +7,12 @@ class Post < ActiveRecord::Base
     date = (created_at || Time.now).strftime("%Y/%m/%d")
     "/posts/#{date}/#{super}"
   end
+
+  def self.blogs
+    where(use: "blog")
+  end
+
+  def self.recent
+    order("created_at").reverse_order
+  end
 end
