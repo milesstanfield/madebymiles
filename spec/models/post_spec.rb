@@ -16,7 +16,10 @@ describe Post do
 
   it "creates friendly id slug from title with date prepended" do
     post = Post.create(title: "This is my #title")
-    expect(post.slug).to eq "/posts/#{slug_date_portion}/this-is-my-title"
+    expect(["/posts/#{slug_date_portion1}/this-is-my-title",
+      "/posts/#{slug_date_portion2}/this-is-my-title", "/posts/#{slug_date_portion3}/this-is-my-title"].any? do |slug|
+        post.slug == slug
+      end).to eq true
   end
 
   it "gets only blog posts" do

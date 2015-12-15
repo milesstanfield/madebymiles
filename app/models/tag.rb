@@ -1,4 +1,4 @@
 class Tag < ActiveRecord::Base
   validates_uniqueness_of :name
-  belongs_to :post
+  has_and_belongs_to_many :posts
 end

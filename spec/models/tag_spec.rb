@@ -9,12 +9,16 @@ describe Tag do
     end
   end
 
-  it "has integer attributes" do
-    ["post_id"].each do |attribute|
-      record = described_class.new
-      record.send("#{attribute}=", 123)
-      expect(record.send("#{attribute}")).to eq 123
-    end
+  it "belongs to many posts" do
+    tag = Tag.create(name: "foo")
+    blog_post = FactoryGirl.create(:post, use: "blog")
+    tutorial_post = FactoryGirl.create(:post, use: "tutorial")
+    blog_post.tags << tag
+    tutorial_post.tags << tag
+    expect(blog_post.tags.count).to eq 1
+    expect(blog_post.tags.first).to eq tag
+    expect(tutorial_post.tags.count).to eq 1
+    expect(tutorial_post.tags.first).to eq tag
   end
 
   it "does not create a duplicate named tag (unique)" do
