@@ -1,4 +1,4 @@
-.m-bg-dark-grey{data: {name: "splash"}}
+.m-bg-dark-grey{data: {area: "splash"}}
   .l-max-content-width.l-horizontal-center.l-content-padding
     .l-large-vertical-padding
       .col-1-2.m-font-largest.m-font-bold.m-color-white.l-v-align-middle.l-relative
@@ -8,7 +8,7 @@
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text"
 
 
-%div{data: {name: "about"}}
+%div{data: {area: "about"}}
   = render "layouts/header", text: "about"
   .l-max-content-width.l-horizontal-center.l-content-padding
     .l-large-vertical-margin.l-relative
@@ -21,24 +21,17 @@
       = render "layouts/button", text: "more about me", path: "/about"
 
 
-%div{data: {name: "blog"}}
+%div{data: {area: "blogs"}}
   = render "layouts/header", text: "blog"
   .l-max-content-width.l-horizontal-center.l-content-padding
-    .l-large-top-margin
-      .miles-gutters
-        - @blog_posts.each do |post|
-          .col-1-3.l-medium-bottom-margin{data: {name: "card"}}
-            .l-square-parent.l-relative.m-bg-light-grey
-              .l-sized-child.l-medium-padding
-                .l-relative.l-height-100
-                  = link_to post.title, post.slug, class: "m-font-bold m-font-medium m-color-darkest-grey a-hover-blue"
-                  .l-small-top-margin
-                    .l-inline-block.tag.l-tag-spacing.l-relative
-                    - post.tags.each do |tag|
-                      = link_to tag.name, tagged_posts_path(tag.name), class: "l-inline-block l-tag-text-spacing m-font-thin m-font-small m-color-white m-bg-dark-blue a-hover-bg-blue"
-                  = link_to post.slug, class: "l-absolute l-right l-bottom" do
-                    .a-circle-hover-blue.l-relative.m-circle-stroke-blue.l-circle-padding.m-circle
-                      .arrow_dark_blue.l-absolute-center
-
+    = render "layouts/post_cards", posts: @blog_posts
     .l-card-more-button-margin.l-text-center
-      = render "layouts/button", text: "more blog posts", path: "/posts/blog"
+      = render "layouts/button", text: "more blog posts", path: "/posts/blogs"
+
+
+%div{data: {area: "tutorials"}}
+  = render "layouts/header", text: "tutorials"
+  .l-max-content-width.l-horizontal-center.l-content-padding
+    = render "layouts/post_cards", posts: @tutorial_posts
+    .l-card-more-button-margin.l-text-center
+      = render "layouts/button", text: "more tutorials", path: "/posts/tutorials"

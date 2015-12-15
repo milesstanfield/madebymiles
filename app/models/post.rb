@@ -12,6 +12,10 @@ class Post < ActiveRecord::Base
     where(use: "blog")
   end
 
+  def self.tutorials
+    where(use: "tutorial")
+  end
+
   def self.recent
     order("created_at").reverse_order
   end

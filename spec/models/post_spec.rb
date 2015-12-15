@@ -21,9 +21,16 @@ describe Post do
 
   it "gets only blog posts" do
     blog_post = Post.create(title: "This is my blog post", use: "blog")
-    tutorial_post = Post.create(title: "This is my howto post", use: "howto")
+    tutorial_post = Post.create(title: "This is my howto post", use: "tutorial")
     expect(Post.blogs.count).to eq 1
     expect(Post.blogs.first.title).to eq "This is my blog post"
+  end
+
+  it "gets only tutorial posts" do
+    tutorial_post = Post.create(title: "This is my tutorial post", use: "tutorial")
+    blog_post = Post.create(title: "This is my blog post", use: "blog")
+    expect(Post.tutorials.count).to eq 1
+    expect(Post.tutorials.first.title).to eq "This is my tutorial post"
   end
 
   it "sorts posts and returns them in recent (created_at) order" do
