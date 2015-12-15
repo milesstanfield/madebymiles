@@ -60,7 +60,7 @@ describe "home page", type: :feature do
               have_content("tags:") &&
               have_content("#{tag_name}tag") &&
               have_css("a[href='/posts/tagged/#{tag_name}tag']") &&
-              have_css(".arrow_button")
+              have_css(".arrow_dark_blue")
           end
         end
 
