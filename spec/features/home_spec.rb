@@ -4,27 +4,27 @@ describe "home page", type: :feature do
   it "has a splash section" do
     visit "/"
     within "[data-name='splash']" do
-      expect(page).to have_content("DEVELOPER") &&
-        have_content("DESIGNER") &&
-        have_content("TEACHER") &&
-        have_content("Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text")
+      expect(page).to have_content("DEVELOPER")
+      expect(page).to have_content("DESIGNER")
+      expect(page).to have_content("TEACHER")
+      expect(page).to have_content("Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text")
     end
   end
 
   it "has an about section" do
     visit "/"
     within "[data-name='about']" do
-      expect(page).to have_content("about") &&
-        have_css(".cog_orange") &&
-        have_css(".profile_head") &&
-        have_content("Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-          printer took a galley of type and scrambled it to make a. It has survived not only five centuries,
-          but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
-          in the 1960s with the release of Letraset sheets containing") &&
-        have_content("more") &&
-        have_css("a[href='/about']")
+      expect(page).to have_content("about")
+      expect(page).to have_css(".cog_orange")
+      expect(page).to have_css(".profile_head")
+      expect(page).to have_content("Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+        printer took a galley of type and scrambled it to make a. It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing")
+      expect(page).to have_content("more")
+      expect(page).to have_css("a[href='/about']")
     end
   end
 
@@ -42,10 +42,10 @@ describe "home page", type: :feature do
     end
     it "has a header and more button" do
       within "[data-name='blog']" do
-        expect(page).to have_content("blog") &&
-          have_css(".cog_orange") &&
-          have_content("more") &&
-          have_css("a[href='/posts/blog']")
+        expect(page).to have_content("blog")
+        expect(page).to have_css(".cog_orange")
+        expect(page).to have_content("more")
+        expect(page).to have_css("a[href='/posts/blog']")
       end
     end
     it "has 6 cards with content in order by created_at" do
@@ -55,12 +55,13 @@ describe "home page", type: :feature do
 
         @tag_names[0..5].each_with_index do |tag_name, index|
           within(cards[index]) do
-            expect(page).to have_content("Why you should use #{tag_name}") &&
-              have_css("a[href='/posts/#{slug_date_portion}/why-you-should-use-#{tag_name}']") &&
-              have_content("tags:") &&
-              have_content("#{tag_name}tag") &&
-              have_css("a[href='/posts/tagged/#{tag_name}tag']") &&
-              have_css(".arrow_dark_blue")
+            expect(page).to have_content("Why you should use #{tag_name}")
+            expect(one_selector_exists?("a[href='/posts/#{slug_date_portion}/why-you-should-use-#{tag_name}']",
+              "a[href='/posts/#{alternate_slug_date_portion}/why-you-should-use-#{tag_name}']")).to eq true
+            expect(page).to have_css(".tag")
+            expect(page).to have_content("#{tag_name}tag")
+            expect(page).to have_css("a[href='/posts/tagged/#{tag_name}tag']")
+            expect(page).to have_css(".arrow_dark_blue")
           end
         end
 
