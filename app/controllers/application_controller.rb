@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def missing_page
-    respond_to do |format|
-      format.html { render 'layouts/missing_page', status: 404 }
-    end
+    render 'layouts/missing_page', status: 404
   end
 end

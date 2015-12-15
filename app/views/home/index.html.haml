@@ -1,43 +1,44 @@
 .m-bg-dark-grey{data: {name: "splash"}}
-  .l-max-content-width.l-simple-center.l-content-padding
-    .l-vertical-padding-large
-      .miles-col-1-2.m-font-largest.m-font-bold.m-color-white.l-v-align-middle.l-relative
+  .l-max-content-width.l-horizontal-center.l-content-padding
+    .l-large-vertical-padding
+      .col-1-2.m-font-largest.m-font-bold.m-color-white.l-v-align-middle.l-relative
         = "DEVELOPER DESIGNER TEACHER"
         .m-bg-orange.l-splash-line-width.l-height-100.l-absolute.l-right.l-top
-      .miles-col-1-2.m-font-medium.m-font-thin.m-color-light-grey.l-v-align-middle.l-splash-info-padding.l-pad-fix
+      .col-1-2.m-font-medium.m-font-thin.m-color-light-grey.l-v-align-middle.l-splash-info-padding.l-pad-fix
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text"
 
 
 %div{data: {name: "about"}}
   = render "layouts/header", text: "about"
-  .l-max-content-width.l-simple-center.l-content-padding
-    .l-vertical-margin-large
-      .l-float-left
+  .l-max-content-width.l-horizontal-center.l-content-padding
+    .l-large-vertical-margin.l-relative
+      .l-absolute
         .profile_head
-        .l-text-center.m-font-small.m-font-thin.m-color-dark-grey.l-top-margin-small= "Miles Stanfield"
+        .l-text-center.m-font-small.m-font-thin.m-color-dark-grey.l-small-top-margin= "Miles Stanfield"
       .m-font-medium.m-font-thin.m-color-dark-grey.l-about-text-margin
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
-    .l-vertical-margin-large.l-text-center
+    .l-large-vertical-margin.l-text-center
       = render "layouts/button", text: "more about me", path: "/about"
 
 
 %div{data: {name: "blog"}}
   = render "layouts/header", text: "blog"
-  .l-max-content-width.l-simple-center.l-content-padding
-    .l-top-margin-large
+  .l-max-content-width.l-horizontal-center.l-content-padding
+    .l-large-top-margin
       .miles-gutters
         - @blog_posts.each do |post|
-          .miles-col-1-3.l-margin-bottom{data: {name: "card"}}
+          .col-1-3.l-medium-bottom-margin{data: {name: "card"}}
             .l-square-parent.l-relative.m-bg-light-grey
-              .l-sized-child.l-card-padding
+              .l-sized-child.l-medium-padding
                 .l-relative.l-height-100
                   = link_to post.title, post.slug, class: "m-font-bold m-font-medium m-color-darkest-grey a-hover-blue"
-                  .l-top-margin-small
+                  .l-small-top-margin
                     .l-inline-block.m-font-thin.m-font-small.m-color-dark-grey="tags:"
                     - post.tags.each do |tag|
-                      = link_to tag.name, tagged_posts_path(tag.name), class: "l-inline-block l-tag m-font-thin m-font-small m-color-white m-bg-dark-blue a-hover-bg-blue"
-                  = link_to post.slug do
-                    .arrow_button.l-absolute.l-right.l-bottom
+                      = link_to tag.name, tagged_posts_path(tag.name), class: "l-inline-block l-tag-spacing m-font-thin m-font-small m-color-white m-bg-dark-blue a-hover-bg-blue"
+                  = link_to post.slug, class: "l-absolute l-right l-bottom" do
+                    .l-relative.m-circle-stroke-blue.l-medium-padding.m-circle
+                      .arrow_dark_blue.l-absolute-center
 
-    .l-card-more-vertical-margin.l-text-center
+    .l-card-more-button-margin.l-text-center
       = render "layouts/button", text: "more blog posts", path: "/posts/blog"

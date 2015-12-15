@@ -1,5 +1,18 @@
 @import "variables";
 
+// FONTS
+.m-font-thin {
+  font-family: "Gotham A", "Gotham B", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+.m-font-bold {
+  font-family: "Gotham A", "Gotham B", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+
 // FONT COLORS
 .m-color-white {
   color: white;
@@ -13,14 +26,14 @@
 .m-color-darkest-grey {
   color: $darkest-grey;
 }
-.m-color-light-blue {
-  color: $light-blue;
+.m-color-blue {
+  color: $blue;
 }
 
 
 // BACKGROUND COLORS
-.m-bg-light-blue {
-  background: $light-blue;
+.m-bg-blue {
+  background: $blue;
 }
 .m-bg-dark-grey {
   background: $dark-grey;
@@ -57,23 +70,13 @@
 }
 
 
-// FONTS
-.m-font-thin {
-  font-family: "Gotham A", "Gotham B";
-  font-style: normal;
-  font-weight: 300;
-}
-.m-font-bold {
-  font-family: "Gotham A", "Gotham B";
-  font-style: normal;
-  font-weight: 700;
-}
-
-
 // OTHER
 .m-underline-white {
   border-bottom: 2px solid white;
 }
-.m-button-stroke {
-  border: 2px solid $light-blue;
+.m-button-stroke-blue {
+  border: 2px solid $blue;
+}
+.m-circle-stroke-blue {
+  border: 2px solid $dark-blue;
 }

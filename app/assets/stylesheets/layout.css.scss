@@ -2,34 +2,52 @@
 
 // GENERAL
 .l-max-content-width {
-  max-width: 950px;
-}
-.l-float-left {
-  float: left;
+  max-width: 1000px;
 }
 
 
-// SPACING
+// MARGIN
+.l-large-top-margin {
+  margin-top: $large-vertical-spacing;
+}
+.l-large-vertical-margin {
+  margin-top: $large-vertical-spacing;
+  margin-bottom: $large-vertical-spacing;
+}
+.l-medium-bottom-margin {
+  margin-bottom: 20px;
+}
+.l-small-top-margin {
+  margin-top: 10px;
+}
+.l-card-more-button-margin {
+  margin-top: calc( #{$nav-height} - 30px);
+  margin-bottom: calc( #{$nav-height} - 20px);
+}
+
+
+// PADDING
 .l-content-padding {
   padding: 0 20px;
 }
-.l-vertical-margin-large {
-  margin-top: calc( #{$nav-height} - 10px);
-  margin-bottom: calc( #{$nav-height} - 10px);
+.l-medium-padding {
+  padding: 20px;
 }
-.l-vertical-padding-large {
-  padding-top: calc( #{$nav-height} - 10px);
-  padding-bottom: calc( #{$nav-height} - 10px);
+.l-button-padding {
+  padding: 10px 25px;
 }
-.l-top-margin-small {
-  margin-top: 10px;
+.l-large-vertical-padding {
+  padding-top: $large-vertical-spacing;
+  padding-bottom: $large-vertical-spacing;
 }
-.l-margin-bottom {
-  margin-bottom: 20px;
+.l-nav-tab-padding {
+  padding: 0 15px;
 }
-.l-top-margin-large {
-  margin-top: calc( #{$nav-height} - 10px);
+.l-splash-info-padding {
+  padding: 0 40px;
 }
+
+
 
 
 // NAV
@@ -39,58 +57,22 @@
 .l-nav-tab-text {
   top: 20px;
 }
-.l-nav-tab-padding {
-  padding: 0 15px;
-}
-
 
 // SPLASH
 .l-splash-line-width {
   width: 2px;
 }
-.l-splash-info-padding {
-  padding: 0 40px;
-}
-
 
 // ABOUT
 .l-about-text-margin {
   margin-left: calc(#{$profile-head-width} + 20px);
 }
 
-
 // OTHER
 .l-cog-adj {
   top: 2px;
 }
-.l-square-parent, .l-16-9-parent {
-  width: 100%;
-}
-.l-square-parent {
-  padding-bottom: 100%;
-}
-.l-16-9-parent {
-  padding-bottom: 56.25%;
-}
-.l-sized-child {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.l-button-padding {
-  padding: 10px 25px;
-}
-.l-card-padding {
-  padding: 20px;
-}
-.l-card-more-vertical-margin {
-  margin-top: calc( #{$nav-height} - 30px);
-  margin-bottom: calc( #{$nav-height} - 20px);
-}
-.l-tag {
+.l-tag-spacing {
   padding: 5px;
   margin: 5px 10px 5px 0px;
 }
