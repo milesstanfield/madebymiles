@@ -8,15 +8,21 @@ class Post < ActiveRecord::Base
     "/posts/#{date}/#{super}"
   end
 
-  def self.blogs
-    where(use: "blog")
-  end
+  class << self
+    def blogs
+      where(use: "blog")
+    end
 
-  def self.tutorials
-    where(use: "tutorial")
-  end
+    def tutorials
+      where(use: "tutorial")
+    end
 
-  def self.recent
-    order("created_at").reverse_order
+    def recent
+      order("created_at").reverse_order
+    end
+
+    def by_tag_name(tag_name)
+      Tag.find_by_name(tag_name).posts
+    end
   end
 end
