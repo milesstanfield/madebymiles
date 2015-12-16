@@ -2,7 +2,7 @@
   .gutters
     - posts.each do |post|
       .col-1-1.col-1-2-med.col-1-3-lrg.l-medium-bottom-margin.l-drop-card-widow{data: {area: "card"}}
-        .l-square-parent.l-relative.m-bg-light-grey
+        .l-square-parent.mobile-unconfined.l-relative.m-bg-light-grey
           .l-sized-child.l-medium-padding
             .l-relative.l-height-100
               = link_to post.title, post.slug, class: "m-font-bold m-font-medium m-color-darkest-grey a-hover-blue"
@@ -11,5 +11,6 @@
                 - post.tags.each do |tag|
                   = link_to tag.name, tagged_posts_path(tag.name), class: "l-inline-block l-tag-text-spacing m-font-thin m-font-small m-color-white m-bg-dark-blue a-hover-bg-blue"
               = link_to post.slug, class: "l-absolute l-right l-bottom" do
-                .a-hover-circle-blue.l-relative.m-circle-stroke-blue.l-circle-padding.m-circle
-                  .arrow_dark_blue.l-absolute-center
+                .a-hover-circle-blue.m-circle-stroke-blue.l-circle-padding.m-circle
+                  .l-relative
+                    .arrow_dark_blue.l-absolute-center

@@ -94,3 +94,13 @@
   left: 0;
   right: 0;
 }
+.l-square-parent.mobile-unconfined {
+  @include respond-to(0, $med) {
+    padding-bottom: initial;
+  }
+  .l-sized-child {
+    @include respond-to(0, $med) {
+      position: initial;
+    }
+  }
+}
