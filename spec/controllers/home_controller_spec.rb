@@ -4,7 +4,7 @@ describe HomeController, type: :controller do
 
   it "#index" do
     blog_posts = double(:blog_posts)
-    expect(Post).to receive(:blogs).and_return(blog_posts)
+    expect(Post).to receive(:blog).and_return(blog_posts)
     expect(blog_posts).to receive(:recent).and_return(blog_posts)
     expect(blog_posts).to receive(:limit).with(4).and_return(blog_posts)
 
