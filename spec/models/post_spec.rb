@@ -25,8 +25,8 @@ describe Post do
   it "gets only blog posts" do
     blog_post = Post.create(title: "This is my blog post", use: "blog")
     tutorial_post = Post.create(title: "This is my howto post", use: "tutorial")
-    expect(Post.blogs.count).to eq 1
-    expect(Post.blogs.first.title).to eq "This is my blog post"
+    expect(Post.blog.count).to eq 1
+    expect(Post.blog.first.title).to eq "This is my blog post"
   end
 
   it "gets only tutorial posts" do

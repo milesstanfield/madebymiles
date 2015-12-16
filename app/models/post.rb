@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   end
 
   class << self
-    def blogs
+    def blog
       where(use: "blog")
     end
 
