@@ -69,7 +69,17 @@
 
 // ABOUT
 .l-about-text-margin {
-  margin-left: calc(#{$profile-head-width} + 20px);
+  @include respond-to(0px, $med) {
+    margin-top: $large-vertical-spacing;
+  }
+  @include respond-to($med) {
+    margin-left: calc(#{$profile-head-width} + 20px);
+  }
+}
+.l-about-head {
+  @include respond-to($med) {
+    position: absolute;
+  }
 }
 
 // OTHER
@@ -84,8 +94,20 @@
   top: 6px;
   margin-right: 5px;
 }
-[class*=l-card-widow-drop]:last-of-type {
+[class*=l-drop-card-widow]:last-of-type {
   @include respond-to($lrg) {
+    display: none;
+  }
+}
+.l-hide-on-mobile {
+  display: none;
+  @include respond-to($med) {
+    display: block;
+  }
+}
+.l-show-on-mobile {
+  display: block;
+  @include respond-to($med) {
     display: none;
   }
 }

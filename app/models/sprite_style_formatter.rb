@@ -76,7 +76,7 @@ class SpriteStyleFormatter
         unless image_style_excluded?(image_name)
           case image_name.to_s
           when "arrow_dark_blue"
-            "div.arrow_dark_blue { #{indivdual_style(@images[:arrow_dark_blue])} }\n .a-circle-hover-blue:hover div.arrow_dark_blue { #{indivdual_style(@images[:arrow_blue])} }"
+            "div.arrow_dark_blue { #{indivdual_style(@images[:arrow_dark_blue])} }\n .a-hover-circle-blue:hover div.arrow_dark_blue { #{indivdual_style(@images[:arrow_blue])} }"
           else
             default_style(image_name, image_data, "div")
           end

@@ -1,21 +1,22 @@
 @import 'variables';
-.arrow_blue { width: 12px; height: 17px; background-position: 0px -55px; }
-div.arrow_dark_blue { width: 12px; height: 17px; background-position: -12px -55px; }
- .a-circle-hover-blue:hover div.arrow_dark_blue { width: 12px; height: 17px; background-position: 0px -55px; }
-.cog_orange { width: 18px; height: 19px; background-position: -24px -54px; }
-.madebymiles_logo { width: 165px; height: 45px; background-position: -42px -41px; }
-.profile_head { width: 127px; height: 127px; background-position: -207px 0px; }
-.tag { width: 21px; height: 20px; background-position: -334px -53px; }
-      .arrow_blue, div.arrow_dark_blue, .a-circle-hover-blue:hover, .cog_orange, .madebymiles_logo, .profile_head, .tag {
+.about_head { width: 127px; height: 127px; background-position: 0px 0px; }
+.arrow_blue { width: 12px; height: 17px; background-position: -127px -55px; }
+div.arrow_dark_blue { width: 12px; height: 17px; background-position: -139px -55px; }
+ .a-hover-circle-blue:hover div.arrow_dark_blue { width: 12px; height: 17px; background-position: -127px -55px; }
+.cog_orange { width: 18px; height: 19px; background-position: -151px -54px; }
+.hamburger { width: 28px; height: 20px; background-position: -169px -53px; }
+.madebymiles_logo { width: 165px; height: 45px; background-position: -197px -41px; }
+.tag { width: 21px; height: 20px; background-position: -362px -53px; }
+      .about_head, .arrow_blue, div.arrow_dark_blue, .a-hover-circle-blue:hover, .cog_orange, .hamburger, .madebymiles_logo, .tag {
         background-repeat: no-repeat;
         background-image: url(image_path('sprites.png'));
         @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
           background-image: url(image_path('sprites_2x.png'));
-          -webkit-background-size: 355px 127px;
-          -moz-background-size: 355px 127px;
-          -ms-background-size: 355px 127px;
-          -o-background-size: 355px 127px;
-          background-size: 355px 127px;
+          -webkit-background-size: 383px 127px;
+          -moz-background-size: 383px 127px;
+          -ms-background-size: 383px 127px;
+          -o-background-size: 383px 127px;
+          background-size: 383px 127px;
         }
       }
     

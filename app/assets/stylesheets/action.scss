@@ -1,7 +1,7 @@
 @import "variables";
 @import "mixins";
 
-.a-nav-tab-hovered:hover {
+.a-hover-nav-tab:hover {
   background: $active-blue;
 }
 .a-hover-bg-blue:hover {
@@ -11,10 +11,13 @@
 .a-hover-blue:hover {
   color: $blue;
 }
-.a-circle-hover-blue:hover {
+.a-hover-circle-blue:hover {
   border: 2px solid $blue;
   @include transition(all, 0.15s, ease);
   padding: 20px;
   margin-bottom: -5px;
   margin-right: -5px;
+}
+.a-hover-opacity:hover {
+  opacity: 0.75;
 }

@@ -2,10 +2,13 @@
   .l-max-content-width.l-horizontal-center.l-content-padding
     .l-relative.l-nav-height
       = link_to "/" do
-        .madebymiles_logo.l-vertical-center
+        .madebymiles_logo.l-vertical-center.a-hover-opacity
 
       .l-right.l-absolute.l-height-100
-        - Navigation.tabs.each do |nav_tab|
-          = link_to nav_tab.path, class: "l-nav-tab-padding l-height-100 l-inline-block a-nav-tab-hovered" do
-            %span{class: Navigation.tab_classes(controller, nav_tab.text)}
-              = nav_tab.text
+        .l-relative.l-show-on-mobile.l-height-100
+          .hamburger.m-clickable.l-vertical-center.l-right
+        .l-hide-on-mobile.l-height-100
+          - Navigation.tabs.each do |nav_tab|
+            = link_to nav_tab.path, class: "l-nav-tab-padding l-height-100 l-inline-block a-hover-nav-tab" do
+              %div{class: Navigation.tab_classes(controller, nav_tab.text)}
+                = nav_tab.text
