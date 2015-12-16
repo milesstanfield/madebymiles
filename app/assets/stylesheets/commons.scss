@@ -1,3 +1,5 @@
+@import "mixins";
+
 .l-hide {
   display: none;
 }
@@ -43,21 +45,13 @@
 .l-vertical-center {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
+  @include prefixes(transform, translateY(-50%))
 }
 .l-absolute-center {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  @include prefixes(transform, translate(-50%, -50%))
 }
 .m-overflow-hidden {
   overflow: hidden;

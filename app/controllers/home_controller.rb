@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @blog_posts = Post.blogs.recent.limit(6)
-    @tutorial_posts = Post.tutorials.recent.limit(6)
+    @blog_posts = Post.blogs.recent.limit(4)
+    @tutorial_posts = Post.tutorials.recent.limit(4)
   end
 end

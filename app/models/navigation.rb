@@ -3,10 +3,10 @@ class Navigation
 
     def tabs
       [
-        tab_struct("home", "/"),
         tab_struct("about", "/about"),
-        tab_struct("blog", "/blog"),
+        tab_struct("tutorials", "/posts/tutorials"),
         tab_struct("portfolio", "/porfolio"),
+        tab_struct("blog", "/posts/blog"),
         tab_struct("connect", "/connect"),
       ]
     end

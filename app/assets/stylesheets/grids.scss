@@ -1,0 +1,49 @@
+@import "mixins";
+
+body {
+  font-size: 0;
+}
+
+.gutters {
+  margin: 0px -10px;
+}
+.gutters [class*=col-] {
+  @include prefixes(box-sizing, border-box);
+  padding: 0 10px;
+}
+[class*=col-] {
+  display: inline-block;
+}
+
+
+.col-1-1 {
+  width: 100%;
+}
+.col-1-2 {
+  width: 50%;
+}
+.col-1-3 {
+  width: 33.33333333%;
+}
+@include respond-to($med) {
+  .col-1-1-med {
+    width: 100%;
+  }
+  .col-1-2-med {
+    width: 50%;
+  }
+  .col-1-3-med {
+    width: 33.33333333%;
+  }
+}
+@include respond-to($lrg) {
+  .col-1-1-lrg {
+    width: 100%;
+  }
+  .col-1-2-lrg {
+    width: 50%;
+  }
+  .col-1-3-lrg {
+    width: 33.33333333%;
+  }
+}

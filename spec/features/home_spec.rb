@@ -46,14 +46,14 @@ describe "home page", type: :feature do
         expect(page).to have_content("blog")
         expect(page).to have_css(".cog_orange")
         expect(page).to have_content("more")
-        expect(page).to have_css("a[href='/posts/blogs']")
+        expect(page).to have_css("a[href='/posts/blog']")
       end
     end
-    it "has 6 cards with content in order by created_at" do
+    it "has 4 cards with content in order by created_at" do
       within "[data-area='blogs']" do
         cards = page.all("[data-area='card']")
-        expect(cards.count).to eq 6
-        tag_names[0..5].each_with_index do |tag_name, index|
+        expect(cards.count).to eq 4
+        tag_names[0..3].each_with_index do |tag_name, index|
           within(cards[index]) do
             expect(page).to have_content("Why you should use #{tag_name}")
             expect(one_selector_exists?( card_post_link(slug_date_portion1, tag_name), card_post_link(slug_date_portion2, tag_name),
@@ -92,11 +92,11 @@ describe "home page", type: :feature do
         expect(page).to have_css("a[href='/posts/tutorials']")
       end
     end
-    it "has 6 cards with content in order by created_at" do
+    it "has 4 cards with content in order by created_at" do
       within "[data-area='tutorials']" do
         cards = page.all("[data-area='card']")
-        expect(cards.count).to eq 6
-        tag_names[0..5].each_with_index do |tag_name, index|
+        expect(cards.count).to eq 4
+        tag_names[0..3].each_with_index do |tag_name, index|
           within(cards[index]) do
             expect(page).to have_content("Why you should use #{tag_name}")
             expect(one_selector_exists?( card_post_link(slug_date_portion1, tag_name), card_post_link(slug_date_portion2, tag_name),
