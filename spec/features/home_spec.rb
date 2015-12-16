@@ -1,6 +1,11 @@
 require "spec_helper.rb"
 
 describe "home page", type: :feature do
+  it "has MadeByMiles title tag" do
+    visit "/"
+    expect(page).to have_title "MadeByMiles"
+  end
+
   it "has a splash area" do
     visit "/"
     within "[data-area='splash']" do

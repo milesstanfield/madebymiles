@@ -1,3 +1,5 @@
+include ApplicationHelper
+
 class Navigation
   class << self
 
@@ -22,7 +24,7 @@ class Navigation
     end
 
     def controller_name_matches_tab?(controller, nav_text)
-      controller.view_context.controller_name == nav_text
+      name_of_controller(controller) == nav_text
     end
 
     def active_tab_classes

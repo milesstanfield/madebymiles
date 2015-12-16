@@ -11,6 +11,11 @@ describe "posts pages", type: :feature do
   end
 
   context "#tagged" do
+    it "has MadeByMiles | tagged title tag" do
+      visit "/posts/tagged/rspec"
+      expect(page).to have_title "MadeByMiles | tagged posts"
+    end
+
     it "has many tagged posts" do
       visit "/posts/tagged/rspec"
       expect(page).to have_content "how to rspec"
@@ -20,6 +25,11 @@ describe "posts pages", type: :feature do
   end
 
   context "blog" do
+    it "has MadeByMiles | blog title tag" do
+      visit "/posts/blog"
+      expect(page).to have_title "MadeByMiles | blog posts"
+    end
+
     it "has many blog posts" do
       visit "/posts/blog"
       expect(page).to have_content "how to rspec"

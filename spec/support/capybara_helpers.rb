@@ -14,4 +14,8 @@ module CapybaraHelpers
   def one_selector_exists?(*selectors)
     selectors.any? {|selector| page.all(selector).count > 0 }
   end
+
+  def page!
+    save_and_open_page
+  end
 end
