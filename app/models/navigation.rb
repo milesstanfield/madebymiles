@@ -3,6 +3,10 @@ include ApplicationHelper
 class Navigation
   class << self
 
+    def footer_tabs
+      tabs.unshift tab_struct("home", "/")
+    end
+
     def tabs
       [
         tab_struct("about", "/about"),
@@ -13,8 +17,8 @@ class Navigation
       ]
     end
 
-    def tab_classes(controller, nav_text)
-      controller_name_matches_tab?(controller, nav_text) ? active_tab_classes : inactive_tab_classes
+    def tab_classes(controller, tab_text)
+      active_tab?(controller, tab_text) ? active_tab_classes : inactive_tab_classes
     end
 
     private
@@ -23,16 +27,16 @@ class Navigation
       OpenStruct.new(text: text, path: path)
     end
 
-    def controller_name_matches_tab?(controller, nav_text)
-      name_of_controller(controller) == nav_text
+    def active_tab?(controller, tab_text)
+      name_of_controller(controller) == tab_text
     end
 
     def active_tab_classes
-      "m-font-bold m-underline-white m-color-white m-font-medium l-nav-tab-text l-relative"
+      "m-font-bold m-underline-white m-color-white m-font-medium l-relative"
     end
 
     def inactive_tab_classes
-      "m-font-thin m-color-white m-font-medium l-nav-tab-text l-relative"
+      "m-font-thin m-color-white m-font-medium l-relative"
     end
 
   end

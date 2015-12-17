@@ -12,8 +12,10 @@
   margin-top: $large-vertical-spacing;
 }
 .l-large-vertical-margin {
-  margin-top: $large-vertical-spacing;
-  margin-bottom: $large-vertical-spacing;
+  margin: 40px 0px;
+  @include respond-to($med) {
+    margin: $large-vertical-spacing 0px;
+  }
 }
 .l-medium-bottom-margin {
   margin-bottom: 20px;
