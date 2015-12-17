@@ -29,11 +29,9 @@ class SpriteStyleFormatter
   end
 
   def used_selectors
-    @individual_styles.gsub("\n\n", "\n").split("\n").map {|line| line.split.first}.join(", ")
-  end
-
-  def image_style_excluded?(image_name)
-    excluded_style_images.any? {|name| name == image_name.to_s}
+    selectors = @individual_styles.gsub("\n\n", "\n").split("\n").map {|line| line.split.first}
+    excluded_selectors.each {|excluded_selector| selectors.reject! {|selector| selector == excluded_selector}}
+    selectors.join(", ")
   end
 
   def default_style(image_name, image_data, selector)
@@ -66,20 +64,18 @@ class SpriteStyleFormatter
     }
   end
 
-  def excluded_style_images
-    ["arrow_button_hovered"]
+  def excluded_selectors
+    [".arrow_blue", ".a-hover-circle-blue:hover"]
   end
 
   def individual_styles
     @individual_styles ||= begin
       @images.map do |image_name, image_data|
-        unless image_style_excluded?(image_name)
-          case image_name.to_s
-          when "arrow_dark_blue"
-            "div.arrow_dark_blue { #{indivdual_style(@images[:arrow_dark_blue])} }\n .a-hover-circle-blue:hover div.arrow_dark_blue { #{indivdual_style(@images[:arrow_blue])} }"
-          else
-            default_style(image_name, image_data, "div")
-          end
+        case image_name.to_s
+        when "arrow_dark_blue"
+          "div.arrow_dark_blue { #{indivdual_style(@images[:arrow_dark_blue])} }\n .a-hover-circle-blue:hover .arrow_dark_blue { #{indivdual_style(@images[:arrow_blue])} }"
+        else
+          default_style(image_name, image_data, "div")
         end
       end.join("\n").gsub("\n\n", "\n")
     end
