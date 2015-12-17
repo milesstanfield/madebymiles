@@ -41,14 +41,18 @@
   padding: 10px 25px;
 }
 .l-large-vertical-padding {
-  padding-top: $large-vertical-spacing;
-  padding-bottom: $large-vertical-spacing;
+  padding: 40px 0px;
+  @include respond-to($med) {
+    padding: $large-vertical-spacing 0px;
+  }
 }
 .l-nav-tab-padding {
   padding: 0 15px;
 }
 .l-splash-info-padding {
-  padding: 0 40px;
+  @include respond-to($med) {
+    padding: 0 40px;
+  }
 }
 
 
@@ -61,13 +65,9 @@
 .l-nav-tab-text {
   top: 20px;
 }
-
-// SPLASH
 .l-splash-line-width {
   width: 2px;
 }
-
-// ABOUT
 .l-about-text-margin {
   @include respond-to(0px, $med) {
     margin-top: $large-vertical-spacing;
@@ -81,8 +81,6 @@
     position: absolute;
   }
 }
-
-// OTHER
 .l-cog-adj {
   top: 2px;
 }
@@ -99,15 +97,8 @@
     display: none;
   }
 }
-.l-hide-on-mobile {
-  display: none;
-  @include respond-to($med) {
-    display: block;
-  }
-}
-.l-show-on-mobile {
-  display: block;
-  @include respond-to($med) {
-    display: none;
+.l-large-splash-text-container {
+  @include respond-to(0px, $med) {
+    margin-bottom: 20px;
   }
 }

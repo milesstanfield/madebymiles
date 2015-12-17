@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 // FONTS
 .m-font-thin {
@@ -79,4 +80,10 @@
 }
 .m-circle-stroke-blue {
   border: 2px solid $dark-blue;
+}
+.m-font-splash-text {
+  @include respond-to(0px, 400px) {
+    line-height: 45px;
+    font-size: 45px;
+  }
 }
