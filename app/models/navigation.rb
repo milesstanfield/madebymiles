@@ -1,5 +1,3 @@
-include ApplicationHelper
-
 class Navigation
   class << self
 
@@ -17,18 +15,14 @@ class Navigation
       ]
     end
 
-    def tab_classes(controller, tab_text)
-      active_tab?(controller, tab_text) ? active_tab_classes : inactive_tab_classes
+    def tab_classes(controller_name, tab_text)
+      (controller_name == tab_text) ? active_tab_classes : inactive_tab_classes
     end
 
     private
 
     def tab_struct(text, path)
       OpenStruct.new(text: text, path: path)
-    end
-
-    def active_tab?(controller, tab_text)
-      name_of_controller(controller) == tab_text
     end
 
     def active_tab_classes

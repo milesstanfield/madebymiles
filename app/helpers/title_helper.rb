@@ -1,5 +1,3 @@
-include ApplicationHelper
-
 module TitleHelper
 
   def title_tag(c = controller)

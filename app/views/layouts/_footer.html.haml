@@ -3,7 +3,7 @@
     .l-medium-bottom-margin
       - Navigation.footer_tabs.each do |tab|
         = link_to tab.path, class: "l-nav-tab-padding l-inline-block" do
-          %div{class: Navigation.tab_classes(controller, tab.text)}
+          %div{class: Navigation.tab_classes(name_of_controller, tab.text)}
             = tab.text
 
     .l-inline.m-color-medium-grey.m-font-thin= "This site was designed and "

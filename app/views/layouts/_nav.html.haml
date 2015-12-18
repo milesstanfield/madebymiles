@@ -11,5 +11,5 @@
         .l-hide-on-mobile.l-height-100
           - Navigation.tabs.each do |tab|
             = link_to tab.path, class: "l-nav-tab-padding l-height-100 l-inline-block a-hover-nav-tab" do
-              %div{class: "#{Navigation.tab_classes(controller, tab.text)} l-nav-tab-text" }
+              %div{class: "#{Navigation.tab_classes(name_of_controller, tab.text)} l-nav-tab-text" }
                 = tab.text

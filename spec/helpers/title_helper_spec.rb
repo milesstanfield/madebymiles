@@ -1,6 +1,7 @@
 require "spec_helper"
+include ApplicationHelper
 
-describe TitleHelper do
+describe TitleHelper, type: :helper do
 
   context ".title_tag" do
     it "returns title tag html for home page" do

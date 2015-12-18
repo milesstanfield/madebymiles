@@ -2,14 +2,14 @@
 @import "mixins";
 
 // FONTS
-.m-font-thin {
-  font-family: "Gotham A", "Gotham B", sans-serif;
+.m-font-thin, .m-font-bold {
+  font-family: sans-serif;
   font-style: normal;
+}
+.m-font-thin {
   font-weight: 300;
 }
 .m-font-bold {
-  font-family: "Gotham A", "Gotham B", sans-serif;
-  font-style: normal;
   font-weight: 700;
 }
 
