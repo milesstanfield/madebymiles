@@ -8,6 +8,6 @@ describe "portfolio page" do
 
   it "renders portfolio page" do
     visit "/portfolio"
-    expect(page).to have_content "portfolio page"
+    expect(page).to have_text "portfolio page"
   end
 end

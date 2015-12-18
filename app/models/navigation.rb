@@ -9,7 +9,7 @@ class Navigation
       [
         tab_struct("about", "/about"),
         tab_struct("tutorials", "/posts/tutorials"),
-        tab_struct("portfolio", "/porfolio"),
+        tab_struct("portfolio", "/portfolio"),
         tab_struct("blog", "/posts/blog"),
         tab_struct("connect", "/connect"),
       ]

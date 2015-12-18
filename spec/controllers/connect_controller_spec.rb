@@ -1,4 +1,4 @@
-require "spec_helper.rb"
+require "spec_helper"
 
 describe ConnectController, type: :controller do
   it "#index" do

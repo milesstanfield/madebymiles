@@ -18,9 +18,9 @@ describe "posts pages", type: :feature do
 
     it "has many tagged posts" do
       visit "/posts/tagged/rspec"
-      expect(page).to have_content "how to rspec"
-      expect(page).to have_content "rspec troubleshooting"
-      expect(page).not_to have_content "something else"
+      expect(page).to have_text "how to rspec"
+      expect(page).to have_text "rspec troubleshooting"
+      expect(page).not_to have_text "something else"
     end
   end
 
@@ -32,9 +32,9 @@ describe "posts pages", type: :feature do
 
     it "has many blog posts" do
       visit "/posts/blog"
-      expect(page).to have_content "how to rspec"
-      expect(page).to have_content "rspec troubleshooting"
-      expect(page).not_to have_content "something else"
+      expect(page).to have_text "how to rspec"
+      expect(page).to have_text "rspec troubleshooting"
+      expect(page).not_to have_text "something else"
     end
   end
 end

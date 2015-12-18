@@ -1,4 +1,4 @@
-require "spec_helper.rb"
+require "spec_helper"
 
 describe "error page", type: :feature do
   it "has MadeByMiles title tag" do
@@ -8,6 +8,6 @@ describe "error page", type: :feature do
 
   it "renders missing_page template on bad request" do
     visit "/some_bad_request"
-    expect(page).to have_content("404")
+    expect(page).to have_text("404")
   end
 end

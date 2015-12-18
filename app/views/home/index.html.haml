@@ -22,17 +22,17 @@
       = render "layouts/button", text: "more about me", path: "/about"
 
 
-%div{data: {area: "blogs"}}
-  = render "layouts/header", text: "blog"
-  .l-max-content-width.l-horizontal-center.l-content-padding
-    = render "layouts/post_cards", posts: @blog_posts
-    .l-card-more-button-margin.l-text-center
-      = render "layouts/button", text: "more blog posts", path: "/posts/blog"
-
-
 %div{data: {area: "tutorials"}}
   = render "layouts/header", text: "tutorials"
   .l-max-content-width.l-horizontal-center.l-content-padding
     = render "layouts/post_cards", posts: @tutorial_posts
     .l-card-more-button-margin.l-text-center
       = render "layouts/button", text: "more tutorials", path: "/posts/tutorials"
+
+
+%div{data: {area: "blog"}}
+  = render "layouts/header", text: "blog"
+  .l-max-content-width.l-horizontal-center.l-content-padding
+    = render "layouts/post_cards", posts: @blog_posts
+    .l-card-more-button-margin.l-text-center
+      = render "layouts/button", text: "more blog posts", path: "/posts/blog"

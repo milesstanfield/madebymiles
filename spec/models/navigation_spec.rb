@@ -1,16 +1,16 @@
-require "spec_helper.rb"
+require "spec_helper"
 
 describe Navigation do
 
   context ".tabs" do
     it "has tabs and their respective paths in order" do
       expect(Navigation.tabs.map(&:text)).to eq ["about", "tutorials", "portfolio", "blog", "connect"]
-      expect(Navigation.tabs.map(&:path)).to eq ["/about", "/posts/tutorials", "/porfolio", "/posts/blog", "/connect"]
+      expect(Navigation.tabs.map(&:path)).to eq ["/about", "/posts/tutorials", "/portfolio", "/posts/blog", "/connect"]
     end
 
     it "has footer tabs and their respective paths in order" do
       expect(Navigation.footer_tabs.map(&:text)).to eq ["home", "about", "tutorials", "portfolio", "blog", "connect"]
-      expect(Navigation.footer_tabs.map(&:path)).to eq ["/", "/about", "/posts/tutorials", "/porfolio", "/posts/blog", "/connect"]
+      expect(Navigation.footer_tabs.map(&:path)).to eq ["/", "/about", "/posts/tutorials", "/portfolio", "/posts/blog", "/connect"]
     end
 
     it "has obj methods accessible with . (open struct)" do
@@ -30,5 +30,4 @@ describe Navigation do
       expect(Navigation.tab_classes("about", "blog")).to eq inactive_classes
     end
   end
-
 end

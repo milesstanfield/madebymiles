@@ -1,4 +1,4 @@
-require "spec_helper.rb"
+require "spec_helper"
 
 describe "connect page", type: :feature do
   it "has MadeByMiles | connect title tag" do
@@ -8,6 +8,6 @@ describe "connect page", type: :feature do
 
   it "renders the connect page" do
     visit "/connect"
-    expect(page).to have_content "connect page"
+    expect(page).to have_text "connect page"
   end
 end
