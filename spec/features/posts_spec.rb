@@ -1,16 +1,15 @@
 require "spec_helper"
 
 describe "posts pages", type: :feature do
+  let(:post1) {FactoryGirl.create(:post, title: "how to rspec", use: "blog")}
+  let(:post2) {FactoryGirl.create(:post, title: "rspec troubleshooting", use: "blog")}
+  let(:post3) {FactoryGirl.create(:post, title: "how to do this thing", use: "tutorial")}
+
   before do
-    post1 = FactoryGirl.create(:post, title: "how to rspec", use: "blog")
-    post2 = FactoryGirl.create(:post, title: "rspec troubleshooting", use: "blog")
-    post3 = FactoryGirl.create(:post, title: "something else", use: "tutorial")
-    rspec_tag = FactoryGirl.create(:tag, name: "rspec")
-    post1.tags << rspec_tag
-    post2.tags << rspec_tag
+    create_and_associate_tags
   end
 
-  context "#tagged" do
+  context "/posts/tagged" do
     it "has MadeByMiles | tagged title tag" do
       visit "/posts/tagged/rspec"
       expect(page).to have_title "MadeByMiles | tagged posts"
@@ -29,7 +28,7 @@ describe "posts pages", type: :feature do
     end
   end
 
-  context "blog" do
+  context "/posts/blog" do
     it "has MadeByMiles | blog title tag" do
       visit "/posts/blog"
       expect(page).to have_title "MadeByMiles | blog posts"
@@ -46,5 +45,38 @@ describe "posts pages", type: :feature do
       visit "/posts/blog"
       connect_expectations
     end
+  end
+
+  context "/posts/tutorials" do
+    it "has MadeByMiles | tutorials title tag" do
+      visit "/posts/tutorials"
+      expect(page).to have_title "MadeByMiles | tutorials"
+    end
+
+    it "has many blog posts" do
+      visit "/posts/tutorials"
+      expect(page).to have_text "how to do this thing"
+      expect(page).not_to have_text "rspec troubleshooting"
+    end
+
+    it "has a connect zone" do
+      visit "/posts/tutorials"
+      connect_expectations
+    end
+  end
+
+  context "posts/slug" do
+    it "has title of post" do
+      visit "posts/#{post1.slug}"
+      expect(page).to have_text post1.title
+    end
+  end
+
+  def create_and_associate_tags
+    rspec_tag = FactoryGirl.create(:tag, name: "rspec")
+    git_tag = FactoryGirl.create(:tag, name: "git")
+    post1.tags << rspec_tag
+    post2.tags << rspec_tag
+    post3.tags << git_tag
   end
 end

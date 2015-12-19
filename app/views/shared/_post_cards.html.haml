@@ -5,11 +5,11 @@
         .l-square-parent.mobile-unconfined.l-relative.m-bg-light-grey
           .l-sized-child.l-medium-padding
             .l-relative.l-height-100
-              = link_to post.title, post.slug, class: "m-font-bold m-font-medium m-color-darkest-grey a-hover-blue"
+              = link_to post.teaser, post_path(post), class: "m-font-bold m-font-medium m-color-darkest-grey a-hover-blue"
               .l-small-top-margin
                 .l-inline-block.tag.l-tag-spacing.l-relative
                 - post.tags.each do |tag|
                   = link_to tag.name, tagged_posts_path(tag.name), class: "l-inline-block l-tag-text-spacing m-font-thin m-font-small m-color-white m-bg-dark-blue a-hover-bg-blue"
 
               .l-absolute.l-right.l-bottom
-                = render "shared/circle", color: "dark-blue", hover_color: "blue", path: post.slug, icon: "arrow_dark_blue"
+                = render "shared/circle_button", color: "dark-blue", hover_color: "blue", path: post_path(post), icon: "arrow_dark_blue"

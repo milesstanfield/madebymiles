@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Post do
   it "has string attributes" do
-    ["title", "use", "body", "slug"].each do |attribute|
+    ["title", "use", "body", "slug", "teaser"].each do |attribute|
       record = described_class.new
       record.send("#{attribute}=", "some string")
       expect(record.send("#{attribute}")).to eq "some string"
@@ -16,10 +16,7 @@ describe Post do
 
   it "creates friendly id slug from title with date prepended" do
     post = Post.create(title: "This is my #title")
-    expect(["/posts/#{slug_date_portion1}/this-is-my-title",
-      "/posts/#{slug_date_portion2}/this-is-my-title", "/posts/#{slug_date_portion3}/this-is-my-title"].any? do |slug|
-        post.slug == slug
-      end).to eq true
+    expect(post.slug). to eq "#{slug_date_portion1}/this-is-my-title"
   end
 
   it "gets only blog posts" do

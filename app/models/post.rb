@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   def normalize_friendly_id(string)
     date = (created_at || Time.now).strftime("%Y/%m/%d")
-    "/posts/#{date}/#{super}"
+    "#{date}/#{super}"
   end
 
   class << self

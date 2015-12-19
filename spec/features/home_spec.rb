@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe "home page", type: :feature do
+
   it "has MadeByMiles title tag" do
     visit "/"
     expect(page).to have_title "MadeByMiles"
@@ -15,6 +16,7 @@ describe "home page", type: :feature do
     before :each do
       visit "/"
     end
+
     it "has large splash text" do
       within "[data-area='splash']" do
         expect(page).to have_text "DEVELOPER"
@@ -35,20 +37,29 @@ describe "home page", type: :feature do
     before :each do
       visit "/"
     end
-    it "has an about header and more button" do
+
+    it "has a header" do
       within "[data-area='about']" do
         expect(page).to have_text "about"
         expect(page).to have_css ".cog_orange"
-        expect(page).to have_text "more"
-        expect(page).to have_css "a[href='/about']"
       end
     end
+
+    it "more button" do
+      within "[data-area='about']" do
+        expect(page).to have_text "more"
+        find("a[href='/about']").click
+      end
+      expect(page).to have_text "about page"
+    end
+
     it "has a head img and caption" do
       within "[data-area='about']" do
         expect(page).to have_css ".about_head"
         expect(page).to have_text "Miles Stanfield"
       end
     end
+
     it "has an about summary text" do
       within "[data-area='about']" do
         expect(page).to have_text "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -61,88 +72,128 @@ describe "home page", type: :feature do
   end
 
   context "blog area" do
-    let(:tag_names) { ["rails", "rspec", "git", "heroku", "bash", "haml", "scss"] }
     before do
-      tag_names.each_with_index do |tag_name, index|
-        post = FactoryGirl.create(:post, title: "Why you should use #{tag_name}", use: "blog",
-          created_at: Time.now - (index + 1).hours)
-        post.tags.create(name: "#{tag_name}tag")
-      end
+      create_posts_and_tags("blog")
     end
+
     before :each do
       visit "/"
     end
-    it "has a header and more button" do
+
+    it "has a header" do
       within "[data-area='blog']" do
         expect(page).to have_text "blog"
         expect(page).to have_css ".cog_orange"
-        expect(page).to have_text "more"
-        expect(page).to have_css "a[href='/posts/blog']"
       end
     end
-    it "has 4 cards with content in order by created_at" do
+
+    it "more button" do
       within "[data-area='blog']" do
-        cards = page.all("[data-area='card']")
-        expect(cards.count).to eq 4
-        tag_names[0..3].each_with_index do |tag_name, index|
-          within(cards[index]) do
-            expect(page).to have_text "Why you should use #{tag_name}"
-            expect(one_selector_exists?( card_post_link(slug_date_portion1, tag_name), card_post_link(slug_date_portion2, tag_name),
-              card_post_link(slug_date_portion3, tag_name) )).to eq true
-            expect(page).to have_css ".tag"
-            expect(page).to have_text "#{tag_name}tag"
-            expect(page).to have_css "a[href='/posts/tagged/#{tag_name}tag']"
-            expect(page).to have_css ".arrow_dark_blue"
-          end
+        expect(page).to have_text "more"
+        find("a[href='/posts/blog']").click
+      end
+      expect(page).to have_text "Why you should use rails"
+    end
+
+    it "has (x) post cards" do
+      expect(all_cards.count).to eq 4
+    end
+
+    it "orders cards by created_at" do
+      all_cards.size.times do |index|
+        within all_cards[index] do
+          expect(page).to have_text "tease for post about #{tags[index]}"
         end
       end
     end
-    def card_post_link(date, tag_name)
-      "a[href='/posts/#{date}/why-you-should-use-#{tag_name}']"
+
+    it "has tags/links for posts" do
+      within all_cards[0] do
+        click_link "railstag"
+      end
+      expect(page).to have_text "Why you should use rails"
+    end
+
+    it "has a goto icon/link/button" do
+      within all_cards[0] do
+        within "[data-area='circle-button']" do
+          expect(page).to have_css ".arrow_dark_blue"
+          first("a").click
+        end
+      end
+      expect(page).to have_text "Why you should use rails"
     end
   end
 
-
   context "tutorial area" do
-    let(:tag_names) { ["coffeescript", "capybara", "dns", "caching", "routes", "tasks", "css"] }
     before do
-      tag_names.each_with_index do |tag_name, index|
-        post = FactoryGirl.create(:post, title: "Why you should use #{tag_name}", use: "tutorial",
-          created_at: Time.now - (index + 1).hours)
-        post.tags.create(name: "#{tag_name}tag")
-      end
+      create_posts_and_tags("tutorial")
     end
-    before(:each) do
+
+    before :each do
       visit "/"
     end
-    it "has a header and more button" do
+
+    it "has a header" do
       within "[data-area='tutorials']" do
         expect(page).to have_text "tutorials"
         expect(page).to have_css ".cog_orange"
-        expect(page).to have_text "more"
-        expect(page).to have_css "a[href='/posts/tutorials']"
       end
     end
-    it "has 4 cards with content in order by created_at" do
+
+    it "more button" do
       within "[data-area='tutorials']" do
-        cards = page.all("[data-area='card']")
-        expect(cards.count).to eq 4
-        tag_names[0..3].each_with_index do |tag_name, index|
-          within(cards[index]) do
-            expect(page).to have_text "Why you should use #{tag_name}"
-            expect(one_selector_exists?( card_post_link(slug_date_portion1, tag_name), card_post_link(slug_date_portion2, tag_name),
-              card_post_link(slug_date_portion3, tag_name) )).to eq true
-            expect(page).to have_css ".tag"
-            expect(page).to have_text "#{tag_name}tag"
-            expect(page).to have_css "a[href='/posts/tagged/#{tag_name}tag']"
-            expect(page).to have_css ".arrow_dark_blue"
-          end
+        expect(page).to have_text "more"
+        find("a[href='/posts/tutorials']").click
+      end
+      expect(page).to have_text "Why you should use rails"
+    end
+
+    it "has (x) post cards" do
+      expect(all_cards.count).to eq 4
+    end
+
+    it "orders cards by created_at" do
+      all_cards.size.times do |index|
+        within all_cards[index] do
+          expect(page).to have_text "tease for post about #{tags[index]}"
         end
       end
     end
-    def card_post_link(date, tag_name)
-      "a[href='/posts/#{date}/why-you-should-use-#{tag_name}']"
+
+    it "has tags/links for posts" do
+      within all_cards[0] do
+        click_link "railstag"
+      end
+      expect(page).to have_text "Why you should use rails"
+    end
+
+    it "has a goto icon/link/button" do
+      within all_cards[0] do
+        within "[data-area='circle-button']" do
+          expect(page).to have_css ".arrow_dark_blue"
+          first("a").click
+        end
+      end
+      expect(page).to have_text "Why you should use rails"
     end
   end
 
+  # helper methods
+
+  def create_posts_and_tags(use)
+    tags.each_with_index do |tag_name, index|
+      post = FactoryGirl.create(:post, title: "Why you should use #{tag_name}", use: use,
+        created_at: Time.now - (index + 1).hours, teaser: "tease for post about #{tag_name}")
+      post.tags.create(name: "#{tag_name}tag")
+    end
+  end
+
+  def tags
+    ["rails", "rspec", "git", "heroku", "bash", "haml", "scss"]
+  end
+
+  def all_cards
+    page.all("[data-area='card']")
+  end
 end
