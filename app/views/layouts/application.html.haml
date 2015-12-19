@@ -8,7 +8,7 @@
     = csrf_meta_tags
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
   %body
-    = render "layouts/nav"
+    = render "shared/nav"
     = yield
-    = render "layouts/connect_zone"
-    = render "layouts/footer"
+    = render "shared/connect_zone"
+    = render "shared/footer"

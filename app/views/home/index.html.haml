@@ -10,7 +10,7 @@
 
 
 %div{data: {area: "about"}}
-  = render "layouts/header", text: "about"
+  = render "shared/header", text: "about"
   .l-max-content-width.l-horizontal-center.l-content-padding
     .l-large-vertical-margin.l-relative
       .l-about-head
@@ -19,20 +19,20 @@
       .m-font-medium.m-font-thin.m-color-dark-grey.l-about-text-margin
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
     .l-large-vertical-margin.l-text-center
-      = render "layouts/button", text: "more about me", path: "/about"
+      = render "shared/button", text: "more about me", path: "/about"
 
 
 %div{data: {area: "tutorials"}}
-  = render "layouts/header", text: "tutorials"
+  = render "shared/header", text: "tutorials"
   .l-max-content-width.l-horizontal-center.l-content-padding
-    = render "layouts/post_cards", posts: @tutorial_posts
+    = render "shared/post_cards", posts: @tutorial_posts
     .l-card-more-button-margin.l-text-center
-      = render "layouts/button", text: "more tutorials", path: "/posts/tutorials"
+      = render "shared/button", text: "more tutorials", path: "/posts/tutorials"
 
 
 %div{data: {area: "blog"}}
-  = render "layouts/header", text: "blog"
+  = render "shared/header", text: "blog"
   .l-max-content-width.l-horizontal-center.l-content-padding
-    = render "layouts/post_cards", posts: @blog_posts
+    = render "shared/post_cards", posts: @blog_posts
     .l-card-more-button-margin.l-text-center
-      = render "layouts/button", text: "more blog posts", path: "/posts/blog"
+      = render "shared/button", text: "more blog posts", path: "/posts/blog"

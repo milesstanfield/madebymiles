@@ -12,4 +12,4 @@
                   = link_to tag.name, tagged_posts_path(tag.name), class: "l-inline-block l-tag-text-spacing m-font-thin m-font-small m-color-white m-bg-dark-blue a-hover-bg-blue"
 
               .l-absolute.l-right.l-bottom
-                = render "layouts/circle", color: "dark-blue", hover_color: "blue", path: post.slug, icon: "arrow_dark_blue"
+                = render "shared/circle", color: "dark-blue", hover_color: "blue", path: post.slug, icon: "arrow_dark_blue"
