@@ -11,4 +11,9 @@ describe "connect page", type: :feature do
     visit "/connect"
     expect(page).to have_text "connect page"
   end
+
+  it "has a connect zone" do
+    visit "/connect"
+    connect_expectations
+  end
 end

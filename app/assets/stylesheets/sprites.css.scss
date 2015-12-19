@@ -4,21 +4,24 @@
 div.arrow_dark_blue { width: 12px; height: 17px; background-position: -139px -55px; }
  .a-hover-circle-blue:hover .arrow_dark_blue { width: 12px; height: 17px; background-position: -127px -55px; }
 .cog_orange { width: 18px; height: 19px; background-position: -151px -54px; }
-.email { width: 17px; height: 12px; background-position: -169px -57px; }
-.hamburger { width: 28px; height: 20px; background-position: -186px -53px; }
-.madebymiles_logo { width: 165px; height: 45px; background-position: -214px -41px; }
-.stack_overflow { width: 14px; height: 17px; background-position: -379px -55px; }
-.tag { width: 21px; height: 20px; background-position: -393px -53px; }
-      .about_head, div.arrow_dark_blue, .a-hover-circle-blue:hover, .cog_orange, .email, .hamburger, .madebymiles_logo, .stack_overflow, .tag {
+.email { width: 23px; height: 15px; background-position: -169px -56px; }
+.facebook { width: 13px; height: 22px; background-position: -192px -52px; }
+.github { width: 23px; height: 22px; background-position: -205px -52px; }
+.hamburger { width: 28px; height: 20px; background-position: -228px -53px; }
+.madebymiles_logo { width: 165px; height: 45px; background-position: -256px -41px; }
+.stack_overflow { width: 20px; height: 22px; background-position: -421px -52px; }
+.tag { width: 21px; height: 20px; background-position: -441px -53px; }
+.twitter { width: 23px; height: 19px; background-position: -462px -54px; }
+      .about_head, div.arrow_dark_blue, .a-hover-circle-blue:hover, .cog_orange, .email, .facebook, .github, .hamburger, .madebymiles_logo, .stack_overflow, .tag, .twitter {
         background-repeat: no-repeat;
         background-image: url(image_path('sprites.png'));
         @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
           background-image: url(image_path('sprites_2x.png'));
-          -webkit-background-size: 414px 127px;
-          -moz-background-size: 414px 127px;
-          -ms-background-size: 414px 127px;
-          -o-background-size: 414px 127px;
-          background-size: 414px 127px;
+          -webkit-background-size: 485px 127px;
+          -moz-background-size: 485px 127px;
+          -ms-background-size: 485px 127px;
+          -o-background-size: 485px 127px;
+          background-size: 485px 127px;
         }
       }
     

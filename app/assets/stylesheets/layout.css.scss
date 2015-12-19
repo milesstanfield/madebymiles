@@ -50,6 +50,9 @@
 .l-button-padding {
   padding: 10px 25px;
 }
+.l-medium-vertical-padding {
+  padding: 30px 0px;
+}
 .l-large-vertical-padding {
   padding: 40px 0px;
   @include respond-to($med) {

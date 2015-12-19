@@ -6,8 +6,8 @@ describe "about page", type: :feature do
     expect(page).to have_title "MadeByMiles | about"
   end
 
-  it "has about me section" do
+  it "has a connect zone" do
     visit "/about"
-    expect(page).to have_text "about page"
+    connect_expectations
   end
 end

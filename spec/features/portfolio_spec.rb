@@ -6,8 +6,8 @@ describe "portfolio page" do
     expect(page).to have_title "MadeByMiles | portfolio"
   end
 
-  it "renders portfolio page" do
+  it "has a connect zone" do
     visit "/portfolio"
-    expect(page).to have_text "portfolio page"
+    connect_expectations
   end
 end

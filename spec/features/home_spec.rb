@@ -8,10 +8,7 @@ describe "home page", type: :feature do
 
   it "has a connect zone" do
     visit "/"
-    within "[data-area='connect']" do
-      expect(page).to have_css ".stack_overflow"
-      expect(page).to have_css ".email"
-    end
+    connect_expectations
   end
 
   context "splash area" do
