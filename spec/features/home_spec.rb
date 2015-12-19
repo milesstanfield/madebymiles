@@ -6,6 +6,14 @@ describe "home page", type: :feature do
     expect(page).to have_title "MadeByMiles"
   end
 
+  it "has a connect zone" do
+    visit "/"
+    within "[data-area='connect']" do
+      expect(page).to have_css ".stack_overflow"
+      expect(page).to have_css ".email"
+    end
+  end
+
   context "splash area" do
     before :each do
       visit "/"

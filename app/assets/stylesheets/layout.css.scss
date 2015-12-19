@@ -27,6 +27,14 @@
   margin-top: calc( #{$nav-height} - 40px);
   margin-bottom: calc( #{$nav-height} - 20px);
 }
+.l-about-text-margin {
+  @include respond-to(0px, $med) {
+    margin-top: $large-vertical-spacing;
+  }
+  @include respond-to($med) {
+    margin-left: calc(#{$profile-head-width} + 20px);
+  }
+}
 
 
 // PADDING
@@ -51,6 +59,9 @@
 .l-nav-tab-padding {
   padding: 0 15px;
 }
+.l-circle-padding {
+  padding: 0 10px;
+}
 .l-splash-info-padding {
   @include respond-to($med) {
     padding: 0 40px;
@@ -58,9 +69,7 @@
 }
 
 
-
-
-// NAV
+// OTHER
 .l-nav-height {
   height: $nav-height;
 }
@@ -69,14 +78,6 @@
 }
 .l-splash-line-width {
   width: 2px;
-}
-.l-about-text-margin {
-  @include respond-to(0px, $med) {
-    margin-top: $large-vertical-spacing;
-  }
-  @include respond-to($med) {
-    margin-left: calc(#{$profile-head-width} + 20px);
-  }
 }
 .l-about-head {
   @include respond-to($med) {
@@ -103,4 +104,8 @@
   @include respond-to(0px, $med) {
     margin-bottom: 20px;
   }
+}
+.l-circle-size {
+  width: 35px;
+  height: 35px;
 }

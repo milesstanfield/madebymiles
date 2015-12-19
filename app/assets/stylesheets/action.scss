@@ -11,12 +11,18 @@
 .a-hover-blue:hover {
   color: $blue;
 }
+[class*=a-hover-circle-]:hover {
+  .l-circle-size {
+    @include transition(all, 0.18s, ease-out);
+    width: 45px;
+    height: 45px;
+  }
+}
 .a-hover-circle-blue:hover {
-  border: 2px solid $blue;
-  @include transition(all, 0.15s, ease);
-  padding: 20px;
-  margin-bottom: -5px;
-  margin-right: -5px;
+  @include transition(all, 0.18s, ease-out);
+  .m-circle-stroke-dark-blue {
+    @include circle-stroke($blue)
+  }
 }
 .a-hover-opacity:hover {
   opacity: 0.75;

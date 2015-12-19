@@ -10,6 +10,6 @@
                 .l-inline-block.tag.l-tag-spacing.l-relative
                 - post.tags.each do |tag|
                   = link_to tag.name, tagged_posts_path(tag.name), class: "l-inline-block l-tag-text-spacing m-font-thin m-font-small m-color-white m-bg-dark-blue a-hover-bg-blue"
-              = link_to post.slug, class: "l-absolute l-right l-bottom" do
-                .a-hover-circle-blue.m-circle-stroke-blue.l-circle-padding.m-circle.l-relative
-                  .arrow_dark_blue.l-absolute-center
+
+              .l-absolute.l-right.l-bottom
+                = render "layouts/circle", color: "dark-blue", hover_color: "blue", path: post.slug, icon: "arrow_dark_blue"

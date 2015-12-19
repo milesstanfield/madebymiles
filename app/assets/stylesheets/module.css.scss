@@ -51,6 +51,9 @@
 .m-bg-dark-blue {
   background: $dark-blue;
 }
+.m-bg-medium-grey {
+  background: $medium-grey;
+}
 
 
 // FONT SIZES
@@ -81,8 +84,11 @@
 .m-button-stroke-blue {
   border: 2px solid $blue;
 }
-.m-circle-stroke-blue {
-  border: 2px solid $dark-blue;
+.m-circle-stroke-dark-blue {
+  @include circle-stroke($dark-blue)
+}
+.m-circle-stroke-white {
+  @include circle-stroke(white)
 }
 .m-font-splash-text {
   @include respond-to(0px, 400px) {

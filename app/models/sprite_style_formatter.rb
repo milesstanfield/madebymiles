@@ -65,7 +65,7 @@ class SpriteStyleFormatter
   end
 
   def excluded_selectors
-    [".arrow_blue", ".a-hover-circle-blue:hover"]
+    [".arrow_blue", ".a-hover-card-circle:hover"]
   end
 
   def individual_styles

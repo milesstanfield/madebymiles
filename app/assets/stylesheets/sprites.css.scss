@@ -9,7 +9,7 @@ div.arrow_dark_blue { width: 12px; height: 17px; background-position: -139px -55
 .madebymiles_logo { width: 165px; height: 45px; background-position: -214px -41px; }
 .stack_overflow { width: 14px; height: 17px; background-position: -379px -55px; }
 .tag { width: 21px; height: 20px; background-position: -393px -53px; }
-      .about_head, div.arrow_dark_blue, .cog_orange, .email, .hamburger, .madebymiles_logo, .stack_overflow, .tag {
+      .about_head, div.arrow_dark_blue, .a-hover-circle-blue:hover, .cog_orange, .email, .hamburger, .madebymiles_logo, .stack_overflow, .tag {
         background-repeat: no-repeat;
         background-image: url(image_path('sprites.png'));
         @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
