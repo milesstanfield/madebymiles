@@ -1,9 +1,9 @@
 %footer.m-bg-dark-grey
   .m-font-small.l-large-vertical-padding.l-text-center
     .l-medium-bottom-margin
-      - Navigation.footer_tabs.each do |tab|
+      - footer_tabs(@active_nav_tab).each do |tab|
         = link_to tab.path, class: "l-nav-tab-padding l-inline-block" do
-          %div{class: Navigation.tab_classes(name_of_controller, tab.text)}
+          %div{class: tab.classes}
             = tab.text
 
     .l-inline.m-color-medium-grey.m-font-thin= "This site was designed and "

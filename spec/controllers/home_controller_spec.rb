@@ -15,7 +15,8 @@ describe HomeController, type: :controller do
 
     get :index
     expect(response).to render_template(:index)
-    expect(assigns(:blog_posts)).to eq(blog_posts)
-    expect(assigns(:tutorial_posts)).to eq(tutorial_posts)
+    expect(assigns(:active_nav_tab)).to eq "home"
+    expect(assigns(:blog_posts)).to eq blog_posts
+    expect(assigns(:tutorial_posts)).to eq tutorial_posts
   end
 end
