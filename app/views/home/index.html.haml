@@ -22,17 +22,19 @@
       = render "shared/button", text: "more about me", path: "/about"
 
 
-%div{data: {area: "tutorials"}}
-  = render "shared/header", text: "tutorials"
-  .l-max-content-width.l-horizontal-center.l-content-padding
-    = render "shared/post_cards", posts: @tutorial_posts
-    .l-card-more-button-margin.l-text-center
-      = render "shared/button", text: "more tutorials", path: "/posts/tutorials"
+- if FeatureFlipper.active_names.include? "tutorials"
+  %div{data: {area: "tutorials"}}
+    = render "shared/header", text: "tutorials"
+    .l-max-content-width.l-horizontal-center.l-content-padding
+      = render "shared/post_cards", posts: @tutorial_posts
+      .l-card-more-button-margin.l-text-center
+        = render "shared/button", text: "more tutorials", path: "/posts/tutorials"
 
 
-%div{data: {area: "blog"}}
-  = render "shared/header", text: "blog"
-  .l-max-content-width.l-horizontal-center.l-content-padding
-    = render "shared/post_cards", posts: @blog_posts
-    .l-card-more-button-margin.l-text-center
-      = render "shared/button", text: "more blog posts", path: "/posts/blog"
+- if FeatureFlipper.active_names.include? "blog"
+  %div{data: {area: "blog"}}
+    = render "shared/header", text: "blog"
+    .l-max-content-width.l-horizontal-center.l-content-padding
+      = render "shared/post_cards", posts: @blog_posts
+      .l-card-more-button-margin.l-text-center
+        = render "shared/button", text: "more blog posts", path: "/posts/blog"

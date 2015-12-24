@@ -2,16 +2,13 @@ module NavigationHelper
 
   def nav_tabs(active_tab)
     [
+      tab("home", "/", active_tab),
       tab("about", "/about", active_tab),
       tab("tutorials", "/posts/tutorials", active_tab),
       tab("portfolio", "/portfolio", active_tab),
       tab("blog", "/posts/blog", active_tab),
       tab("connect", "/connect", active_tab),
     ]
-  end
-
-  def footer_tabs(active_tab)
-    add_home_tab nav_tabs(active_tab), active_tab
   end
 
   private

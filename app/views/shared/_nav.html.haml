@@ -10,6 +10,7 @@
 
         .l-hide-on-mobile.l-height-100
           - nav_tabs(@active_nav_tab).each do |tab|
-            = link_to tab.path, class: "l-nav-tab-padding l-height-100 l-inline-block a-hover-nav-tab" do
-              %div{class: "#{tab.classes} l-nav-tab-text" }
-                = tab.text
+            - if FeatureFlipper.active_names.include? tab.text
+              = link_to tab.path, class: "l-nav-tab-padding l-height-100 l-inline-block a-hover-nav-tab" do
+                %div{class: "#{tab.classes} l-nav-tab-text" }
+                  = tab.text

@@ -1,3 +1,4 @@
+# create posts and associated tags
 Post.delete_all
 Tag.delete_all
 ["rails", "rspec", "git", "heroku", "bash", "haml", "scss"].each_with_index do |tag_name, index|
@@ -7,6 +8,11 @@ Tag.delete_all
 
   blog_post.tags << tag
   tutorial_post.tags << tag
+end
+
+# create featureflippers
+["home", "about", "tutorials", "portfolio", "blog", "connect"].each do |name|
+  FeatureFlipper.create(name: name, active: true)
 end
 
 puts "done"
