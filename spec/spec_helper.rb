@@ -10,6 +10,12 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   include CapybaraHelpers
   include ConnectHelpers
+  include SeedHelper
+
+  config.before(:each, type: :feature) do
+    create_activate_flippers "home", "about", "tutorials", "portfolio", "blog", "connect"
+  end
+
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!

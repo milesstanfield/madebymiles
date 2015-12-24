@@ -1,5 +1,5 @@
 require "spec_helper"
-include ApplicationHelper
+include TitleHelper
 
 describe TitleHelper, type: :helper do
 
