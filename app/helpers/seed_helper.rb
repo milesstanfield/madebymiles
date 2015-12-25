@@ -3,7 +3,12 @@ module SeedHelper
     tags.each_with_index do |tag_name, index|
       post = FactoryGirl.create(:post, title: "Why you should use #{tag_name}", use: use,
         created_at: Time.now - (index + 1).hours, teaser: "tease for post about #{tag_name}")
-      post.tags.create name: "#{tag_name}tag"
+
+      if Tag.exists?(name: "#{tag_name}tag")
+        post.tags << Tag.find_by_name("#{tag_name}tag")
+      else
+        post.tags.create name: "#{tag_name}tag"
+      end
     end
   end
 
