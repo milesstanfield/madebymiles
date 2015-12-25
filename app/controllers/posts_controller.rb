@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def tagged
     @posts = Post.by_tag_name(params[:tag_name]).limit(25)
   end

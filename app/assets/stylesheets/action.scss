@@ -1,6 +1,10 @@
 @import "variables";
 @import "mixins";
 
+.a-hover-nav-tab:hover, .a-hover-bg-blue:hover, .a-hover-blue:hover,
+  .m-circle-stroke-dark-blue, .m-circle-stroke-white, .a-hover-opacity:hover {
+    @include transition(all, 0.15s, ease);
+}
 .a-hover-nav-tab:hover {
   background: $active-blue;
 }
@@ -11,17 +15,10 @@
 .a-hover-blue:hover {
   color: $blue;
 }
-[class*=a-hover-circle-]:hover {
-  .l-circle-size {
-    @include transition(all, 0.18s, ease-out);
-    width: 45px;
-    height: 45px;
-  }
-}
-.a-hover-circle-blue:hover {
-  @include transition(all, 0.18s, ease-out);
-  .m-circle-stroke-dark-blue {
-    @include circle-stroke($blue)
+.a-hover-circle-blue:hover, .a-hover-circle-white:hover {
+  .m-circle-stroke-dark-blue, .m-circle-stroke-white {
+    @include circle-stroke($blue);
+    background: $blue;
   }
 }
 .a-hover-opacity:hover {

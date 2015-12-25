@@ -1,8 +1,8 @@
 @import 'variables';
 .about_head { width: 127px; height: 127px; background-position: 0px 0px; }
-.arrow_blue { width: 12px; height: 17px; background-position: -127px -55px; }
-div.arrow_dark_blue { width: 12px; height: 17px; background-position: -139px -55px; }
- .a-hover-circle-blue:hover .arrow_dark_blue { width: 12px; height: 17px; background-position: -127px -55px; }
+div.arrow_dark_blue { width: 12px; height: 17px; background-position: -127px -55px; }
+ .a-hover-circle-blue:hover .arrow_dark_blue { width: 12px; height: 17px; background-position: -139px -55px; }
+.arrow_white { width: 12px; height: 17px; background-position: -139px -55px; }
 .cog_orange { width: 18px; height: 19px; background-position: -151px -54px; }
 .email { width: 23px; height: 15px; background-position: -169px -56px; }
 .facebook { width: 13px; height: 22px; background-position: -192px -52px; }
@@ -12,7 +12,7 @@ div.arrow_dark_blue { width: 12px; height: 17px; background-position: -139px -55
 .stack_overflow { width: 20px; height: 22px; background-position: -421px -52px; }
 .tag { width: 21px; height: 20px; background-position: -441px -53px; }
 .twitter { width: 23px; height: 19px; background-position: -462px -54px; }
-      .about_head, div.arrow_dark_blue, .a-hover-circle-blue:hover, .cog_orange, .email, .facebook, .github, .hamburger, .madebymiles_logo, .stack_overflow, .tag, .twitter {
+      .about_head, div.arrow_dark_blue, .arrow_white, .cog_orange, .email, .facebook, .github, .hamburger, .madebymiles_logo, .stack_overflow, .tag, .twitter {
         background-repeat: no-repeat;
         background-image: url(image_path('sprites.png'));
         @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
