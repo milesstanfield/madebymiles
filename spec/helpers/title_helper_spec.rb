@@ -13,7 +13,7 @@ describe TitleHelper, type: :helper do
     it "returns title tag html for posts page" do
       view_context = double(:view_context, controller_name: "posts", action_name: "tagged")
       controller = double(:controller, view_context: view_context)
-      expect(title_tag(controller)).to eq "<title>MadeByMiles | tagged posts</title>"
+      expect(title_tag(controller)).to eq "<title>MadeByMiles | tagged</title>"
     end
 
     it "returns title tag html for connect page" do

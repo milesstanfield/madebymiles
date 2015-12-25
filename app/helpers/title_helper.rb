@@ -10,7 +10,7 @@ module TitleHelper
     case name_of_controller(controller)
     when "home"
     when "posts"
-      " | #{name_of_action(controller)} posts"
+      " | #{name_of_action(controller)}"
     else
       " | #{name_of_controller(controller)}"
     end

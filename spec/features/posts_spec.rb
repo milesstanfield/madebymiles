@@ -12,7 +12,7 @@ describe "posts pages", type: :feature do
   context "/posts/tagged" do
     it "has MadeByMiles | tagged title tag" do
       visit "/posts/tagged/rspec"
-      expect(page).to have_title "MadeByMiles | tagged posts"
+      expect(page).to have_title "MadeByMiles | tagged"
     end
 
     it "has many tagged posts" do
@@ -31,7 +31,7 @@ describe "posts pages", type: :feature do
   context "/posts/blog" do
     it "has MadeByMiles | blog title tag" do
       visit "/posts/blog"
-      expect(page).to have_title "MadeByMiles | blog posts"
+      expect(page).to have_title "MadeByMiles | blog"
     end
 
     it "has many blog posts" do
