@@ -1,4 +1,4 @@
-include SeedHelper
+helper SeedHelpers
 
 # create posts and associated tags
 create_posts_and_tags("blog")

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe SeedHelper, type: :helper do
+describe SeedHelpers, type: :helper do
   it ".create_activate_flippers(*names)" do
     expect(FeatureFlipper.count).to eq 0
     create_activate_flippers("foo")
