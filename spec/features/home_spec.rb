@@ -50,7 +50,7 @@ describe "home page", type: :feature do
         expect(page).to have_text "more"
         find("a[href='/about']").click
       end
-      expect(page).to have_text "about page"
+      expect(page).to have_text "about me"
     end
 
     it "has a head img and caption" do

@@ -14,12 +14,6 @@
 .l-large-top-margin {
   margin-top: $large-vertical-spacing;
 }
-.l-large-vertical-margin {
-  margin: 40px 0px;
-  @include respond-to($med) {
-    margin: $large-vertical-spacing 0px;
-  }
-}
 .l-medium-bottom-margin {
   margin-bottom: 20px;
 }
@@ -32,9 +26,11 @@
 }
 .l-about-text-margin {
   @include respond-to(0px, $med) {
-    margin-top: $large-vertical-spacing;
+    margin-top: 20px;
+    margin-bottom: $large-vertical-spacing;
   }
   @include respond-to($med) {
+    margin-bottom: $large-vertical-spacing;
     margin-left: calc(#{$profile-head-width} + 20px);
   }
 }
@@ -42,7 +38,8 @@
 
 // PADDING
 .l-content-padding {
-  padding: 0 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .l-medium-padding {
   padding: 20px;
@@ -54,12 +51,15 @@
   padding: 10px 25px;
 }
 .l-medium-vertical-padding {
-  padding: 30px 0px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .l-large-vertical-padding {
-  padding: 40px 0px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   @include respond-to($med) {
-    padding: $large-vertical-spacing 0px;
+    padding-top: $large-vertical-spacing;
+    padding-bottom: $large-vertical-spacing;
   }
 }
 .l-nav-tab-padding {
@@ -82,8 +82,11 @@
 .l-nav-tab-text {
   top: 20px;
 }
-.l-splash-line-width {
+.l-line-width {
   width: 2px;
+}
+.l-line-height {
+  height: 2px;
 }
 .l-about-head {
   @include respond-to($med) {

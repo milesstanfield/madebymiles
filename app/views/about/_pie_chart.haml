@@ -1,0 +1,10 @@
+- small_top_color ||= "#6baeeb"
+- large_color ||= "#f7751f"
+- medium_left_color ||= "#515558"
+- small_left_color ||= "#47739b"
+%svg-piechart
+  %svg{height: "250", viewbox: "0 0 360 360", width: "250"}
+    %path{d: "M180,180 L180,0 A180,180 0 0,1 295.7017697435771,42.11200023858396 z", style: "fill: #{small_top_color};"}
+    %path{d: "M180,180 L295.7017697435771,42.11200023858396 A180,180 0 1,1 24.11542731880104,270 z", style: "fill: #{large_color};"}
+    %path{d: "M180,180 L24.11542731880104,270 A180,180 0 0,1 64.2982302564229,42.11200023858399 z", style: "fill: #{medium_left_color};"}
+    %path{d: "M180,180 L64.2982302564229,42.11200023858399 A180,180 0 0,1 179.99999999999997,0 z", style: "fill: #{small_left_color};"}

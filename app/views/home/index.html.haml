@@ -4,21 +4,20 @@
       .col-1-1.col-1-2-med.m-font-largest.m-font-splash-text.m-font-bold.m-color-white.l-v-align-middle.l-relative.l-large-splash-text-container
         - ["DEVELOPER", "DESIGNER", "TEACHER"].each do |word|
           .l-large-splash-text= word
-        .m-bg-orange.l-splash-line-width.l-height-100.l-absolute.l-right.l-top.l-hide-on-mobile
+        .m-bg-orange.l-line-width.l-height-100.l-absolute.l-right.l-top.l-hide-on-mobile
       .col-1-1.col-1-2-med.m-font-medium.m-font-thin.m-color-light-grey.l-v-align-middle.l-splash-info-padding.l-pad-fix
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text"
 
 
 %div{data: {area: "about"}}
   = render "shared/header", text: "about"
-  .l-max-content-width.l-horizontal-center.l-content-padding
-    .l-large-vertical-margin.l-relative
-      .l-about-head
-        .about_head.l-horizontal-center
-        .l-text-center.m-font-small.m-font-thin.m-color-dark-grey.l-small-top-margin= "Miles Stanfield"
-      .m-font-medium.m-font-thin.m-color-dark-grey.l-about-text-margin
-        = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
-    .l-large-vertical-margin.l-text-center
+  .l-max-content-width.l-horizontal-center.l-content-padding.l-relative.l-large-vertical-padding
+    .l-about-head
+      .about_head.l-horizontal-center
+      .l-text-center.m-font-small.m-font-thin.m-color-dark-grey.l-small-top-margin= "Miles Stanfield"
+    .m-font-medium.m-font-thin.m-color-dark-grey.l-about-text-margin
+      = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
+    .l-text-center
       = render "shared/button", text: "more about me", path: "/about"
 
 

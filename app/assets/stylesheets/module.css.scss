@@ -58,19 +58,24 @@
 
 // FONT SIZES
 .m-font-largest {
-  font-size: 59px;
   letter-spacing: -2px;
+  font-size: 59px;
   line-height: 53px;
 }
-.m-font-large, .m-font-medium {
+.m-font-larger, .m-font-large, .m-font-medium {
   letter-spacing: -0.5px;
-  line-height: 28px;
+}
+.m-font-larger {
+  font-size: 35px;
+  line-height: 45px;
 }
 .m-font-large {
   font-size: 25px;
+  line-height: 35px;
 }
 .m-font-medium {
   font-size: 19px;
+  line-height: 28px;
 }
 .m-font-small {
   font-size: 13px;
