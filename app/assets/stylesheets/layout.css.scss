@@ -67,11 +67,6 @@
 .l-circle-padding {
   padding: 0 10px;
 }
-.l-splash-info-padding {
-  @include respond-to($med) {
-    padding: 0 40px;
-  }
-}
 
 
 // OTHER
@@ -108,7 +103,7 @@
     display: none;
   }
 }
-.l-large-splash-text-container {
+.l-home-splash-margin {
   @include respond-to(0px, $med) {
     margin-bottom: 20px;
   }

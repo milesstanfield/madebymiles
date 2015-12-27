@@ -1,16 +1,17 @@
 .m-bg-dark-grey{data: {area: "splash"}}
-  .l-max-content-width.l-horizontal-center.l-content-padding
-    .l-large-vertical-padding
-      .col-1-1.col-1-2-med.m-font-largest.m-font-splash-text.m-font-bold.m-color-white.l-v-align-middle.l-relative.l-large-splash-text-container
-        - ["DEVELOPER", "DESIGNER", "TEACHER"].each do |word|
-          .l-large-splash-text= word
-        .m-bg-orange.l-line-width.l-height-100.l-absolute.l-right.l-top.l-hide-on-mobile
-      .col-1-1.col-1-2-med.m-font-medium.m-font-thin.m-color-light-grey.l-v-align-middle.l-splash-info-padding.l-pad-fix
-        = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text"
+  .l-max-content-width.l-horizontal-center.l-content-padding.l-large-vertical-padding
+    .col-1-1.col-1-2-med.m-font-splash-text.m-font-bold.m-color-white.l-v-align-middle.l-relative.l-home-splash-margin
+      - ["DEVELOPER", "DESIGNER", "TEACHER"].each do |word|
+        .l-block= word
+      .m-bg-orange.l-line-width.l-height-100.l-absolute.l-right.l-top.l-hide-on-mobile
+    .col-1-1.col-1-2-med.l-text-center
+      .col-1-1.col-2-3-med.l-v-align-middle
+        .m-font-medium.m-font-thin.m-color-light-grey.l-text-left
+          = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text"
 
 
 - if FeatureFlipper.active_names.include? "about"
-  = render layout: "section", locals: {name: "about", path: "/about", button_text: "more about me"} do
+  = render layout: "shared/section", locals: {name: "about", path: "/about", button_text: "more about me"} do
     .l-about-head
       .about_head.l-horizontal-center
       .l-text-center.m-font-small.m-font-thin.m-color-dark-grey.l-small-top-margin= "Miles Stanfield"
@@ -19,10 +20,10 @@
 
 
 - if FeatureFlipper.active_names.include? "tutorials"
-  = render layout: "section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials"} do
+  = render layout: "shared/section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials"} do
     = render "shared/post_cards", posts: @tutorial_posts
 
 
 - if FeatureFlipper.active_names.include? "blog"
-  = render layout: "section", locals: {name: "blog", path: "/posts/blog", button_text: "more blog posts"} do
+  = render layout: "shared/section", locals: {name: "blog", path: "/posts/blog", button_text: "more blog posts"} do
     = render "shared/post_cards", posts: @blog_posts

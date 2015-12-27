@@ -1,7 +1,12 @@
+- button_off ||= false
+- button_text ||= nil
+- path ||= nil
+
 %div{data: {area: name}}
   .l-max-content-width.l-horizontal-center.l-content-padding
     .l-large-vertical-padding
       = render "shared/header", text: name
       = yield
-      = render "shared/button", text: button_text, path: path
+      - unless button_off
+        = render "shared/button", text: button_text, path: path
     = render "shared/line"

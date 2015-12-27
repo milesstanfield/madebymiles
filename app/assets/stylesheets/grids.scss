@@ -25,6 +25,9 @@ body {
 .col-1-3 {
   width: 33.33333333%;
 }
+.col-2-3 {
+  width: 66.66666666%;
+}
 @include respond-to($med) {
   .col-1-1-med {
     width: 100%;
@@ -34,6 +37,9 @@ body {
   }
   .col-1-3-med {
     width: 33.33333333%;
+  }
+  .col-2-3-med {
+    width: 66.66666666%;
   }
 }
 @include respond-to($lrg) {
@@ -45,5 +51,8 @@ body {
   }
   .col-1-3-lrg {
     width: 33.33333333%;
+  }
+  .col-2-3-lrg {
+    width: 66.66666666%;
   }
 }
