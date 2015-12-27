@@ -17,12 +17,11 @@
 .l-medium-bottom-margin {
   margin-bottom: 20px;
 }
+.l-post-card-bottom-margin {
+  margin-bottom: 40px;
+}
 .l-small-top-margin {
   margin-top: 10px;
-}
-.l-card-more-button-margin {
-  margin-top: calc( #{$nav-height} - 40px);
-  margin-bottom: calc( #{$nav-height} - 20px);
 }
 .l-about-text-margin {
   @include respond-to(0px, $med) {

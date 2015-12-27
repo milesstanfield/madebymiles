@@ -9,31 +9,20 @@
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text"
 
 
-%div{data: {area: "about"}}
-  = render "shared/header", text: "about"
-  .l-max-content-width.l-horizontal-center.l-content-padding.l-relative.l-large-vertical-padding
+- if FeatureFlipper.active_names.include? "about"
+  = render layout: "section", locals: {name: "about", path: "/about", button_text: "more about me"} do
     .l-about-head
       .about_head.l-horizontal-center
       .l-text-center.m-font-small.m-font-thin.m-color-dark-grey.l-small-top-margin= "Miles Stanfield"
     .m-font-medium.m-font-thin.m-color-dark-grey.l-about-text-margin
       = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
-    .l-text-center
-      = render "shared/button", text: "more about me", path: "/about"
 
 
 - if FeatureFlipper.active_names.include? "tutorials"
-  %div{data: {area: "tutorials"}}
-    = render "shared/header", text: "tutorials"
-    .l-max-content-width.l-horizontal-center.l-content-padding
-      = render "shared/post_cards", posts: @tutorial_posts
-      .l-card-more-button-margin.l-text-center
-        = render "shared/button", text: "more tutorials", path: "/posts/tutorials"
+  = render layout: "section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials"} do
+    = render "shared/post_cards", posts: @tutorial_posts
 
 
 - if FeatureFlipper.active_names.include? "blog"
-  %div{data: {area: "blog"}}
-    = render "shared/header", text: "blog"
-    .l-max-content-width.l-horizontal-center.l-content-padding
-      = render "shared/post_cards", posts: @blog_posts
-      .l-card-more-button-margin.l-text-center
-        = render "shared/button", text: "more blog posts", path: "/posts/blog"
+  = render layout: "section", locals: {name: "blog", path: "/posts/blog", button_text: "more blog posts"} do
+    = render "shared/post_cards", posts: @blog_posts
