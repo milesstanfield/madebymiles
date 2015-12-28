@@ -33,6 +33,11 @@
     margin-left: calc(#{$profile-head-width} + 20px);
   }
 }
+.l-mobile-medium-bottom-margin {
+  @include respond-to(0px, $med) {
+    margin-bottom: 20px;
+  }
+}
 
 
 // PADDING
@@ -103,12 +108,10 @@
     display: none;
   }
 }
-.l-home-splash-margin {
-  @include respond-to(0px, $med) {
-    margin-bottom: 20px;
-  }
-}
 .l-circle-size {
   width: 45px;
   height: 45px;
+}
+.l-large-profile-head-height {
+  height: 180px;
 }

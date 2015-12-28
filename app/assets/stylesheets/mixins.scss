@@ -20,8 +20,3 @@
 @mixin circle-stroke($color) {
   border: 2px solid $color;
 }
-@mixin largest-font-style {
-  letter-spacing: -2px;
-  font-size: 59px;
-  line-height: 53px;
-}

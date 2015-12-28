@@ -1,5 +1,4 @@
 module NavigationHelper
-
   def nav_tabs(active_tab)
     [
       tab("home", "/", active_tab),

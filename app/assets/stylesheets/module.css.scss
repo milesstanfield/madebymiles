@@ -61,7 +61,13 @@
 
 // FONT SIZES
 .m-font-largest {
-  @include largest-font-style;
+  letter-spacing: -2px;
+  font-size: 59px;
+  line-height: 53px;
+  @include respond-to(0px, 500px) {
+    line-height: 45px;
+    font-size: 45px;
+  }
 }
 .m-font-larger, .m-font-large, .m-font-medium {
   letter-spacing: -0.5px;
@@ -95,11 +101,4 @@
 }
 .m-circle-stroke-white {
   @include circle-stroke(white)
-}
-.m-font-splash-text {
-  @include largest-font-style;
-  @include respond-to(0px, 400px) {
-    line-height: 45px;
-    font-size: 45px;
-  }
 }

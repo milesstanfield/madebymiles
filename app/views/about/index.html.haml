@@ -1,19 +1,28 @@
-.m-bg-dark-grey{data: {area: "splash"}}
-  .l-max-content-width.l-horizontal-center.l-content-padding.l-large-vertical-padding
-    .col-1-1.col-1-2-med.m-font-medium.m-font-thin.m-color-light-grey.l-v-align-middle.l-splash-info-padding.l-pad-fix
-      = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text"
-
 .l-max-content-width.l-horizontal-center.l-content-padding
-  .col-1-1.col-1-2-med.l-v-align-middle.l-large-vertical-padding
-    .m-font-largest.m-font-bold.m-color-darkest-grey.l-medium-bottom-margin
-      = "about me"
-    .m-font-large.m-font-thin.m-color-dark-grey.l-medium-bottom-margin
-      = "I'm a Ruby-on-Rails Developer with a background in design, living in Atlanta, GA."
-    .m-font-medium.m-font-thin.m-color-dark-grey
-      = "Code review and refactoring in an agile environment is by far my favorite aspect of being a developer because I get to teach others how to improve their code and learn new ways to improve my own."
-  .col-1-1.col-1-2-med.l-v-align-middle.l-text-center
-    = render "pie_chart"
+  .l-large-vertical-padding
+    .col-1-1.col-1-3-med.l-v-align-middle.l-text-center
+      = image_tag "large_profile_head.png", class: "l-large-profile-head-height"
+      .m-font-medium.m-font-bold.m-color-dark-grey.l-small-top-margin.l-mobile-medium-bottom-margin
+        = "Miles Stanfield"
+    .col-1-1.col-2-3-med.l-v-align-middle
+      .m-font-large.m-font-thin.m-color-dark-grey.l-medium-bottom-margin
+        = "A Ruby-on-Rails Developer with a background in design, living/working in Atlanta, GA"
+      .m-font-medium.m-font-thin.m-color-dark-grey
+        = "Code review and refactoring in an agile environment is by far my favorite aspect of being a developer because I get to teach others how to improve their code and learn new ways to improve my own."
   = render "shared/line"
+
+
+= render layout: "shared/section", locals: {name: "background", button_off: true} do
+  .m-font-thin.m-font-medium.l-medium-bottom-margin.m-color-dark-grey
+    = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
+  .m-font-thin.m-font-medium.m-color-dark-grey
+    = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
+
+
+= render layout: "shared/section", locals: {name: "education", button_off: true} do
+  .gutters
+    .col-1-3
+
 
 
 = render layout: "shared/section", locals: {name: "testimonials", button_off: true} do
@@ -21,7 +30,7 @@
     - 3.times do
       .col-1-3.l-medium-bottom-margin
         .l-medium-padding.m-bg-light-grey
-          .m-font-bold.m-font-large
+          .m-font-bold.m-font-large.m-color-dark-grey
             = "David Horslev"
           .m-font-thin
             .m-font-small.l-medium-bottom-margin= "Executive Creative Director | HLN"
