@@ -23,16 +23,6 @@
 .l-small-top-margin {
   margin-top: 10px;
 }
-.l-about-text-margin {
-  @include respond-to(0px, $med) {
-    margin-top: 20px;
-    margin-bottom: $large-vertical-spacing;
-  }
-  @include respond-to($med) {
-    margin-bottom: $large-vertical-spacing;
-    margin-left: calc(#{$profile-head-width} + 20px);
-  }
-}
 .l-mobile-medium-bottom-margin {
   @include respond-to(0px, $med) {
     margin-bottom: 20px;

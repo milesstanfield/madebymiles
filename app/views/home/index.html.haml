@@ -12,11 +12,14 @@
 
 - if FeatureFlipper.active_names.include? "about"
   = render layout: "shared/section", locals: {name: "about", path: "/about", button_text: "more about me"} do
-    .l-about-head
-      .about_head.l-horizontal-center
-      .l-text-center.m-font-small.m-font-thin.m-color-dark-grey.l-small-top-margin= "Miles Stanfield"
-    .m-font-medium.m-font-thin.m-color-dark-grey.l-about-text-margin
-      = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
+    .l-medium-bottom-margin
+      .gutters
+        .col-1-1.col-1-5-med.l-v-align-top.l-text-center
+          .about_head.l-inline-block
+          .m-font-small.m-font-thin.m-color-dark-grey.l-small-top-margin.l-medium-bottom-margin= "Miles Stanfield"
+        .col-1-1.col-4-5-med.l-v-align-top
+          .m-font-medium.m-font-thin.m-color-dark-grey
+            = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
 
 
 - if FeatureFlipper.active_names.include? "tutorials"
