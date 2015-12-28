@@ -9,7 +9,7 @@ describe "home page", type: :feature do
 
   it "has a connect zone" do
     visit "/"
-    connect_expectations
+    connect_zone_expectations
   end
 
   context "splash area" do
@@ -27,8 +27,8 @@ describe "home page", type: :feature do
 
     it "has short splash info text" do
       within "[data-area='splash']" do
-        expect(page).to have_text "Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text"
+        expect(page).to have_text "When I'm not writing tests, refactoring code, teaching Ruby on Rails
+          or building websites ... I'm dreaming up ways to change the world through code."
       end
     end
   end
@@ -50,7 +50,7 @@ describe "home page", type: :feature do
         expect(page).to have_text "more"
         find("a[href='/about']").click
       end
-      expect(page).to have_text "about me"
+      expect(page).to have_text "A Ruby-on-Rails Developer with a background in design, living/working in Atlanta, GA"
     end
 
     it "has a head img and caption" do

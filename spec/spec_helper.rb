@@ -9,8 +9,8 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   include CapybaraHelpers
-  include ConnectHelpers
   include SeedHelpers
+  include ConnectTestHelpers
 
   config.before(:each, type: :feature) do
     create_activate_flippers "home", "about", "tutorials", "portfolio", "blog", "connect"

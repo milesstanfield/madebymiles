@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe "connect page", type: :feature do
-
   it "has MadeByMiles | connect title tag" do
     visit "/connect"
     expect(page).to have_title "MadeByMiles | connect"
@@ -14,6 +13,6 @@ describe "connect page", type: :feature do
 
   it "has a connect zone" do
     visit "/connect"
-    connect_expectations
+    connect_zone_expectations
   end
 end

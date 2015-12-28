@@ -24,7 +24,7 @@ describe "posts pages", type: :feature do
 
     it "has a connect zone" do
       visit "/posts/tagged"
-      connect_expectations
+      connect_zone_expectations
     end
   end
 
@@ -43,7 +43,7 @@ describe "posts pages", type: :feature do
 
     it "has a connect zone" do
       visit "/posts/blog"
-      connect_expectations
+      connect_zone_expectations
     end
   end
 
@@ -61,7 +61,7 @@ describe "posts pages", type: :feature do
 
     it "has a connect zone" do
       visit "/posts/tutorials"
-      connect_expectations
+      connect_zone_expectations
     end
   end
 

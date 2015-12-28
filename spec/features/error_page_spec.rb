@@ -13,6 +13,6 @@ describe "error page", type: :feature do
 
   it "has a connect zone" do
     visit "/some_bad_request"
-    connect_expectations
+    connect_zone_expectations
   end
 end

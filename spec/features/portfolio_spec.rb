@@ -8,6 +8,6 @@ describe "portfolio page" do
 
   it "has a connect zone" do
     visit "/portfolio"
-    connect_expectations
+    connect_zone_expectations
   end
 end

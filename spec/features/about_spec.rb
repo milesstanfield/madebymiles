@@ -8,6 +8,6 @@ describe "about page", type: :feature do
 
   it "has a connect zone" do
     visit "/about"
-    connect_expectations
+    connect_zone_expectations
   end
 end
