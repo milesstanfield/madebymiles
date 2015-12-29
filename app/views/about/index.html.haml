@@ -21,10 +21,10 @@
 
 = render layout: "shared/section", locals: {name: "skills", button_off: true} do
   .gutters
-    .col-1-1.col-2-5-med.l-v-align-top
+    .col-1-1.col-1-3-med.l-v-align-top
       .m-font-medium.m-font-thin.m-color-dark-grey
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
-    .col-1-1.col-3-5-med.l-v-align-top.l-small-top-margin
+    .col-1-1.col-2-3-med.l-v-align-top.l-small-top-margin
       = render "bar", percentage: "98", name: "HTML / HAML"
       = render "bar", percentage: "93", name: "Ruby on Rails"
       = render "bar", percentage: "85", name: "Javascript & jQuery"
@@ -35,15 +35,6 @@
       = render "bar", percentage: "83", name: "Postgresql / ActiveRecord"
 
 
-
-= render layout: "shared/section", locals: {name: "experience", button_off: true} do
-  .gutters.m-color-dark-grey
-    = render "work_card", title: "Graphic Designer", company: "HLN", time: "2009 - 2012", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
-    = render "work_card", title: "Vizrt Engineer", company: "HLN", time: "2012 - 2014", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard"
-    = render "work_card", title: "Data Manager", company: "HLN", time: "2014 - 2016", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum has been the industry's standard"
-
-
-
 = render layout: "shared/section", locals: {name: "education", button_off: true} do
   .l-text-center.m-color-dark-grey
     = image_tag "u_of_a_logo.png", class: "l-school-logo-height l-small-top-margin l-medium-bottom-margin"
@@ -52,6 +43,17 @@
     .m-font-medium.m-font-thin
       .l-block= "Bachelor of Fine Arts (B.F.A.)"
       .l-block= "2009 Alumni"
+
+
+= render layout: "shared/section", locals: {name: "experience", button_off: true} do
+  .gutters
+    = render "work_card", title: "Data Manager", company: "HLNtv.com", time: "2014 - 2016", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum has been the industry's standard"
+    = render "work_card", title: "New Media Designer/Developer", company: "HLN", time: "2012 - 2014", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard"
+    = render "work_card", title: "Graphic Designer", company: "HLN", time: "2009 - 2012", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
+    = render "work_card", title: "Freelance Graphic Designer", company: "CNNi", time: "2009", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
+    = render "work_card", title: "Intern Graphic Designer", company: "CNNi", time: "2009", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
+
+
 
 
 = render layout: "shared/section", locals: {name: "testimonials", button_off: true} do

@@ -51,6 +51,14 @@
   padding-top: 40px;
   padding-bottom: 40px;
 }
+.l-large-horizontal-padding {
+  padding-right: 40px;
+  padding-left: 40px;
+  @include respond-to($med) {
+    padding-right: $large-vertical-spacing;
+    padding-left: $large-vertical-spacing;
+  }
+}
 .l-large-vertical-padding {
   padding-top: 40px;
   padding-bottom: 40px;

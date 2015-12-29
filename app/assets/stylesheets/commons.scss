@@ -45,13 +45,13 @@
 .l-vertical-center {
   position: absolute;
   top: 50%;
-  @include prefixes(transform, translateY(-50%))
+  @include prefixes(transform, translateY(-50%));
 }
 .l-absolute-center {
   position: absolute;
   top: 50%;
   left: 50%;
-  @include prefixes(transform, translate(-50%, -50%))
+  @include prefixes(transform, translate(-50%, -50%));
 }
 .m-overflow-hidden {
   overflow: hidden;
@@ -71,9 +71,6 @@
 
 
 // LESS COMMON
-.l-text-left {
-  text-align: left;
-}
 .l-no-wrap {
   white-space: nowrap;
 }

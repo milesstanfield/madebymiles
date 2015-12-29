@@ -1,5 +1,13 @@
-.col-1-1.col-1-3-med.l-v-align-top.l-medium-bottom-margin{data: {name: "work-card"}}
-  .m-font-large.m-font-thin.l-block= title
-  .m-font-large.m-font-bold.l-inline-block.l-small-margin-right= company
-  .m-font-small.m-font-thin.l-inline-block= time
-  .m-font-medium.m-font-thin.l-inline-block= description
+%div{data: {name: "work-card"}}
+  .col-1-1.col-1-3-med.l-v-align-top.l-relative
+    .l-hide-on-mobile
+      .l-absolute-horizontal-center.l-medium-padding
+        .m-color-dark-grey.m-font-large.m-font-bold= company
+        .m-color-medium-grey.m-font-medium.m-font-thin= time
+  .col-1-1.col-2-3-med.l-v-align-top.m-color-dark-grey.m-bg-light-grey.l-medium-bottom-margin
+    .l-medium-padding
+      .l-show-on-mobile
+        .l-inline-block.m-color-dark-grey.m-font-medium.m-font-bold.l-small-margin-right= company
+        .l-inline-block.m-color-medium-grey.m-font-small.m-font-thin= time
+      .m-font-large.m-font-bold= title
+      .m-font-medium.m-font-thin= description

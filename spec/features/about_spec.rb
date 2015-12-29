@@ -71,7 +71,7 @@ describe "about page", type: :feature do
       visit "/about"
     end
 
-    it "has 3 testimonials" do
+    it "has testimonials" do
       within "[data-area='testimonials']" do
         expect(page.all("[data-name='testimonial']").count).to eq 3
       end
@@ -121,11 +121,11 @@ describe "about page", type: :feature do
 
     it "has work cards with title, company, years and description" do
       within "[data-area='experience']" do
-        expect(page.all("[data-name='work-card']").count).to eq 3
+        expect(page.all("[data-name='work-card']").count).to eq 5
         within first("[data-name='work-card']") do
-          expect(page).to have_text "Graphic Designer"
-          expect(page).to have_text "HLN"
-          expect(page).to have_text "2009 - 2012"
+          expect(page).to have_text "Data Manager"
+          expect(page).to have_text "HLNtv.com"
+          expect(page).to have_text "2014 - 2016"
           expect(page).to have_text "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
         end
       end
