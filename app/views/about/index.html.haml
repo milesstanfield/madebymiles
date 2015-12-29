@@ -1,4 +1,4 @@
-.l-max-content-width.l-horizontal-center.l-content-padding
+.l-max-content-width.l-horizontal-center.l-content-padding{data: {area: "splash"}}
   .l-large-vertical-padding
     .col-1-1.col-1-3-med.l-v-align-middle.l-text-center
       = image_tag "large_profile_head.png", class: "l-large-profile-head-height"
@@ -19,24 +19,44 @@
     = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
 
 
-= render layout: "shared/section", locals: {name: "education", button_off: true} do
+= render layout: "shared/section", locals: {name: "skills", button_off: true} do
   .gutters
-    .col-1-3
+    .col-1-1.col-2-5-med.l-v-align-top
+      .m-font-medium.m-font-thin.m-color-dark-grey
+        = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
+    .col-1-1.col-3-5-med.l-v-align-top.l-small-top-margin
+      = render "bar", percentage: "98", name: "HTML / HAML"
+      = render "bar", percentage: "97", name: "CSS / SASS"
+      = render "bar", percentage: "95", name: "Photoshop & Illustrator"
+      = render "bar", percentage: "93", name: "Ruby on Rails"
+      = render "bar", percentage: "93", name: "Rspec & Capybara TDD"
+      = render "bar", percentage: "85", name: "Javascript & jQuery"
+      = render "bar", percentage: "80", name: "Postgresql / ActiveRecord"
+      = render "bar", percentage: "77", name: "Coffeescript"
 
+
+
+
+= render layout: "shared/section", locals: {name: "education", button_off: true} do
+  .l-text-center.m-color-dark-grey
+    = image_tag "u_of_a_logo.png", class: "l-school-logo-height l-small-top-margin l-medium-bottom-margin"
+    .m-font-large.m-font-bold
+      = "University of Alabama"
+    .m-font-medium.m-font-thin
+      .l-block= "Bachelor of Fine Arts (B.F.A.)"
+      .l-block= "2009 Alumni"
 
 
 = render layout: "shared/section", locals: {name: "testimonials", button_off: true} do
   .gutters
     - 3.times do
-      .col-1-3.l-medium-bottom-margin
-        .l-medium-padding.m-bg-light-grey
-          .m-font-bold.m-font-large.m-color-dark-grey
+      .col-1-3.l-medium-bottom-margin{data: {name: "testimonial"}}
+        .l-medium-padding.m-bg-light-grey.m-color-dark-grey
+          .m-font-bold.m-font-large
             = "David Horslev"
           .m-font-thin
             .m-font-small.l-medium-bottom-margin= "Executive Creative Director | HLN"
             .m-font-medium= "I left my full-time job mid-2015 to focus on the thing that makes me happiest: helping people share their passions. Despite the fact that I was working on extracurricular projects during weekends and late at night, I always thought"
-
-
 
 
   / HI THERE! I'M KRISTA.

@@ -64,18 +64,30 @@
 }
 
 
-// OTHER
+// HEIGHT
 .l-nav-height {
   height: $nav-height;
 }
+.l-line-height {
+  height: 1px;
+}
+.l-large-profile-head-height {
+  height: 180px;
+}
+.l-bar-height {
+  height: 40px;
+}
+.l-school-logo-height {
+  height: 80px
+}
+
+
+// OTHER
 .l-nav-tab-text {
   top: 20px;
 }
 .l-line-width {
   width: 1px;
-}
-.l-line-height {
-  height: 1px;
 }
 .l-about-head {
   @include respond-to($med) {
@@ -98,7 +110,4 @@
 .l-circle-size {
   width: 45px;
   height: 45px;
-}
-.l-large-profile-head-height {
-  height: 180px;
 }
