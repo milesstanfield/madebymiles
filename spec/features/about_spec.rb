@@ -89,4 +89,46 @@ describe "about page", type: :feature do
       end
     end
   end
+
+
+  context "skills area" do
+    before :each do
+      visit "/about"
+    end
+
+    it "has blurb copy" do
+      within "[data-area='skills']" do
+        expect(page).to have_text "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+          Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
+      end
+    end
+
+    it "has bar skills" do
+      within "[data-area='skills']" do
+        expect(page.all("[data-name='bar']").count).to eq 8
+        within first("[data-name='bar']") do
+          expect(page).to have_text "HTML / HAML"
+        end
+      end
+    end
+  end
+
+
+  context "experience area" do
+    before :each do
+      visit "/about"
+    end
+
+    it "has work cards with title, company, years and description" do
+      within "[data-area='experience']" do
+        expect(page.all("[data-name='work-card']").count).to eq 3
+        within first("[data-name='work-card']") do
+          expect(page).to have_text "Graphic Designer"
+          expect(page).to have_text "HLN"
+          expect(page).to have_text "2009 - 2012"
+          expect(page).to have_text "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
+        end
+      end
+    end
+  end
 end

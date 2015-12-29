@@ -26,14 +26,21 @@
         = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
     .col-1-1.col-3-5-med.l-v-align-top.l-small-top-margin
       = render "bar", percentage: "98", name: "HTML / HAML"
+      = render "bar", percentage: "93", name: "Ruby on Rails"
+      = render "bar", percentage: "85", name: "Javascript & jQuery"
+      = render "bar", percentage: "93", name: "Rspec & Capybara TDD"
+      = render "bar", percentage: "77", name: "Coffeescript"
       = render "bar", percentage: "97", name: "CSS / SASS"
       = render "bar", percentage: "95", name: "Photoshop & Illustrator"
-      = render "bar", percentage: "93", name: "Ruby on Rails"
-      = render "bar", percentage: "93", name: "Rspec & Capybara TDD"
-      = render "bar", percentage: "85", name: "Javascript & jQuery"
-      = render "bar", percentage: "80", name: "Postgresql / ActiveRecord"
-      = render "bar", percentage: "77", name: "Coffeescript"
+      = render "bar", percentage: "83", name: "Postgresql / ActiveRecord"
 
+
+
+= render layout: "shared/section", locals: {name: "experience", button_off: true} do
+  .gutters.m-color-dark-grey
+    = render "work_card", title: "Graphic Designer", company: "HLN", time: "2009 - 2012", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
+    = render "work_card", title: "Vizrt Engineer", company: "HLN", time: "2012 - 2014", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard"
+    = render "work_card", title: "Data Manager", company: "HLN", time: "2014 - 2016", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum has been the industry's standard"
 
 
 
@@ -57,27 +64,3 @@
           .m-font-thin
             .m-font-small.l-medium-bottom-margin= "Executive Creative Director | HLN"
             .m-font-medium= "I left my full-time job mid-2015 to focus on the thing that makes me happiest: helping people share their passions. Despite the fact that I was working on extracurricular projects during weekends and late at night, I always thought"
-
-
-  / HI THERE! I'M KRISTA.
-  /
-  / I live in San Francisco, where I help individuals, small businesses, and early-stage startups build their web presence.
-  /
-  / I left my full-time job mid-2015 to focus on the thing that makes me happiest: helping people share their passions. Despite the fact that I was working on extracurricular projects during weekends and late at night, I always thought that the number of "hats" I've worn in my seven-year career startup had left me without the specialty or focus required to formally start my own company. Turns out, I was wrong - and I'm grateful to have incredible variety built into my current workload!
-  /
-  / I was honored to be featured on CloudPeeps' list of '10 Freelancers to Watch', Daily Muse's list of 'The 35 Best Personal Websites We've Ever Seen' and as the subject of a Pinterview by Pinterest.
-  /
-  / When I'm not working on cool projects with inspiring people, you can catch me in a Bar Method class, coffee shop, or meticulously planning my next trip. Follow my global adventures on Trippy, where I served as an official travel Ambassador.
-
-
-
-  / Hi! I'm Craig Morrison. I'm a Usability Consultant, UI Designer and Entrepreneur.
-  / Currently, I help startup founders build great products that promote a positive user experience through my Usability Hour consultation service.
-  / I'm also co-founder and President of Minoe, a Mom based local productivity network.
-  / When I'm not doing those things, I'm also breaking world records on my web comedy web series The Record Collection.
-  / I hold multiple records, including The Longest High Five and Longest Time Underwater Using A Vuvuzela To Breathe.
-
-
-
-
-  / My interest in web development stemmed from my passion for gaming. Between developing websites and playing video games, I admittedly spend most of my time in front of a screen. Some of my passions are writing clean code, creating sexy user experiences and filling up a fresh cup of coffee.
