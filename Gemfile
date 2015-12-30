@@ -36,13 +36,11 @@ end
 
 group :test do
   gem 'vcr'
-  gem 'webmock'
   gem 'excon', '<0.39.0'
   gem 'capybara', '> 2.3.0'
   gem 'capybara-webkit', '~> 1.1.0'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
-  gem 'minitest'
   gem 'shoulda-matchers'
   gem 'launchy'
 end

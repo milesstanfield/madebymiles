@@ -1,7 +1,6 @@
 module NavigationHelper
   def nav_tabs(active_tab)
     [
-      tab("home", "/", active_tab),
       tab("about", "/about", active_tab),
       tab("tutorials", "/posts/tutorials", active_tab),
       tab("portfolio", "/portfolio", active_tab),
@@ -10,11 +9,11 @@ module NavigationHelper
     ]
   end
 
-  private
-
-  def add_home_tab(other_tabs, active_tab)
-    other_tabs.unshift tab("home", "/", active_tab)
+  def footer_tabs(active_tab)
+    nav_tabs(active_tab).unshift tab("home", "/", active_tab)
   end
+
+  private
 
   def tab(text, path, active_tab)
     OpenStruct.new text: text, path: path, classes: tab_classes(text, active_tab)

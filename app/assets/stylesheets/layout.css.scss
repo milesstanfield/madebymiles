@@ -31,12 +31,14 @@
 .l-small-margin-right {
   margin-right: 5px;
 }
+.l-nav-margin-top {
+  margin-top: $nav-height;
+}
 
 
 // PADDING
 .l-content-padding {
-  padding-right: 20px;
-  padding-left: 20px;
+  @include side-padding(20px);
 }
 .l-medium-padding {
   padding: 20px;
@@ -47,31 +49,23 @@
 .l-button-padding {
   padding: 10px 25px;
 }
-.l-medium-vertical-padding {
-  padding-top: 40px;
-  padding-bottom: 40px;
+.l-small-vertical-padding {
+  @include vertical-padding(20px);
 }
-.l-large-horizontal-padding {
-  padding-right: 40px;
-  padding-left: 40px;
-  @include respond-to($med) {
-    padding-right: $large-vertical-spacing;
-    padding-left: $large-vertical-spacing;
-  }
+.l-medium-vertical-padding {
+  @include vertical-padding(40px);
 }
 .l-large-vertical-padding {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  @include vertical-padding(40px);
   @include respond-to($med) {
-    padding-top: $large-vertical-spacing;
-    padding-bottom: $large-vertical-spacing;
+    @include vertical-padding($large-vertical-spacing);
   }
 }
 .l-nav-tab-padding {
-  padding: 0 15px;
+  @include side-padding(15px);
 }
 .l-circle-padding {
-  padding: 0 10px;
+  @include side-padding(10px);
 }
 
 

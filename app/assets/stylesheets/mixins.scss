@@ -20,3 +20,16 @@
 @mixin circle-stroke($color) {
   border: 2px solid $color;
 }
+@mixin vertical-padding($amount) {
+  padding-top: $amount;
+  padding-bottom: $amount;
+}
+@mixin side-padding($amount) {
+  padding-left: $amount;
+  padding-right: $amount;
+}
+@mixin hide-on($min-width, $max-width : false) {
+  @include respond-to($min-width, $max-width) {
+    display: none;
+  }
+}

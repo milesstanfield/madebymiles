@@ -71,6 +71,9 @@
 
 
 // LESS COMMON
+.l-z-index-5 {
+  z-index: 5;
+}
 .l-no-wrap {
   white-space: nowrap;
 }
@@ -104,15 +107,9 @@
     }
   }
 }
-.l-hide-on-mobile {
-  display: none;
-  @include respond-to($med) {
-    display: block;
-  }
+.l-hide-on-tablet {
+  @include hide-on($med);
 }
-.l-show-on-mobile {
-  display: block;
-  @include respond-to($med) {
-    display: none;
-  }
+.l-hide-on-mobile {
+  @include hide-on(0px, $med);
 }

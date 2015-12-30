@@ -11,6 +11,7 @@ RSpec.configure do |config|
   include CapybaraHelpers
   include SeedHelpers
   include ConnectTestHelpers
+  include ResponsiveTestHelper
 
   config.before(:each, type: :feature) do
     create_activate_flippers "home", "about", "tutorials", "portfolio", "blog", "connect"
