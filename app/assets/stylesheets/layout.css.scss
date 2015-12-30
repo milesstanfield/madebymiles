@@ -31,9 +31,6 @@
 .l-small-margin-right {
   margin-right: 5px;
 }
-.l-nav-margin-top {
-  margin-top: $nav-height;
-}
 
 
 // PADDING
@@ -90,6 +87,18 @@
 // OTHER
 .l-nav-tab-text {
   top: 20px;
+}
+.l-nav-logo-position {
+  top: 50%;
+  @include prefixes(transform, translateY(-50%));
+  @include respond-to(0px, $med) {
+    left: 50%;
+    @include prefixes(transform, translate(-50%, -50%));
+  }
+}
+.l-nav-menu {
+  margin-top: $nav-height;
+  height: calc(100% - $nav-height);
 }
 .l-line-width {
   width: 1px;

@@ -42,7 +42,7 @@
 .l-horizontal-center {
   margin: 0 auto;
 }
-.l-vertical-center {
+.l-absolute-vertical-center {
   position: absolute;
   top: 50%;
   @include prefixes(transform, translateY(-50%));
