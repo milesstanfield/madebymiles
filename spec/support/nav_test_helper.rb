@@ -9,11 +9,13 @@ module NavTestHelper
     end
   end
 
-  def it_has_clickable_tags(path)
+  def it_has_clickable_tags(path, footer = false)
     it "has clickable tabs" do
+      area = footer ? "footer" : "[data-name='nav-tabs']"
+      texts = footer ? footer_tab_texts : tab_texts
       visit path
-      tab_texts.each do |tab_text|
-        within "[data-name='nav-tabs']" do
+      texts.each do |tab_text|
+        within area do
           click_link tab_text
         end
         next_page_expectations tab_text
@@ -49,5 +51,9 @@ module NavTestHelper
 
   def tab_texts
     ["about", "portfolio", "connect", "tutorials", "blog"]
+  end
+
+  def footer_tab_texts
+    tab_texts.unshift "home"
   end
 end
