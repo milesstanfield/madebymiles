@@ -10,9 +10,4 @@ describe "error page", type: :feature do
     visit "/some_bad_request"
     expect(page).to have_text "404"
   end
-
-  it "has a connect zone" do
-    visit "/some_bad_request"
-    connect_zone_expectations
-  end
 end

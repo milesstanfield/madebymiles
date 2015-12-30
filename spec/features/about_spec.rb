@@ -6,11 +6,6 @@ describe "about page", type: :feature do
     expect(page).to have_title "MadeByMiles | about"
   end
 
-  it "has a connect zone" do
-    visit "/about"
-    connect_zone_expectations
-  end
-
   context "splash area" do
     before :each do
       visit "/about"

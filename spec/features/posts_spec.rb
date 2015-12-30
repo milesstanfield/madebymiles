@@ -21,11 +21,6 @@ describe "posts pages", type: :feature do
       expect(page).to have_text "rspec troubleshooting"
       expect(page).not_to have_text "something else"
     end
-
-    it "has a connect zone" do
-      visit "/posts/tagged"
-      connect_zone_expectations
-    end
   end
 
   context "/posts/blog" do
@@ -40,11 +35,6 @@ describe "posts pages", type: :feature do
       expect(page).to have_text "rspec troubleshooting"
       expect(page).not_to have_text "something else"
     end
-
-    it "has a connect zone" do
-      visit "/posts/blog"
-      connect_zone_expectations
-    end
   end
 
   context "/posts/tutorials" do
@@ -57,11 +47,6 @@ describe "posts pages", type: :feature do
       visit "/posts/tutorials"
       expect(page).to have_text "how to do this thing"
       expect(page).not_to have_text "rspec troubleshooting"
-    end
-
-    it "has a connect zone" do
-      visit "/posts/tutorials"
-      connect_zone_expectations
     end
   end
 

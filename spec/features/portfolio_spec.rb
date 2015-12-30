@@ -5,9 +5,4 @@ describe "portfolio page" do
     visit "/portfolio"
     expect(page).to have_title "MadeByMiles | portfolio"
   end
-
-  it "has a connect zone" do
-    visit "/portfolio"
-    connect_zone_expectations
-  end
 end

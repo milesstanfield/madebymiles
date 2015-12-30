@@ -10,7 +10,6 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   include CapybaraHelpers
   include SeedHelpers
-  include ConnectTestHelpers
   include ResponsiveTestHelper
 
   config.before(:each, type: :feature) do

@@ -37,4 +37,9 @@ describe "the footer", type: :feature do
     it_has_clickable_tags "/posts/blog", true
     it_has_legal_copy "/posts/blog"
   end
+
+  context "404 page" do
+    it_has_clickable_tags "/bad_request", true
+    it_has_legal_copy "/bad_request"
+  end
 end
