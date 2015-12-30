@@ -35,7 +35,7 @@
       = render "bar", percentage: "83", name: "Postgresql / ActiveRecord"
 
 
-= render layout: "shared/section", locals: {name: "education", button_off: true} do
+= render layout: "shared/section", locals: {name: "education", button_off: true, line_off: true} do
   .l-text-center.m-color-dark-grey
     = image_tag "u_of_a_logo.png", class: "l-school-logo-height l-small-top-margin l-medium-bottom-margin"
     .m-font-large.m-font-bold
@@ -45,13 +45,14 @@
       .l-block= "2009 Alumni"
 
 
-= render layout: "shared/section", locals: {name: "experience", button_off: true} do
-  .gutters
-    = render "work_card", title: "Data Manager", company: "HLNtv.com", time: "2014 - 2016", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum has been the industry's standard"
-    = render "work_card", title: "New Media Designer/Developer", company: "HLN", time: "2012 - 2014", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard"
-    = render "work_card", title: "Graphic Designer", company: "HLN", time: "2009 - 2012", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
-    = render "work_card", title: "Freelance Graphic Designer", company: "CNNi", time: "2009", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
-    = render "work_card", title: "Intern Graphic Designer", company: "CNNi", time: "2009", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
+.m-bg-dark-blue
+  = render layout: "shared/section", locals: {name: "work", button_off: true, header_color_class: "m-color-white", line_off: true} do
+    .gutters
+      = render "work_card", title: "Data Manager", company: "HLNtv.com", time: "2014 - 2016", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. Lorem Ipsum has been the industry's standard"
+      = render "work_card", title: "New Media Designer/Developer", company: "HLN", time: "2012 - 2014", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard"
+      = render "work_card", title: "Graphic Designer", company: "HLN", time: "2009 - 2012", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
+      = render "work_card", title: "Freelance Graphic Designer", company: "CNNi", time: "2009", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
+      = render "work_card", title: "Intern Graphic Designer", company: "CNNi", time: "2009", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
 
 
 
@@ -59,7 +60,7 @@
 = render layout: "shared/section", locals: {name: "testimonials", button_off: true} do
   .gutters
     - 3.times do
-      .col-1-3.l-medium-bottom-margin{data: {name: "testimonial"}}
+      .col-1-1.col-1-3-lrg.l-medium-bottom-margin{data: {name: "testimonial"}}
         .l-medium-padding.m-bg-light-grey.m-color-dark-grey
           .m-font-bold.m-font-large
             = "David Horslev"

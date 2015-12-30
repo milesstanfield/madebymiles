@@ -114,13 +114,13 @@ describe "about page", type: :feature do
   end
 
 
-  context "experience area" do
+  context "work area" do
     before :each do
       visit "/about"
     end
 
     it "has work cards with title, company, years and description" do
-      within "[data-area='experience']" do
+      within "[data-area='work']" do
         expect(page.all("[data-name='work-card']").count).to eq 5
         within first("[data-name='work-card']") do
           expect(page).to have_text "Data Manager"

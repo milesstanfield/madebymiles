@@ -1,12 +1,15 @@
 - button_off ||= false
 - button_text ||= nil
 - path ||= nil
+- header_color_class ||= "m-color-dark-grey"
+- line_off ||= nil
 
 %div{data: {area: name}}
   .l-max-content-width.l-horizontal-center.l-content-padding
     .l-large-vertical-padding
-      = render "shared/header", text: name
+      = render "shared/header", text: name, color_class: header_color_class
       = yield
       - unless button_off
         = render "shared/button", text: button_text, path: path
-    = render "shared/line"
+    - unless line_off
+      = render "shared/line"
