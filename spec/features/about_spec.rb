@@ -34,14 +34,14 @@ describe "about page", type: :feature do
     it "has background copy and link" do
       within "[data-area='background']" do
         expect(page).to have_link "Vizrt"
-        expect(page).to have_text "I started out as a painter, not a great one but with a fine arts degree I learned
-          good design principles. That helped me get a job right out of college as a graphic designer working for HLN -- A Time
-          Warner Company. Two years later I was immersed in specialized 3d animating software called Vizrt which happened to
-          require a lot of programming knowledge to make the most of it. From that point on, I was all developer. I quickly gravitated
-          towards front-end development because of my strong design background. Needless to say, CSS became my life. I started
-          aimlessly making Flash and PHP websites for work without any framework or guidance and then I got solid, on-the-job
-          Ruby on Rails training everyday from a veteren programmer. Years later, I'm definitely one of those developers
-          preaching convention over configuration and saying did you write a test for that first?"
+        expect(page).to have_text "I started out as a painter, not a great one but with a fine arts degree I learned good design
+          principles. That helped me get a job right out of college as a graphic designer working for HLN -- A Time Warner Company.
+          Two years later I was immersed in specialized 3d animating software called Vizrt which happened to require a lot of
+          programming knowledge to make the most of it. From that point on, I was all developer. I quickly gravitated towards
+          front-end development because of my strong design background. Needless to say, CSS became my life. I started aimlessly
+          making Flash and PHP websites for work without any framework or guidance and then I got solid, on-the-job Ruby on
+          Rails training everyday from a veteren programmer. Years later, I'm definitely one of those developers preaching
+          convention over configuration and saying did you write a test for that?"
       end
     end
   end
