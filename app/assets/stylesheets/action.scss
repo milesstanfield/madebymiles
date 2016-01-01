@@ -1,25 +1,27 @@
 @import "variables";
 @import "mixins";
 
-.a-hover-nav-tab:hover {
-  background: $active-blue;
-}
-.a-inline-link-hover:hover {
-  @include underline($blue);
-}
-.a-hover-bg-blue:hover {
-  background: $blue;
-  color: white;
-}
-.a-hover-blue:hover {
-  color: $blue;
-}
-.a-hover-circle-blue:hover, .a-hover-circle-white:hover {
-  .m-circle-stroke-dark-blue, .m-circle-stroke-white {
-    @include circle-stroke($blue);
-    background: $blue;
+.no-touch {
+  .a-hover-nav-tab:hover {
+    background: $active-blue;
   }
-}
-.a-hover-opacity:hover {
-  opacity: 0.75;
+  .a-inline-link-hover:hover {
+    @include underline($blue);
+  }
+  .a-hover-bg-blue:hover {
+    background: $blue;
+    color: white;
+  }
+  .a-hover-blue:hover {
+    color: $blue;
+  }
+  .a-hover-circle-blue:hover, .a-hover-circle-white:hover {
+    .m-circle-stroke-dark-blue, .m-circle-stroke-white {
+      @include circle-stroke($blue);
+      background: $blue;
+    }
+  }
+  .a-hover-opacity:hover {
+    opacity: 0.75;
+  }
 }
