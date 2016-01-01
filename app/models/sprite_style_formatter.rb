@@ -73,7 +73,7 @@ class SpriteStyleFormatter
       @images.map do |image_name, image_data|
         case image_name.to_s
         when "arrow_dark_blue"
-          "div.arrow_dark_blue { #{indivdual_style(@images[:arrow_dark_blue])} }\n .a-hover-circle-blue:hover .arrow_dark_blue { #{indivdual_style(@images[:arrow_white])} }"
+          "div.arrow_dark_blue { #{indivdual_style(@images[:arrow_dark_blue])} }\n .no-touch .a-hover-circle-blue:hover .arrow_dark_blue { #{indivdual_style(@images[:arrow_white])} }"
         else
           default_style(image_name, image_data, "div")
         end
