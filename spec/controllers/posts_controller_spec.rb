@@ -7,6 +7,7 @@ describe PostsController, type: :controller do
     expect(posts_by_tag).to receive(:limit).with(25).and_return(posts_by_tag)
     get :tagged, tag_name: "rspec"
     expect(assigns(:posts)).to eq(posts_by_tag)
+    expect(assigns(:title_tag)).to eq "rspec posts"
     expect(response).to render_template :tagged
   end
 
@@ -17,6 +18,7 @@ describe PostsController, type: :controller do
     get :blog
     expect(assigns(:active_nav_tab)).to eq "blog"
     expect(assigns(:posts)).to eq blog_posts
+    expect(assigns(:title_tag)).to eq "blog"
     expect(response).to render_template :blog
   end
 
@@ -27,16 +29,18 @@ describe PostsController, type: :controller do
     get :tutorials
     expect(assigns(:active_nav_tab)).to eq "tutorials"
     expect(assigns(:posts)).to eq tutorial_posts
+    expect(assigns(:title_tag)).to eq "tutorials"
     expect(response).to render_template :tutorials
   end
 
   it "#show" do
-    post = double(:post, use: "blog")
+    post = double(:post, use: "blog", title: "How to do foobar")
     slug = "2015/12/19/how-to-do-foobar"
     expect(Post).to receive(:find_by_slug).with(slug).and_return(post)
     get :show, slug: slug
     expect(assigns(:active_nav_tab)).to eq "blog"
     expect(assigns(:post)).to eq post
+    expect(assigns(:title_tag)).to eq "How to do foobar"
     expect(response).to render_template :show
   end
 end

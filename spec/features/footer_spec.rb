@@ -1,45 +1,99 @@
 require "spec_helper"
-include NavTestHelper
-include FooterTestHelper
+include NavFooterTestHelper
 
 describe "the footer", type: :feature do
   before do
-    create_posts_and_tags("blog")
-    create_posts_and_tags("tutorial")
+    create_posts_and_tags "blog"
+    create_posts_and_tags "tutorial"
   end
 
   context "home page" do
-    it_has_clickable_tags "/", true
-    it_has_legal_copy "/"
+    it "has clickable tabs" do
+      clickable_footer_tabs_expectations "/"
+    end
+
+    it "has legal copy" do
+      legal_copy_expectations "/"
+    end
   end
 
   context "about page" do
-    it_has_clickable_tags "/about", true
-    it_has_legal_copy "/about"
+    it "has clickable tabs" do
+      clickable_footer_tabs_expectations "/about"
+    end
+
+    it "has legal copy" do
+      legal_copy_expectations "/about"
+    end
   end
 
   context "portfolio page" do
-    it_has_clickable_tags "/portfolio", true
-    it_has_legal_copy "/portfolio"
+    it "has clickable tabs" do
+      clickable_footer_tabs_expectations "/portfolio"
+    end
+
+    it "has legal copy" do
+      legal_copy_expectations "/portfolio"
+    end
   end
 
   context "connect page" do
-    it_has_clickable_tags "/connect", true
-    it_has_legal_copy "/connect"
+    it "has clickable tabs" do
+      clickable_footer_tabs_expectations "/connect"
+    end
+
+    it "has legal copy" do
+      legal_copy_expectations "/connect"
+    end
   end
 
   context "tutorials page" do
-    it_has_clickable_tags "/posts/tutorials", true
-    it_has_legal_copy "/posts/tutorials"
+    it "has clickable tabs" do
+      clickable_footer_tabs_expectations "/posts/tutorials"
+    end
+
+    it "has legal copy" do
+      legal_copy_expectations "/posts/tutorials"
+    end
   end
 
   context "blog page" do
-    it_has_clickable_tags "/posts/blog", true
-    it_has_legal_copy "/posts/blog"
+    it "has clickable tabs" do
+      clickable_footer_tabs_expectations "/posts/blog"
+    end
+
+    it "has legal copy" do
+      legal_copy_expectations "/posts/blog"
+    end
+  end
+
+  context "tagged posts page" do
+    it "has clickable tabs" do
+      clickable_footer_tabs_expectations "/posts/tagged/rspec"
+    end
+
+    it "has legal copy" do
+      legal_copy_expectations "/posts/tagged/rspec"
+    end
+  end
+
+  context "post page" do
+    it "has clickable tabs" do
+      clickable_footer_tabs_expectations "posts/#{Post.first.slug}"
+    end
+
+    it "has legal copy" do
+      legal_copy_expectations "posts/#{Post.first.slug}"
+    end
   end
 
   context "404 page" do
-    it_has_clickable_tags "/bad_request", true
-    it_has_legal_copy "/bad_request"
+    it "has clickable tabs" do
+      clickable_footer_tabs_expectations "/badrequest"
+    end
+
+    it "has legal copy" do
+      legal_copy_expectations "/badrequest"
+    end
   end
 end

@@ -1,12 +1,6 @@
 require "spec_helper"
 
 describe "home page", type: :feature do
-
-  it "has MadeByMiles title tag" do
-    visit "/"
-    expect(page).to have_title "MadeByMiles"
-  end
-
   context "splash area" do
     before :each do
       visit "/"
@@ -68,7 +62,7 @@ describe "home page", type: :feature do
 
   context "blog area" do
     before do
-      create_posts_and_tags("blog")
+      create_posts_and_tags "blog"
     end
 
     before :each do
@@ -122,7 +116,7 @@ describe "home page", type: :feature do
 
   context "tutorial area" do
     before do
-      create_posts_and_tags("tutorial")
+      create_posts_and_tags "tutorial"
     end
 
     before :each do

@@ -40,19 +40,33 @@ describe Post do
     expect(Post.recent.map(&:title)).to eq ["new", "older", "oldest"]
   end
 
-  it "gets all posts by tags" do
-    post1 = FactoryGirl.create(:post, title: "1")
-    post2 = FactoryGirl.create(:post, title: "2")
-    rspec_tag = FactoryGirl.create(:tag, name: "rspec")
-    git_tag = FactoryGirl.create(:tag, name: "git")
+  it "has to have a title" do
+    expect(Post.count).to eq 0
+    Post.create(teaser: "foo")
+    expect(Post.count).to eq 0
+    Post.create(title: "foo")
+    expect(Post.count).to eq 1
+  end
 
-    post1.tags << rspec_tag
-    post1.tags << git_tag
-    post2.tags << git_tag
+  context ".by_tag_name" do
+    it "gets posts .by_tag_name" do
+      post1 = FactoryGirl.create(:post, title: "1")
+      post2 = FactoryGirl.create(:post, title: "2")
+      rspec_tag = FactoryGirl.create(:tag, name: "rspec")
+      git_tag = FactoryGirl.create(:tag, name: "git")
 
-    expect(Post.by_tag_name("rspec").count).to eq 1
-    expect(Post.by_tag_name("rspec").first).to eq post1
-    expect(Post.by_tag_name("git").count).to eq 2
-    expect(Post.by_tag_name("git").order("title").map(&:title)).to eq ["1", "2"]
+      post1.tags << rspec_tag
+      post1.tags << git_tag
+      post2.tags << git_tag
+
+      expect(Post.by_tag_name("rspec").count).to eq 1
+      expect(Post.by_tag_name("rspec").first).to eq post1
+      expect(Post.by_tag_name("git").count).to eq 2
+      expect(Post.by_tag_name("git").order("title").map(&:title)).to eq ["1", "2"]
+    end
+
+    it "returns empty array if no posts exists" do
+      expect(Post.by_tag_name("rspec")).to eq []
+    end
   end
 end
