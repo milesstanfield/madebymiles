@@ -4,6 +4,9 @@
 .a-hover-nav-tab:hover {
   background: $active-blue;
 }
+.a-inline-link-hover:hover {
+  @include underline($blue);
+}
 .a-hover-bg-blue:hover {
   background: $blue;
   color: white;

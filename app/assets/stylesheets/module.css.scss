@@ -97,7 +97,7 @@
 
 // OTHER
 .m-underline-white {
-  border-bottom: 2px solid white;
+  @include underline(white);
 }
 .m-button-stroke-blue {
   border: 2px solid $blue;

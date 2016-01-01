@@ -14,9 +14,17 @@
 
 = render layout: "shared/section", locals: {name: "background", button_off: true} do
   .m-font-thin.m-font-medium.l-medium-bottom-margin.m-color-dark-grey
-    = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
-  .m-font-thin.m-font-medium.m-color-dark-grey
-    = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
+    = "I started out as a painter, not a great one but with a fine arts degree I learned good design principles. That helped me get a job right out of college as a graphic designer working for HLN -- A Time Warner Company."
+  .m-font-thin.m-font-medium.l-medium-bottom-margin.m-color-dark-grey
+    .l-inline= "Two years later I was immersed in specialized 3d animating software called"
+    = inline_link "Vizrt", "http://www.vizrt.com/", target: "_blank"
+    .l-inline= "which happened to require a lot of programming knowledge to make the most of it. From that point on, I was all developer."
+  .m-font-thin.m-font-medium.l-medium-bottom-margin.m-color-dark-grey
+    .l-inline= "I quickly gravitated towards front-end development because of my strong design background. Needless to say, CSS became my life. I started aimlessly making Flash and PHP websites for work without any framework or guidance and then I got solid, on-the-job Ruby on Rails training everyday from a veteren programmer. Years later, I'm definitely one of those developers preaching"
+    .l-inline.m-font-bold= "convention over configuration"
+    .l-inline= "and saying"
+    .l-inline.m-font-bold="did you write a test for that?"
+
 
 
 = render layout: "shared/section", locals: {name: "skills", button_off: true} do

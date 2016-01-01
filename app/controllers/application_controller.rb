@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper TitleHelper
   helper NavigationHelper
+  helper TagHelpers
 
   def missing_page
     render 'layouts/missing_page', status: 404
