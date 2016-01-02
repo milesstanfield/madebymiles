@@ -16,4 +16,11 @@ describe SeedHelpers, type: :helper do
     expect(Tag.count).to eq 7
     expect(Post.all.map(&:use).uniq).to eq ["blog"]
   end
+
+  it ".create_admin_user" do
+    expect(User.count).to eq 0
+    create_admin_user
+    expect(User.count).to eq 1
+    expect(User.first.email).to eq "admin@example.com"
+  end
 end

@@ -19,4 +19,8 @@ module SeedHelpers
   def create_activate_flippers(*names)
     names.each {|name| FeatureFlipper.create(name: name, active: true) }
   end
+
+  def create_admin_user
+    User.create(email: "admin@example.com", password: "password", password_confirmation: "password")
+  end
 end

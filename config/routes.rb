@@ -1,6 +1,8 @@
 require "routing_helpers"
 
 Rails.application.routes.draw do
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   extend RoutingHelpers
   root to: "home#index", as: :root
 

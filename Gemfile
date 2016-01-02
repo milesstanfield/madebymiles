@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'friendly_id', '~> 5.0.0'
 gem "haml-rails"
 gem "rails_12factor", group: :production
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
 
 group :assets do
   gem 'sprite-factory'
