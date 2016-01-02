@@ -16,7 +16,7 @@ describe "the nav", type: :feature do
       clickable_nav_tabs_expectations "/"
     end
 
-    it "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
+    xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
       hamburger_expectations "/"
     end
   end
@@ -30,7 +30,7 @@ describe "the nav", type: :feature do
       clickable_nav_tabs_expectations "/about"
     end
 
-    it "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
+    xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
       hamburger_expectations "/about"
     end
   end
@@ -44,7 +44,7 @@ describe "the nav", type: :feature do
       clickable_nav_tabs_expectations "/portfolio"
     end
 
-    it "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
+    xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
       hamburger_expectations "/portfolio"
     end
   end
@@ -58,7 +58,7 @@ describe "the nav", type: :feature do
       clickable_nav_tabs_expectations "/connect"
     end
 
-    it "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
+    xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
       hamburger_expectations "/connect"
     end
   end
@@ -72,7 +72,7 @@ describe "the nav", type: :feature do
       clickable_nav_tabs_expectations "/posts/tutorials"
     end
 
-    it "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
+    xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
       hamburger_expectations "/posts/tutorials"
     end
   end
@@ -86,7 +86,7 @@ describe "the nav", type: :feature do
       clickable_nav_tabs_expectations "/posts/blog"
     end
 
-    it "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
+    xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
       hamburger_expectations "/posts/blog"
     end
   end
@@ -100,7 +100,7 @@ describe "the nav", type: :feature do
       clickable_nav_tabs_expectations "/posts/tagged/rspec"
     end
 
-    it "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
+    xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
       hamburger_expectations "/posts/tagged/rspec"
     end
   end
@@ -114,7 +114,7 @@ describe "the nav", type: :feature do
       clickable_nav_tabs_expectations "/posts/#{Post.first.slug}"
     end
 
-    it "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
+    xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
       hamburger_expectations "/posts/#{Post.first.slug}"
     end
   end
@@ -128,7 +128,7 @@ describe "the nav", type: :feature do
       clickable_nav_tabs_expectations "/badrequest"
     end
 
-    it "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
+    xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
       hamburger_expectations "/badrequest"
     end
   end

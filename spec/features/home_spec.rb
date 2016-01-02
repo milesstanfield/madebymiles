@@ -16,8 +16,8 @@ describe "home page", type: :feature do
 
     it "has short splash info text" do
       within "[data-area='splash']" do
-        expect(page).to have_text "When I'm not writing tests, refactoring code, teaching Ruby on Rails
-          or building websites ... I'm dreaming up ways to change the world through code."
+        expect(page).to have_text "DEVELOPER DESIGNER TEACHER When I'm not writing tests, refactoring code,
+          teaching or building websites ... I'm dreaming up ways to change the world through code."
       end
     end
   end
@@ -51,11 +51,15 @@ describe "home page", type: :feature do
 
     it "has an about summary text" do
       within "[data-area='about']" do
-        expect(page).to have_text "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-          printer took a galley of type and scrambled it to make a. It has survived not only five centuries,
-          but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
-          in the 1960s with the release of Letraset sheets containing"
+        expect(page).to have_text "about Miles Stanfield Everyday I'm immersed in code. I love it. And what's even
+          better is I get paid to it. Currently, I'm the Data Manager for HLN - A Time Warner Company, in Atlanta,
+          GA. One of my main responsibilities as Data Manager is continually improving and maintaining a product I
+          developed called The HLN Social Index which is a proprietary trending algorithm that aggregates data from
+          Facebook, Twitter and Google into a real-time all-screens experience. It's promoted on TV every weekday on
+          HLN and it also became a 2016 CES Innovation Award Honoree. As the developer who built nearly all the
+          front-end for the HLNtv.com site, I also find myself from time-to-time providing support and building new
+          features but my primary role is innovating, designing and developing new products to better our company's
+          brand. more about me"
       end
     end
   end

@@ -30,4 +30,14 @@ describe "feature flipper", type: :feature do
     visit "/"
     expect(page).to have_css "[data-area='blog']"
   end
+
+  it "flips on/off testimonial section of about page" do
+    FeatureFlipper.delete_all
+    visit "/about"
+    expect(page).not_to have_css "[data-area='testimonials']"
+
+    FeatureFlipper.create(name: "testimonials", active: true)
+    visit "/about"
+    expect(page).to have_css "[data-area='testimonials']"
+  end
 end

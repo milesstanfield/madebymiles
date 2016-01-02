@@ -5,6 +5,6 @@ create_posts_and_tags "blog"
 create_posts_and_tags "tutorial"
 
 # active flippers
-create_activate_flippers "home", "about", "tutorials", "portfolio", "blog", "connect"
+create_activate_flippers "home", "about", "tutorials", "portfolio", "blog", "connect", "testimonials"
 
 puts "done"

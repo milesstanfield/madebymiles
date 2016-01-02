@@ -64,14 +64,14 @@
 
 
 
-
-= render layout: "shared/section", locals: {name: "testimonials", button_off: true} do
-  .gutters
-    - 3.times do
-      .col-1-1.col-1-3-lrg.l-medium-bottom-margin{data: {name: "testimonial"}}
-        .l-medium-padding.m-bg-light-grey.m-color-dark-grey
-          .m-font-bold.m-font-large
-            = "David Horslev"
-          .m-font-thin
-            .m-font-small.l-medium-bottom-margin= "Executive Creative Director | HLN"
-            .m-font-medium= "I left my full-time job mid-2015 to focus on the thing that makes me happiest: helping people share their passions. Despite the fact that I was working on extracurricular projects during weekends and late at night, I always thought"
+- if FeatureFlipper.active_names.include? "testimonials"
+  = render layout: "shared/section", locals: {name: "testimonials", button_off: true} do
+    .gutters
+      - 3.times do
+        .col-1-1.col-1-3-lrg.l-medium-bottom-margin{data: {name: "testimonial"}}
+          .l-medium-padding.m-bg-light-grey.m-color-dark-grey
+            .m-font-bold.m-font-large
+              = "David Horslev"
+            .m-font-thin
+              .m-font-small.l-medium-bottom-margin= "Executive Creative Director | HLN"
+              .m-font-medium= "I left my full-time job mid-2015 to focus on the thing that makes me happiest: helping people share their passions. Despite the fact that I was working on extracurricular projects during weekends and late at night, I always thought"

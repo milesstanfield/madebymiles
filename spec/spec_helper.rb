@@ -13,7 +13,7 @@ RSpec.configure do |config|
   include ResponsiveTestHelper
 
   config.before(:each, type: :feature) do
-    create_activate_flippers "home", "about", "tutorials", "portfolio", "blog", "connect"
+    create_activate_flippers "home", "about", "tutorials", "portfolio", "blog", "connect", "testimonials"
   end
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

@@ -1,15 +1,22 @@
 require "spec_helper"
 
-describe "title tag", type: :feature do
+describe "meta content", type: :feature do
   before do
     create_posts_and_tags "blog"
     create_posts_and_tags "tutorial"
   end
 
   context "home page" do
-    it "has a title tag" do
+    before :each do
       visit "/"
+    end
+
+    it "has a title tag" do
       expect(page).to have_title "MadeByMiles | home"
+    end
+
+    it "has a description meta tag" do
+      expect(page).to have_css "meta[name='description'][content='Miles Stanfield - Ruby on Rails developer, designer, teacher and blogger. Technologies include HTML5, CSS3, SASS, HAML, Ruby, Ruby on Rails, JavaScript, jQuery, Coffeescript, Postgresql, Photoshop and Illustrator.']", visible: false
     end
   end
 
