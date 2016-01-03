@@ -5,14 +5,16 @@ class PostsController < ApplicationController
   end
 
   def blog
-    @active_nav_tab = "blog"
-    @title_tag = "blog"
+    page = Page.by_name_or_create "blog"
+    @active_nav_tab = page.active_nav_tab
+    @title_tag = page.title_tag
     @posts = Post.blog.limit(25)
   end
 
   def tutorials
-    @active_nav_tab = "tutorials"
-    @title_tag = "tutorials"
+    page = Page.by_name_or_create "tutorials"
+    @active_nav_tab = page.active_nav_tab
+    @title_tag = page.title_tag
     @posts = Post.tutorials.limit(25)
   end
 

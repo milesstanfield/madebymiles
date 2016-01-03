@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   helper TagHelpers
 
   def missing_page
-    @title_tag = "404"
+    page = Page.by_name_or_create "404"
+    @title_tag = page.title_tag
     render 'layouts/missing_page', status: 404
   end
 end

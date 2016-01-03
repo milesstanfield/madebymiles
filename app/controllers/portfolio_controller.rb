@@ -1,6 +1,7 @@
 class PortfolioController < ApplicationController
   def index
-    @active_nav_tab = "portfolio"
-    @title_tag = "portfolio"
+    page = Page.by_name_or_create "portfolio"
+    @active_nav_tab = page.active_nav_tab
+    @title_tag = page.title_tag
   end
 end

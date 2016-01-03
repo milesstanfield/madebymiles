@@ -1,8 +1,12 @@
 require "spec_helper"
 
 describe HomeController, type: :controller do
-
   it "#index" do
+    page = double(:page, name: "home", active_nav_tab: "home", title_tag: "home")
+    expect(Page).to receive(:find_by_name).with(page.name).and_return(page)
+    expect(page).to receive(:active_nav_tab).and_return(page.active_nav_tab)
+    expect(page).to receive(:title_tag).and_return(page.title_tag)
+
     blog_posts = double(:blog_posts)
     expect(Post).to receive(:blog).and_return(blog_posts)
     expect(blog_posts).to receive(:recent).and_return(blog_posts)

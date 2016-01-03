@@ -12,6 +12,10 @@ describe PostsController, type: :controller do
   end
 
   it "#blog" do
+    page = double(:page, name: "blog", active_nav_tab: "blog", title_tag: "blog")
+    expect(Page).to receive(:find_by_name).with(page.name).and_return(page)
+    expect(page).to receive(:active_nav_tab).and_return(page.active_nav_tab)
+    expect(page).to receive(:title_tag).and_return(page.title_tag)
     blog_posts = double(:blog_posts)
     expect(Post).to receive(:blog).and_return(blog_posts)
     expect(blog_posts).to receive(:limit).with(25).and_return(blog_posts)
@@ -23,6 +27,10 @@ describe PostsController, type: :controller do
   end
 
   it "#tutorials" do
+    page = double(:page, name: "tutorials", active_nav_tab: "tutorials", title_tag: "tutorials")
+    expect(Page).to receive(:find_by_name).with(page.name).and_return(page)
+    expect(page).to receive(:active_nav_tab).and_return(page.active_nav_tab)
+    expect(page).to receive(:title_tag).and_return(page.title_tag)
     tutorial_posts = double(:tutorial_posts)
     expect(Post).to receive(:tutorials).and_return(tutorial_posts)
     expect(tutorial_posts).to receive(:limit).with(25).and_return(tutorial_posts)

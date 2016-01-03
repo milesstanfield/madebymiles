@@ -24,4 +24,11 @@ describe Page do
     Page.create active_nav_tab: "foo"
     expect(Page.count).to eq 0
   end
+
+  it "gets by name or creates" do
+    expect(Page.count).to eq 0
+    Page.by_name_or_create "foo"
+    expect(Page.count).to eq 1
+    expect(Page.by_name_or_create("foo").name).to eq "foo"
+  end
 end

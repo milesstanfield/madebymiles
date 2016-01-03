@@ -1,6 +1,7 @@
 class AboutController < ApplicationController
   def index
-    @active_nav_tab = "about"
-    @title_tag = "about"
+    page = Page.by_name_or_create "about"
+    @active_nav_tab = page.active_nav_tab
+    @title_tag = page.title_tag
   end
 end

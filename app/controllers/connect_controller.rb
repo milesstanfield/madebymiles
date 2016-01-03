@@ -1,6 +1,7 @@
 class ConnectController < ApplicationController
   def index
-    @active_nav_tab = "connect"
-    @title_tag = "connect"
+    page = Page.by_name_or_create "connect"
+    @active_nav_tab = page.active_nav_tab
+    @title_tag = page.title_tag
   end
 end
