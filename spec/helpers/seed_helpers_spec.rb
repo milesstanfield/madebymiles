@@ -23,10 +23,16 @@ describe SeedHelpers, type: :helper do
     expect(User.first.email).to eq "admin@example.com"
   end
 
-  xit ".create_pages_and_associated" do
+  it ".create_pages_and_associated" do
     expect(Page.count).to eq 0
-    create_pages
-    expect(Page.count).to eq 5
-    expect(Page.find_by_name("home").active_nav_tab).to eq "home"
+    expect(FeatureFlipper.count).to eq 0
+    expect(MetaTag.count).to eq 0
+
+    # create records
+    create_pages_and_associated
+
+    expect(Page.count).to eq 9
+    expect(FeatureFlipper.count).to eq 7
+    expect(MetaTag.count).to eq 9
   end
 end

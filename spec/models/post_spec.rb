@@ -44,6 +44,11 @@ describe Post do
     expect(Post.count).to eq 1
   end
 
+  it ".path" do
+    post = FactoryGirl.create(:post, title: "foo")
+    expect(post.path).to eq "/posts/#{post.slug}"
+  end
+
   context ".by_tag_name" do
     it "gets posts .by_tag_name" do
       post1 = FactoryGirl.create(:post, title: "1")

@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders, :history]
+  scope :blog, -> { where use: "blog" }
+  scope :tutorials, -> { where use: "tutorial" }
   has_and_belongs_to_many :tags
   validates :title, presence: true
 
@@ -9,15 +11,11 @@ class Post < ActiveRecord::Base
     "#{date}/#{super}"
   end
 
+  def path
+    "/posts/#{slug}"
+  end
+
   class << self
-    def blog
-      where(use: "blog")
-    end
-
-    def tutorials
-      where(use: "tutorial")
-    end
-
     def recent
       order("created_at").reverse_order
     end

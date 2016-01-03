@@ -34,7 +34,7 @@ module SeedHelpers
     Page.create name: "404", title_tag: "404"
 
     Page.all.each do |page|
-      page.meta_tags << MetaTag.create(type: "name", type_value: "description", content: "this is the description of this page")
+      page.meta_tags << MetaTag.create(attr: "name", attr_value: "description", content: "this is the description of this page")
       FeatureFlipper.all.each do |feature_flipper|
         page.feature_flippers << feature_flipper
       end

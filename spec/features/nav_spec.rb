@@ -107,15 +107,15 @@ describe "the nav", type: :feature do
 
   context "post page" do
     it "has a clickable logo" do
-      clickable_logo_expectations "/posts/#{Post.first.slug}"
+      clickable_logo_expectations Post.first.path
     end
 
     it "has clickable tabs" do
-      clickable_nav_tabs_expectations "/posts/#{Post.first.slug}"
+      clickable_nav_tabs_expectations Post.first.path
     end
 
     xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
-      hamburger_expectations "/posts/#{Post.first.slug}"
+      hamburger_expectations Post.first.path
     end
   end
 

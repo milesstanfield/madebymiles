@@ -1,3 +1,3 @@
 class MetaTag < ActiveRecord::Base
-  belongs_to :pages
+  belongs_to :page
 end
