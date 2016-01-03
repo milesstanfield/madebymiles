@@ -17,16 +17,6 @@ module NavFooterTestHelper
     end
   end
 
-  def clickable_footer_tabs_expectations(path)
-    visit path
-    footer_tab_texts.each do |tab_text|
-      within "footer" do
-        click_link tab_text
-      end
-      next_page_expectations tab_text
-    end
-  end
-
   def legal_copy_expectations(path)
     visit path
     within "footer" do

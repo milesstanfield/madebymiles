@@ -1,7 +1,7 @@
 %footer.m-bg-dark-grey
   .m-font-small.l-large-vertical-padding.l-text-center
     .l-medium-bottom-margin
-      - footer_tabs(@active_nav_tab).each do |tab|
+      - nav_tabs(@active_nav_tab).each do |tab|
         - if FeatureFlipper.active_names.include? tab.text
           = link_to tab.path, class: "l-nav-tab-padding l-inline-block a-hover-opacity" do
             %div{class: tab.classes}

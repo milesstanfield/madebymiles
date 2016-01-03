@@ -9,7 +9,7 @@ describe "the footer", type: :feature do
 
   context "home page" do
     it "has clickable tabs" do
-      clickable_footer_tabs_expectations "/"
+      clickable_nav_tabs_expectations "/"
     end
 
     it "has legal copy" do
@@ -19,7 +19,7 @@ describe "the footer", type: :feature do
 
   context "about page" do
     it "has clickable tabs" do
-      clickable_footer_tabs_expectations "/about"
+      clickable_nav_tabs_expectations "/about"
     end
 
     it "has legal copy" do
@@ -29,7 +29,7 @@ describe "the footer", type: :feature do
 
   context "portfolio page" do
     it "has clickable tabs" do
-      clickable_footer_tabs_expectations "/portfolio"
+      clickable_nav_tabs_expectations "/portfolio"
     end
 
     it "has legal copy" do
@@ -39,7 +39,7 @@ describe "the footer", type: :feature do
 
   context "connect page" do
     it "has clickable tabs" do
-      clickable_footer_tabs_expectations "/connect"
+      clickable_nav_tabs_expectations "/connect"
     end
 
     it "has legal copy" do
@@ -49,7 +49,7 @@ describe "the footer", type: :feature do
 
   context "tutorials page" do
     it "has clickable tabs" do
-      clickable_footer_tabs_expectations "/posts/tutorials"
+      clickable_nav_tabs_expectations "/posts/tutorials"
     end
 
     it "has legal copy" do
@@ -59,7 +59,7 @@ describe "the footer", type: :feature do
 
   context "blog page" do
     it "has clickable tabs" do
-      clickable_footer_tabs_expectations "/posts/blog"
+      clickable_nav_tabs_expectations "/posts/blog"
     end
 
     it "has legal copy" do
@@ -69,7 +69,7 @@ describe "the footer", type: :feature do
 
   context "tagged posts page" do
     it "has clickable tabs" do
-      clickable_footer_tabs_expectations "/posts/tagged/rspec"
+      clickable_nav_tabs_expectations "/posts/tagged/rspec"
     end
 
     it "has legal copy" do
@@ -79,7 +79,7 @@ describe "the footer", type: :feature do
 
   context "post page" do
     it "has clickable tabs" do
-      clickable_footer_tabs_expectations "posts/#{Post.first.slug}"
+      clickable_nav_tabs_expectations "posts/#{Post.first.slug}"
     end
 
     it "has legal copy" do
@@ -89,7 +89,7 @@ describe "the footer", type: :feature do
 
   context "404 page" do
     it "has clickable tabs" do
-      clickable_footer_tabs_expectations "/badrequest"
+      clickable_nav_tabs_expectations "/badrequest"
     end
 
     it "has legal copy" do
