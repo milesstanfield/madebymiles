@@ -2,11 +2,11 @@ require "spec_helper"
 
 describe FeatureFlipper do
   it "has string attributes" do
-    ["name"].each do |attribute|
-      record = described_class.new
-      record.send("#{attribute}=", "some string")
-      expect(record.send("#{attribute}")).to eq "some string"
-    end
+    string_attributes_expectations "name"
+  end
+
+  it "has numerical attributes" do
+    numerical_attributes_expectations "page_id"
   end
 
   it "has boolean attributes" do

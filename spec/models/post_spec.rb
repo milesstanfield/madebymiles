@@ -2,11 +2,7 @@ require "spec_helper"
 
 describe Post do
   it "has string attributes" do
-    ["title", "use", "body", "slug", "teaser"].each do |attribute|
-      record = described_class.new
-      record.send("#{attribute}=", "some string")
-      expect(record.send("#{attribute}")).to eq "some string"
-    end
+    string_attributes_expectations "title", "use", "body", "slug", "teaser"
   end
 
   it "has many tags" do

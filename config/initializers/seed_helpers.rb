@@ -12,15 +12,38 @@ module SeedHelpers
     end
   end
 
-  def tags
-    ["rails", "rspec", "git", "heroku", "bash", "haml", "scss"]
-  end
-
-  def create_activate_flippers(*names)
+  def create_activate_flippers
+    names = ["home", "about", "tutorials", "portfolio", "blog", "connect", "testimonials"]
     names.each {|name| FeatureFlipper.create(name: name, active: true) }
   end
 
   def create_admin_user
     User.create(email: "admin@example.com", password: "password", password_confirmation: "password")
+  end
+
+  def create_pages_and_associated
+    create_activate_flippers
+    Page.create name: "home", active_nav_tab: "home", title_tag: "home"
+    Page.create name: "about", active_nav_tab: "about", title_tag: "about"
+    Page.create name: "portfolio", active_nav_tab: "portfolio", title_tag: "portfolio"
+    Page.create name: "connect", active_nav_tab: "connect", title_tag: "connect"
+    Page.create name: "tagged"
+    Page.create name: "blog", active_nav_tab: "blog", title_tag: "blog"
+    Page.create name: "tutorials", active_nav_tab: "tutorials", title_tag: "tutorials"
+    Page.create name: "post"
+    Page.create name: "404", title_tag: "404"
+
+    Page.all.each do |page|
+      page.meta_tags << MetaTag.create(type: "name", type_value: "description", content: "this is the description of this page")
+      FeatureFlipper.all.each do |feature_flipper|
+        page.feature_flippers << feature_flipper
+      end
+    end
+  end
+
+  private
+
+  def tags
+    ["rails", "rspec", "git", "heroku", "bash", "haml", "scss"]
   end
 end

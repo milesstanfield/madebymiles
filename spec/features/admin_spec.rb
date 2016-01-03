@@ -32,7 +32,7 @@ describe "admin", type: :feature do
       login
     end
 
-    it "has a post tab in header" do
+    it "has a posts tab in header" do
       within "#header" do
         expect(page).to have_link "Posts"
       end
@@ -44,9 +44,33 @@ describe "admin", type: :feature do
       login
     end
 
-    it "has a tab tab in header" do
+    it "has a tags tab in header" do
       within "#header" do
         expect(page).to have_link "Tags"
+      end
+    end
+  end
+
+  context "pages" do
+    before do
+      login
+    end
+
+    it "has a pages tab in header" do
+      within "#header" do
+        expect(page).to have_link "Pages"
+      end
+    end
+  end
+
+  context "meta tags" do
+    before do
+      login
+    end
+
+    it "has a meta tags tab in header" do
+      within "#header" do
+        expect(page).to have_link "Meta Tags"
       end
     end
   end

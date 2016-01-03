@@ -18,4 +18,20 @@ module CapybaraHelpers
   def page!
     save_and_open_page
   end
+
+  def string_attributes_expectations(*attributes)
+    attributes.each do |attribute|
+      record = described_class.new
+      record.send("#{attribute}=", "some string")
+      expect(record.send("#{attribute}")).to eq "some string"
+    end
+  end
+
+  def numerical_attributes_expectations(*attributes)
+    attributes.each do |attribute|
+      record = described_class.new
+      record.send("#{attribute}=", 123)
+      expect(record.send("#{attribute}")).to eq 123
+    end
+  end
 end

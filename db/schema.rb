@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102041644) do
+ActiveRecord::Schema.define(version: 20160103002520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160102041644) do
   create_table "feature_flippers", force: :cascade do |t|
     t.boolean "active"
     t.string  "name"
+    t.integer "page_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -48,6 +49,19 @@ ActiveRecord::Schema.define(version: 20160102041644) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "meta_tags", force: :cascade do |t|
+    t.string  "type"
+    t.text    "content"
+    t.integer "page_id"
+    t.string  "type_value"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "name"
+    t.string "title_tag"
+    t.string "active_nav_tab"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
