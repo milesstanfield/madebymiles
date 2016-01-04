@@ -23,5 +23,9 @@ class Post < ActiveRecord::Base
     def by_tag_name(tag_name)
       includes(:tags).where(tags: { name: tag_name })
     end
+
+    def available_uses
+      ["blog", "tutorials"]
+    end
   end
 end

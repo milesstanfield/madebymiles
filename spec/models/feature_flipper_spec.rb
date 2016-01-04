@@ -29,4 +29,8 @@ describe FeatureFlipper do
     FeatureFlipper.create(name: "foo", active: true)
     expect(FeatureFlipper.count).to eq 1
   end
+
+  it ".available_names" do
+    expect(FeatureFlipper.available_names).to eq ["home", "about", "portfolio", "connect", "tutorials", "blog", "testimonials"]
+  end
 end

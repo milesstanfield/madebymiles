@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103010940) do
+ActiveRecord::Schema.define(version: 20160103064851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,11 +51,18 @@ ActiveRecord::Schema.define(version: 20160103010940) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "meta_tags", force: :cascade do |t|
-    t.string  "attr"
-    t.text    "content"
-    t.integer "page_id"
-    t.string  "attr_value"
+    t.string "attr"
+    t.text   "content"
+    t.string "attr_value"
   end
+
+  create_table "meta_tags_pages", id: false, force: :cascade do |t|
+    t.integer "meta_tag_id"
+    t.integer "page_id"
+  end
+
+  add_index "meta_tags_pages", ["meta_tag_id"], name: "index_meta_tags_pages_on_meta_tag_id", using: :btree
+  add_index "meta_tags_pages", ["page_id"], name: "index_meta_tags_pages_on_page_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
     t.string "name"

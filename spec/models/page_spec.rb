@@ -31,4 +31,8 @@ describe Page do
     expect(Page.count).to eq 1
     expect(Page.by_name_or_create("foo").name).to eq "foo"
   end
+
+  it ".available_names" do
+    expect(Page.available_names).to eq ["home", "about", "tutorials", "portfolio", "blog", "connect", "404"]
+  end
 end

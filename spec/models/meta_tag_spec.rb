@@ -5,7 +5,16 @@ describe MetaTag do
     string_attributes_expectations "attr", "attr_value", "content"
   end
 
-  it "has numerical attributes" do
-    numerical_attributes_expectations "page_id"
+  it "has many pages" do
+    expect(MetaTag.create(attr: "foo").pages).to eq []
+  end
+
+  it "must have attr, attr_value and content" do
+    MetaTag.create attr: "name"
+    expect(MetaTag.count).to eq 0
+    MetaTag.create attr: "name", attr_value: "miles"
+    expect(MetaTag.count).to eq 0
+    MetaTag.create attr: "name", attr_value: "miles", content: "foo"
+    expect(MetaTag.count).to eq 1
   end
 end

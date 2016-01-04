@@ -70,4 +70,8 @@ describe Post do
       expect(Post.by_tag_name("rspec")).to eq []
     end
   end
+
+  it ".available_uses" do
+    expect(Post.available_uses).to eq ["blog", "tutorials"]
+  end
 end

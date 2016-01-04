@@ -17,7 +17,7 @@ describe "meta content", type: :feature do
     end
 
     it "has a description meta tag" do
-      expect(page).to have_css "meta[name='description'][content='Miles Stanfield - Ruby on Rails developer, designer, teacher and blogger. Technologies include HTML5, CSS3, SASS, HAML, Ruby, Ruby on Rails, JavaScript, jQuery, Coffeescript, Postgresql, Photoshop and Illustrator.']", visible: false
+      expect(page).to have_css "meta[name='description'][content='this is the description of this page']", visible: false
     end
   end
 

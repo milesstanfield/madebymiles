@@ -8,14 +8,16 @@ describe PostsController, type: :controller do
     get :tagged, tag_name: "rspec"
     expect(assigns(:posts)).to eq(posts_by_tag)
     expect(assigns(:title_tag)).to eq "rspec posts"
+    expect(assigns(:meta_tags)).to eq []
     expect(response).to render_template :tagged
   end
 
   it "#blog" do
-    page = double(:page, name: "blog", active_nav_tab: "blog", title_tag: "blog")
+    page = double(:page, name: "blog", active_nav_tab: "blog", title_tag: "blog", meta_tags: [])
     expect(Page).to receive(:find_by_name).with(page.name).and_return(page)
     expect(page).to receive(:active_nav_tab).and_return(page.active_nav_tab)
     expect(page).to receive(:title_tag).and_return(page.title_tag)
+    expect(page).to receive(:meta_tags).and_return(page.meta_tags)
     blog_posts = double(:blog_posts)
     expect(Post).to receive(:blog).and_return(blog_posts)
     expect(blog_posts).to receive(:limit).with(25).and_return(blog_posts)
@@ -23,14 +25,16 @@ describe PostsController, type: :controller do
     expect(assigns(:active_nav_tab)).to eq "blog"
     expect(assigns(:posts)).to eq blog_posts
     expect(assigns(:title_tag)).to eq "blog"
+    expect(assigns(:meta_tags)).to eq []
     expect(response).to render_template :blog
   end
 
   it "#tutorials" do
-    page = double(:page, name: "tutorials", active_nav_tab: "tutorials", title_tag: "tutorials")
+    page = double(:page, name: "tutorials", active_nav_tab: "tutorials", title_tag: "tutorials", meta_tags: [])
     expect(Page).to receive(:find_by_name).with(page.name).and_return(page)
     expect(page).to receive(:active_nav_tab).and_return(page.active_nav_tab)
     expect(page).to receive(:title_tag).and_return(page.title_tag)
+    expect(page).to receive(:meta_tags).and_return(page.meta_tags)
     tutorial_posts = double(:tutorial_posts)
     expect(Post).to receive(:tutorials).and_return(tutorial_posts)
     expect(tutorial_posts).to receive(:limit).with(25).and_return(tutorial_posts)
@@ -38,6 +42,7 @@ describe PostsController, type: :controller do
     expect(assigns(:active_nav_tab)).to eq "tutorials"
     expect(assigns(:posts)).to eq tutorial_posts
     expect(assigns(:title_tag)).to eq "tutorials"
+    expect(assigns(:meta_tags)).to eq []
     expect(response).to render_template :tutorials
   end
 
@@ -49,6 +54,7 @@ describe PostsController, type: :controller do
     expect(assigns(:active_nav_tab)).to eq "blog"
     expect(assigns(:post)).to eq post
     expect(assigns(:title_tag)).to eq "How to do foobar"
+    expect(assigns(:meta_tags)).to eq []
     expect(response).to render_template :show
   end
 end
