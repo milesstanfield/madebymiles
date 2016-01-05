@@ -5,6 +5,9 @@ ActiveAdmin.register Page do
   index do
     selectable_column
     column :name
+    column :active? do |page|
+      FeatureFlipper.active_names.include?(page.name) ? "yes" : "no"
+    end
     actions
   end
 

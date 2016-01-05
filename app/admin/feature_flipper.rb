@@ -9,4 +9,11 @@ ActiveAdmin.register FeatureFlipper do
     end
     f.actions
   end
+
+  show do
+    attributes_table do
+      row :name
+      row :active
+    end
+  end
 end

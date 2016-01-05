@@ -4,7 +4,7 @@ describe SeedHelpers, type: :helper do
   it ".create_activate_flippers" do
     expect(FeatureFlipper.count).to eq 0
     create_activate_flippers
-    expect(FeatureFlipper.count).to eq 7
+    expect(FeatureFlipper.count).to eq 8
   end
 
   it ".create_posts_and_tags(use)" do
@@ -32,7 +32,7 @@ describe SeedHelpers, type: :helper do
     create_pages_and_associated
 
     expect(Page.count).to eq 9
-    expect(FeatureFlipper.count).to eq 7
+    expect(FeatureFlipper.count).to eq 8
     expect(MetaTag.count).to eq 9
   end
 end

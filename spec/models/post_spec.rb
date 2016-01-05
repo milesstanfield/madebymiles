@@ -11,37 +11,33 @@ describe Post do
   end
 
   it "creates friendly id slug from title with date prepended" do
-    post = Post.create(title: "This is my #title")
+    post = FactoryGirl.create :post, title: "This is my #title"
     expect(post.slug). to eq "#{slug_date_portion1}/this-is-my-title"
   end
 
   it "gets only blog posts" do
-    blog_post = Post.create(title: "This is my blog post", use: "blog")
-    tutorial_post = Post.create(title: "This is my howto post", use: "tutorial")
+    blog_post = FactoryGirl.create(:post, title: "This is my blog post", use: "blog")
+    tutorial_post = FactoryGirl.create(:post, title: "This is my howto post", use: "tutorial")
     expect(Post.blog.count).to eq 1
     expect(Post.blog.first.title).to eq "This is my blog post"
   end
 
   it "gets only tutorial posts" do
-    tutorial_post = Post.create(title: "This is my tutorial post", use: "tutorial")
-    blog_post = Post.create(title: "This is my blog post", use: "blog")
+    tutorial_post = FactoryGirl.create :post, title: "This is my tutorial post", use: "tutorial"
+    blog_post = FactoryGirl.create :post, title: "This is my blog post", use: "blog"
     expect(Post.tutorials.count).to eq 1
     expect(Post.tutorials.first.title).to eq "This is my tutorial post"
   end
 
   it "sorts posts and returns them in recent (created_at) order" do
-    Post.create(title: "oldest", created_at: Time.now - 10.minutes)
-    Post.create(title: "new", created_at: Time.now)
-    Post.create(title: "older", created_at: Time.now - 5.minutes)
+    FactoryGirl.create :post, title: "oldest", created_at: (Time.now - 10.minutes)
+    FactoryGirl.create :post, title: "new", created_at: Time.now
+    FactoryGirl.create :post, title: "older", created_at: (Time.now - 5.minutes)
     expect(Post.recent.map(&:title)).to eq ["new", "older", "oldest"]
   end
 
-  it "has to have a title" do
-    expect(Post.count).to eq 0
-    Post.create(teaser: "foo")
-    expect(Post.count).to eq 0
-    Post.create(title: "foo")
-    expect(Post.count).to eq 1
+  it "must have a title" do
+    expect { FactoryGirl.create(:post, title: nil) }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it ".path" do
@@ -73,5 +69,9 @@ describe Post do
 
   it ".available_uses" do
     expect(Post.available_uses).to eq ["blog", "tutorials"]
+  end
+
+  it "must have a use" do
+    expect { FactoryGirl.create(:post, use: nil) }.to raise_error(ActiveRecord::RecordInvalid)
   end
 end

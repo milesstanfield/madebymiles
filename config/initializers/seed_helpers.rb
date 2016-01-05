@@ -13,8 +13,7 @@ module SeedHelpers
   end
 
   def create_activate_flippers
-    names = ["home", "about", "tutorials", "portfolio", "blog", "connect", "testimonials"]
-    names.each {|name| FeatureFlipper.create(name: name, active: true) }
+    FeatureFlipper.available_names.each {|name| FeatureFlipper.create(name: name, active: true) }
   end
 
   def create_admin_user
