@@ -26,7 +26,7 @@ class Post < ActiveRecord::Base
     end
 
     def available_uses
-      ["blog", "tutorials"]
+      ["blog", "tutorial"]
     end
   end
 end

@@ -68,7 +68,7 @@ describe Post do
   end
 
   it ".available_uses" do
-    expect(Post.available_uses).to eq ["blog", "tutorials"]
+    expect(Post.available_uses).to eq ["blog", "tutorial"]
   end
 
   it "must have a use" do
