@@ -1,7 +1,11 @@
 @import "mixins";
 
+// layouts
 .l-hide {
   display: none;
+}
+.l-block {
+  display: block;
 }
 .l-inline {
   display: inline;
@@ -14,6 +18,12 @@
 }
 .l-absolute {
   position: absolute;
+}
+.l-fixed {
+  position: fixed;
+}
+.l-left {
+  left: 0;
 }
 .l-right {
   right: 0;
@@ -36,8 +46,17 @@
 .l-v-align-middle {
   vertical-align: middle;
 }
+.l-v-align-bottom {
+  vertical-align: bottom;
+}
+.l-text-left {
+  text-align: left;
+}
 .l-text-center {
   text-align: center;
+}
+.l-text-right {
+  text-align: right;
 }
 .l-horizontal-center {
   margin: 0 auto;
@@ -53,14 +72,17 @@
   left: 50%;
   @include prefixes(transform, translate(-50%, -50%));
 }
+.l-no-wrap {
+  white-space: nowrap;
+}
+.l-wrap {
+  white-space: normal;
+}
+
+
+// modules
 .m-overflow-hidden {
   overflow: hidden;
-}
-.m-debug {
-  outline: 2px dashed pink;
-}
-.l-pad-fix {
-  box-sizing: border-box;
 }
 .m-clickable {
   cursor: pointer;
@@ -68,48 +90,57 @@
 .m-circle {
   border-radius: 100%;
 }
+.m-bg-black {
+  background: black;
+}
+.m-bg-white {
+  background: white;
+}
+.m-color-white {
+  color: white;
+}
+.m-color-black {
+  color: black;
+}
 
 
-// LESS COMMON
-.l-z-index-5 {
-  z-index: 5;
-}
-.l-no-wrap {
-  white-space: nowrap;
-}
-.l-wrap {
-  white-space: normal;
-}
-.l-square-parent, .l-16-9-parent {
-  width: 100%;
-}
-.l-square-parent {
-  padding-bottom: 100%;
-}
-.l-16-9-parent {
-  padding-bottom: 56.25%;
-}
-.l-sized-child {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.l-square-parent.mobile-unconfined {
-  @include respond-to(0, $med) {
-    padding-bottom: initial;
-  }
-  .l-sized-child {
-    @include respond-to(0, $med) {
-      position: initial;
-    }
-  }
+// show and hide
+.l-hide-on-desktop {
+  @include hide-on($lrg);
 }
 .l-hide-on-tablet {
   @include hide-on($med);
 }
 .l-hide-on-mobile {
   @include hide-on(0px, $med);
+}
+
+
+//tables
+
+
+//FLOATS
+.l-float-right {
+  float: right;
+}
+.l-float-left {
+  float: left;
+}
+.l-clear-both {
+  clear: both;
+}
+.l-clear-left {
+  clear: left;
+}
+.l-clear-right {
+  clear: right;
+}
+
+
+// LESS COMMON
+.m-debug {
+  outline: 2px dashed pink;
+}
+.l-pad-fix {
+  box-sizing: border-box;
 }

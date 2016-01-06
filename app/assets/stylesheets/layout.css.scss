@@ -8,6 +8,36 @@
 .l-max-reading-width {
   max-width: 800px;
 }
+.l-z-index-5 {
+  z-index: 5;
+}
+.l-square-parent, .l-16-9-parent {
+  width: 100%;
+}
+.l-square-parent {
+  padding-bottom: 100%;
+}
+.l-16-9-parent {
+  padding-bottom: 56.25%;
+}
+.l-sized-child {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.l-square-parent.mobile-unconfined {
+  @include respond-to(0, $med) {
+    padding-bottom: initial;
+  }
+  .l-sized-child {
+    @include respond-to(0, $med) {
+      position: initial;
+    }
+  }
+}
 
 
 // MARGIN
