@@ -1,5 +1,8 @@
 @import "mixins";
 
+// Roles.css
+
+
 // layouts
 .l-hide {
   display: none;
@@ -64,13 +67,21 @@
 .l-absolute-vertical-center {
   position: absolute;
   top: 50%;
-  @include prefixes(transform, translateY(-50%));
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .l-absolute-center {
   position: absolute;
   top: 50%;
   left: 50%;
-  @include prefixes(transform, translate(-50%, -50%));
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .l-no-wrap {
   white-space: nowrap;
@@ -106,13 +117,19 @@
 
 // show and hide
 .l-hide-on-desktop {
-  @include hide-on($lrg);
+  @media only screen and (min-width: $lrg) {
+    display: none;
+  }
 }
 .l-hide-on-tablet {
-  @include hide-on($med);
+  @media only screen and (min-width: $med) and (max-width: $lrg) {
+    display: none;
+  }
 }
 .l-hide-on-mobile {
-  @include hide-on(0px, $med);
+  @media only screen and (max-width: $med) {
+    display: none;
+  }
 }
 
 
