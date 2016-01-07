@@ -37,9 +37,10 @@
     = render "shared/post_cards", posts: @tutorial_posts
 
 
-.m-bg-dark-blue
-  = render layout: "shared/section", locals: {name: "portfolio", path: "/portfolio", button_text: "more of my portfolio", color: "white", line_off: true} do
-    "foo"
+- if FeatureFlipper.active_names.include? "portfolio"
+  .m-bg-dark-blue
+    = render layout: "shared/section", locals: {name: "portfolio", path: "/portfolio", button_text: "more of my portfolio", color: "white", line_off: true} do
+      "foo"
 
 
 - if FeatureFlipper.active_names.include? "blog"

@@ -1,6 +1,7 @@
 ActiveAdmin.register Page do
   permit_params :name, :active_nav_tab, :title_tag, meta_tag_ids: []
   before_filter :skip_sidebar!, only: :index
+  config.sort_order = "name_asc"
 
   index do
     selectable_column
@@ -17,7 +18,7 @@ ActiveAdmin.register Page do
 
   form do |f|
     f.inputs do
-      f.input :name, as: :select, collection: Page.available_names
+      f.input :name, as: :select, collection: Page.available_names.sort
       f.input :active_nav_tab
       f.input :title_tag
     end
