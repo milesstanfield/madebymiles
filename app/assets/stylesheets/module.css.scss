@@ -96,6 +96,9 @@
 .m-button-stroke-blue {
   border: 2px solid $blue;
 }
+.m-button-stroke-white {
+  border: 2px solid white;
+}
 .m-circle-stroke-dark-blue {
   @include circle-stroke($dark-blue)
 }

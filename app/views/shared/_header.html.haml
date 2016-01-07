@@ -1,4 +1,6 @@
-- color_class ||= "m-color-dark-grey"
+- color ||= nil
+- color_class = color ? "m-color-white" : "m-color-dark-grey"
+
 .m-font-larger.m-font-thin.l-medium-bottom-margin.l-text-center{class: color_class}
   .cog_orange.l-inline-block.l-relative
   .l-inline-block="#{text}"

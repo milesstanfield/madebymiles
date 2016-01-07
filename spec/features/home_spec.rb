@@ -36,7 +36,7 @@ describe "home page", type: :feature do
 
     it "more button" do
       within "[data-area='about']" do
-        expect(page).to have_text "more"
+        expect(page).to have_text "more about me"
         find("a[href='/about']").click
       end
       expect(page).to have_text "A Ruby-on-Rails Developer with a background in design, living/working in Atlanta, GA"
@@ -51,15 +51,14 @@ describe "home page", type: :feature do
 
     it "has an about summary text" do
       within "[data-area='about']" do
-        expect(page).to have_text "about Miles Stanfield Everyday I'm immersed in code. I love it. And what's even
-          better is I get paid to it. Currently, I'm the Data Manager for HLN - A Time Warner Company, in Atlanta,
-          GA. One of my main responsibilities as Data Manager is continually improving and maintaining a product I
-          developed called The HLN Social Index which is a proprietary trending algorithm that aggregates data from
-          Facebook, Twitter and Google into a real-time all-screens experience. It's promoted on TV every weekday on
-          HLN and it also became a 2016 CES Innovation Award Honoree. As the developer who built nearly all the
-          front-end for the HLNtv.com site, I also find myself from time-to-time providing support and building new
-          features but my primary role is innovating, designing and developing new products to better our company's
-          brand. more about me"
+        expect(page).to have_text "about Miles Stanfield Everyday I'm immersed in code. I love it. And what's even better
+          is I get paid to it. Currently, I'm the Data Manager for HLN - A Time Warner Company, in Atlanta, GA. One of my
+          main responsibilities as Data Manager is continually improving and maintaining a product I developed called The
+          HLN Social Index which is a proprietary trending algorithm that aggregates data from Facebook, Twitter and Google
+          into a real-time all-screens experience. It's promoted on TV every weekday on HLN and it also won a 2016 CES
+          Innovation Award. As the developer who built nearly all the front-end for the HLNtv.com site, I also find myself
+          from time-to-time providing support on that project but my primary role is to continue innovating, designing
+          and developing new products to better our company's brand. more about me"
       end
     end
   end
@@ -82,7 +81,7 @@ describe "home page", type: :feature do
 
     it "more button" do
       within "[data-area='blog']" do
-        expect(page).to have_text "more"
+        expect(page).to have_text "more blog posts"
         find("a[href='/posts/blog']").click
       end
       expect(page).to have_text "Why you should use rails"
@@ -136,7 +135,7 @@ describe "home page", type: :feature do
 
     it "more button" do
       within "[data-area='tutorials']" do
-        expect(page).to have_text "more"
+        expect(page).to have_text "more tutorials"
         find("a[href='/posts/tutorials']").click
       end
       expect(page).to have_text "Why you should use rails"
@@ -169,6 +168,27 @@ describe "home page", type: :feature do
         end
       end
       expect(page).to have_text "Why you should use rails"
+    end
+  end
+
+  context "portfolio area" do
+    before :each do
+      visit "/"
+    end
+
+    it "has a header" do
+      within "[data-area='portfolio']" do
+        expect(page).to have_text "portfolio"
+        expect(page).to have_css ".cog_orange"
+      end
+    end
+
+    it "more button" do
+      within "[data-area='portfolio']" do
+        expect(page).to have_text "more of my portfolio"
+        find("a[href='/portfolio']").click
+      end
+      expect(page).to have_text "portfolio page"
     end
   end
 

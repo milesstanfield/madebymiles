@@ -23,18 +23,23 @@
           .m-font-medium.m-font-thin.m-color-dark-grey
             .l-inline= "Everyday I'm immersed in code. I love it. And what's even better is I get paid to it. Currently, I'm the Data Manager for HLN - A Time Warner Company, in Atlanta, GA. One of my main responsibilities as Data Manager is continually improving and maintaining a product I developed called"
             = inline_link "The HLN Social Index", "http://www.hlntv.com/hln-index/embed", target: "_blank"
-            .l-inline="which is a proprietary trending algorithm that aggregates data from Facebook, Twitter and Google into a real-time all-screens experience. It's promoted on TV every weekday on HLN and it also became a"
-            = inline_link "2016 CES Innovation Award Honoree.", "http://www.cesweb.org/Events-Programs/Innovation", target: "_blank"
+            .l-inline="which is a proprietary trending algorithm that aggregates data from Facebook, Twitter and Google into a real-time all-screens experience. It's promoted on TV every weekday on HLN and it also won a"
+            = inline_link "2016 CES Innovation Award.", "http://www.cesweb.org/Events-Programs/Innovation", target: "_blank"
             %br
             %br
             .l-inline="As the developer who built nearly all the front-end for the"
             = inline_link "HLNtv.com", "http://www.hlntv.com/", target: "_blank"
-            .l-inline="site, I also find myself from time-to-time providing support and building new features but my primary role is innovating, designing and developing new products to better our company's brand."
+            .l-inline="site, I also find myself from time-to-time providing support on that project but my primary role is to continue innovating, designing and developing new products to better our company's brand."
 
 
 - if FeatureFlipper.active_names.include? "tutorials"
   = render layout: "shared/section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials"} do
     = render "shared/post_cards", posts: @tutorial_posts
+
+
+.m-bg-dark-blue
+  = render layout: "shared/section", locals: {name: "portfolio", path: "/portfolio", button_text: "more of my portfolio", color: "white", line_off: true} do
+    "foo"
 
 
 - if FeatureFlipper.active_names.include? "blog"

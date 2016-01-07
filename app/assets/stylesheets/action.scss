@@ -15,6 +15,9 @@
   .a-hover-blue:hover {
     color: $blue;
   }
+  .m-button-stroke-white:hover {
+    border: 2px solid $blue;
+  }
   .a-hover-circle-blue:hover, .a-hover-circle-white:hover {
     .m-circle-stroke-dark-blue, .m-circle-stroke-white {
       @include circle-stroke($blue);

@@ -115,7 +115,7 @@
 }
 
 
-// show and hide
+// hides
 .l-hide-on-desktop {
   @media only screen and (min-width: $lrg) {
     display: none;
@@ -131,6 +131,7 @@
     display: none;
   }
 }
+
 
 
 //tables
