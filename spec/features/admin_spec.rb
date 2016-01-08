@@ -32,10 +32,19 @@ describe "admin", type: :feature do
       login
     end
 
-    it "has a posts tab in header" do
-      within "#header" do
-        expect(page).to have_link "Posts"
-      end
+    it "creates a post with redcarpet/markdown format on body attribute" do
+      click_link "Posts"
+      click_link "New Post"
+      fill_in "Title", with: "How to write an rspec controller test"
+      fill_in "Teaser", with: "How to write a controller test"
+      select("tutorial", from: "Use")
+      fill_in "Body", with: "first you do this \n > with quote"
+      click_button "Create Post"
+      expect(page).to have_content "successfully created"
+      expect(Post.count).to eq 1
+
+      visit Post.first.path
+      expect(page).to have_content "foo"
     end
   end
 
