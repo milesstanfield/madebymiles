@@ -11,7 +11,7 @@ describe "admin", type: :feature do
       fill_in "user_email", with: "admin@example.com"
       fill_in "user_password", with: "password"
       click_button "Login"
-      expect(page).to have_content "Posts"
+      expect(page).to have_text "Posts"
     end
   end
 
@@ -32,9 +32,22 @@ describe "admin", type: :feature do
       login
     end
 
-    it "has a posts tab in header" do
-      within "#header" do
-        expect(page).to have_link "Posts"
+    it "creates a post with redcarpet/markdown format on body attribute" do
+      click_link "Posts"
+      click_link "New Post"
+      fill_in "Title", with: "How to write an rspec controller test"
+      fill_in "Teaser", with: "How to write a controller test"
+      select("tutorial", from: "Use")
+      fill_in "Body", with: "first you do this \n > with quote"
+      click_button "Create Post"
+      expect(page).to have_text "successfully created"
+      expect(Post.count).to eq 1
+
+      visit Post.first.path
+      within "blockquote" do
+        within "p" do
+          expect(page).to have_text "with quote"
+        end
       end
     end
   end

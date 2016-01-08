@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
   has_and_belongs_to_many :tags
   validates :title, presence: true
   validates :use, presence: true
+  validates :body, presence: true
 
   def normalize_friendly_id(string)
     date = (created_at || Time.now).strftime("%Y/%m/%d")

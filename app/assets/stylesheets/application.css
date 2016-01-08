@@ -15,7 +15,14 @@
  *= require "module"
  *= require "commons"
  *= require "action"
- *= require "grids"
  *= require "sprites"
+
+ *= require "grids_lite/base"
+ *= require "grids_lite/col-1"
+ *= require "grids_lite/col-2"
+ *= require "grids_lite/col-3"
+ *= require "grids_lite/col-5"
+ *= require "grids_lite/col-8"
+
  *= require_self
  */

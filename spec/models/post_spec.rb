@@ -40,6 +40,10 @@ describe Post do
     expect { FactoryGirl.create(:post, title: nil) }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
+  it "must have body" do
+    expect { FactoryGirl.create(:post, body: nil) }.to raise_error(ActiveRecord::RecordInvalid)
+  end
+
   it ".path" do
     post = FactoryGirl.create(:post, title: "foo")
     expect(post.path).to eq "/posts/#{post.slug}"

@@ -47,14 +47,19 @@ describe PostsController, type: :controller do
   end
 
   it "#show" do
-    post = double(:post, use: "blog", title: "How to do foobar")
+    post = double(:post)
     slug = "2015/12/19/how-to-do-foobar"
+    use = "blog"
+    title = "How to do foobar"
+    presented_post = double(:presented_post, use: use, title: title)
     expect(Post).to receive(:find_by_slug).with(slug).and_return(post)
+    expect(PostPresenter).to receive(:new).with(post, @controller).and_return(presented_post)
+    expect(presented_post).to receive(:use).and_return(use)
+    expect(presented_post).to receive(:title).and_return(title)
     get :show, slug: slug
-    expect(assigns(:active_nav_tab)).to eq "blog"
-    expect(assigns(:post)).to eq post
-    expect(assigns(:title_tag)).to eq "How to do foobar"
+    expect(assigns(:presented_post)).to eq presented_post
+    expect(assigns(:active_nav_tab)).to eq use
+    expect(assigns(:title_tag)).to eq title
     expect(assigns(:meta_tags)).to eq []
-    expect(response).to render_template :show
   end
 end

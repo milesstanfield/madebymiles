@@ -22,9 +22,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_slug params[:slug]
-    @active_nav_tab = @post.use == "tutorial" ? "tutorials" : "blog"
-    @title_tag = @post.title
+    post = Post.find_by_slug params[:slug]
+    @presented_post = PostPresenter.new post, self
+    @active_nav_tab = @presented_post.use == "tutorial" ? "tutorials" : "blog"
+    @title_tag = @presented_post.title
     @meta_tags = []
   end
 end
