@@ -122,6 +122,8 @@ GEM
       trollop (>= 2.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    grids_lite (1.0.0)
+      rails
     haml (4.0.7)
       tilt
     haml-rails (0.9.0)
@@ -317,6 +319,7 @@ DEPENDENCIES
   factory_girl_rails
   friendly_id (~> 5.0.0)
   git-pairing
+  grids_lite (~> 1.0.0)
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
