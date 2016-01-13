@@ -319,7 +319,7 @@ DEPENDENCIES
   factory_girl_rails
   friendly_id (~> 5.0.0)
   git-pairing
-  grids_lite (~> 1.0.0)
+  grids_lite
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails

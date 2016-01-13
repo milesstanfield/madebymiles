@@ -15,7 +15,7 @@ gem "rails_12factor", group: :production
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'redcarpet'
-gem 'grids_lite', '~> 1.0.0'
+gem 'grids_lite'
 
 group :assets do
   gem 'sprite-factory'
