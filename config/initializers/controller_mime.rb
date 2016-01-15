@@ -2,7 +2,7 @@ module ControllerMime
   def mimic_controller
     controller = self.described_class
     unless controller == ApplicationController
-      raise "ControllerMime is currently limited to use with ApplicationController"
+      raise "ControllerMime is currently limited to use with ApplicationController only"
     end
     action = controller.action_methods.first
     controller_file = controller.instance_method(action.to_sym).source_location.first
@@ -12,7 +12,16 @@ module ControllerMime
     end
 
     before do
-      dynamic_routes = actions.map do |action|
+      actions = self.described_class.action_methods
+      routes.draw do
+        eval dynamic_routes(actions).join(" ")
+      end
+    end
+
+    private
+
+    def dynamic_routes(actions)
+      actions.map do |action|
         %Q[
           get "/anonymous/#{action}"
           post "/anonymous/#{action}"
@@ -21,20 +30,6 @@ module ControllerMime
           delete "/anonymous/#{action}"
         ]
       end
-
-      routes.draw do
-        eval dynamic_routes.join(" ")
-      end
-    end
-
-    private
-
-    def verbs
-      ["get", "post", "patch", "put", "delete"]
-    end
-
-    def actions
-      self.described_class.action_methods
     end
 
   end
