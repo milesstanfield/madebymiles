@@ -12,10 +12,18 @@ module ControllerMime
     end
 
     before do
-      actions.each do |action|
-        verbs.each_with_index do |verb, index|
-          routes.draw { get "custom" => "anonymous#custom" }
-        end
+      dynamic_routes = actions.map do |action|
+        %Q[
+          get "/anonymous/#{action}"
+          post "/anonymous/#{action}"
+          patch "/anonymous/#{action}"
+          put "/anonymous/#{action}"
+          delete "/anonymous/#{action}"
+        ]
+      end
+
+      routes.draw do
+        eval dynamic_routes.join(" ")
       end
     end
 

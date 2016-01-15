@@ -21,7 +21,7 @@ describe ApplicationController, type: :controller do
     get :foo
   end
 
-  it "bar" do
-    get :bar
-  end
+  # it "bar" do
+  #   get :bar
+  # end
 end

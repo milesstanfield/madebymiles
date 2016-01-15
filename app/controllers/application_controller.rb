@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     render nothing: true
   end
 
-  def bar
-    render nothing: true
-  end
+  # def bar
+  #   render nothing: true
+  # end
 end
