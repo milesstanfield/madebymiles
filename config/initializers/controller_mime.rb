@@ -4,8 +4,9 @@ module ControllerMime
     unless controller == ApplicationController
       raise "ControllerMime is currently limited to use with ApplicationController only"
     end
-    action = controller.action_methods.first
-    controller_file = controller.instance_method(action.to_sym).source_location.first
+
+    first_action = controller.action_methods.first
+    controller_file = controller.instance_method(first_action.to_sym).source_location.first
 
     controller do
       eval File.read(controller_file)
