@@ -1,37 +1,56 @@
 module ControllerMime
   def mimic_controller
-    controller = self.described_class
-    unless controller == ApplicationController
-      raise "ControllerMime is currently limited to use with ApplicationController only"
-    end
+    raise_misuse if misused?
+    mock_controller this_controller
+    draw_routes this_controller
+  end
 
-    first_action = controller.action_methods.first
-    controller_file = controller.instance_method(first_action.to_sym).source_location.first
+  private
 
-    controller do
-      eval File.read(controller_file)
-    end
-
+  def draw_routes(controller)
     before do
-      actions = self.described_class.action_methods
       routes.draw do
-        eval dynamic_routes(actions).join(" ")
+        eval dynamic_routes(actions(controller)).join(" ")
       end
     end
+  end
 
-    private
+  def actions(controller)
+    controller.action_methods
+  end
 
-    def dynamic_routes(actions)
-      actions.map do |action|
-        %Q[
-          get "/anonymous/#{action}"
-          post "/anonymous/#{action}"
-          patch "/anonymous/#{action}"
-          put "/anonymous/#{action}"
-          delete "/anonymous/#{action}"
-        ]
-      end
+  def mock_controller(controller)
+    this_controller_path = controller.instance_method(first_action.to_sym).source_location.first
+    controller do
+      eval File.read(this_controller_path)
     end
+  end
 
+  def dynamic_routes(actions)
+    actions.map do |action|
+      %Q[
+        get "/anonymous/#{action}"
+        post "/anonymous/#{action}"
+        patch "/anonymous/#{action}"
+        put "/anonymous/#{action}"
+        delete "/anonymous/#{action}"
+      ]
+    end
+  end
+
+  def this_controller
+    @this_controller ||= self.described_class
+  end
+
+  def raise_misuse
+    raise "ControllerMime is currently limited to use with ApplicationController only"
+  end
+
+  def misused?
+    this_controller != ApplicationController
+  end
+
+  def first_action
+    this_controller.action_methods.first
   end
 end
