@@ -1,8 +1,8 @@
 module ControllerMime
   def mimic_controller
-    raise_misuse if misused?
-    mock_controller this_controller
-    draw_routes this_controller
+    raise_misuse if misused? self.described_class
+    mock_controller self.described_class
+    draw_routes self.described_class
   end
 
   private
@@ -20,9 +20,10 @@ module ControllerMime
   end
 
   def mock_controller(controller)
-    this_controller_path = controller.instance_method(first_action.to_sym).source_location.first
+    method = first_action(controller).to_sym
+    controller_path = controller.instance_method(method).source_location[0]
     controller do
-      eval File.read(this_controller_path)
+      eval File.read(controller_path)
     end
   end
 
@@ -38,19 +39,15 @@ module ControllerMime
     end
   end
 
-  def this_controller
-    @this_controller ||= self.described_class
-  end
-
   def raise_misuse
     raise "ControllerMime is currently limited to use with ApplicationController only"
   end
 
-  def misused?
-    this_controller != ApplicationController
+  def misused?(controller)
+    controller != ApplicationController
   end
 
-  def first_action
-    this_controller.action_methods.first
+  def first_action(controller)
+    controller.action_methods.first
   end
 end
