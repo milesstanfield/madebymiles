@@ -11,6 +11,7 @@ RSpec.configure do |config|
   include CapybaraHelpers
   include SeedHelpers
   include ResponsiveTestHelper
+  include ControllerMime
 
   config.before(:each, type: :feature) do
     create_activate_flippers
