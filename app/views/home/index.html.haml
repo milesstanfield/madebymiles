@@ -1,5 +1,5 @@
 .m-bg-dark-grey{data: {area: "splash"}}
-  .l-max-content-width.l-horizontal-center.l-content-padding.l-large-vertical-padding
+  .l-max-content-width.l-horizontal-center.l-content-padding.l-large-vertical-padding.columns
     .col-1-1.col-1-2-med.m-font-largest.m-font-bold.m-color-white.l-v-align-middle.l-relative.l-mobile-medium-bottom-margin
       - ["DEVELOPER", "DESIGNER", "TEACHER"].each do |word|
         .l-block= word
@@ -15,7 +15,7 @@
 - if FeatureFlipper.active_names.include? "about"
   = render layout: "shared/section", locals: {name: "about", path: "/about", button_text: "more about me"} do
     .l-medium-bottom-margin
-      .gutters
+      .gutters.columns
         .col-1-1.col-1-5-med.l-v-align-top.l-text-center
           .about_head.l-inline-block
           .m-font-small.m-font-thin.m-color-dark-grey.l-small-top-margin.l-medium-bottom-margin= "Miles Stanfield"
@@ -33,7 +33,7 @@
 
 
 - if FeatureFlipper.active_names.include? "tutorials"
-  = render layout: "shared/section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials"} do
+  = render layout: "shared/section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials", line_off: true} do
     = render "shared/post_cards", posts: @tutorial_posts
 
 
@@ -44,5 +44,5 @@
 
 
 - if FeatureFlipper.active_names.include? "blog"
-  = render layout: "shared/section", locals: {name: "blog", path: "/posts/blog", button_text: "more blog posts"} do
+  = render layout: "shared/section", locals: {name: "blog", path: "/posts/blog", button_text: "more blog posts", line_off: true} do
     = render "shared/post_cards", posts: @blog_posts

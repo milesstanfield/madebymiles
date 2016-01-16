@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @active_nav_tab = page.active_nav_tab
     @title_tag = page.title_tag
     @meta_tags = page.meta_tags
-    @blog_posts = Post.blog.recent.limit(4)
-    @tutorial_posts = Post.tutorials.recent.limit(4)
+    @blog_posts = Post.blog.recent.limit(6)
+    @tutorial_posts = Post.tutorials.recent.limit(6)
   end
 end

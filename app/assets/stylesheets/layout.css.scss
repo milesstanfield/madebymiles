@@ -146,11 +146,6 @@
   top: 6px;
   margin-right: 5px;
 }
-[class*=l-drop-card-widow]:last-of-type {
-  @include respond-to($lrg) {
-    display: none;
-  }
-}
 .l-circle-size {
   width: 45px;
   height: 45px;

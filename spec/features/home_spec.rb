@@ -88,7 +88,7 @@ describe "home page", type: :feature do
     end
 
     it "has (x) post cards" do
-      expect(all_cards.count).to eq 4
+      expect(all_cards.count).to eq 6
     end
 
     it "orders cards by created_at" do
@@ -142,7 +142,7 @@ describe "home page", type: :feature do
     end
 
     it "has (x) post cards" do
-      expect(all_cards.count).to eq 4
+      expect(all_cards.count).to eq 6
     end
 
     it "orders cards by created_at" do
