@@ -9,3 +9,10 @@ img {
 a {
   text-decoration: none;
 }
+fieldset, input, textarea {
+  border: none;
+  resize: none;
+}
+ol {
+  padding: 0;
+}

@@ -70,11 +70,11 @@
 .l-medium-padding {
   padding: 20px;
 }
-.l-circle-padding {
-  padding: 15px;
-}
 .l-button-padding {
   padding: 10px 25px;
+}
+.l-smallest-padding {
+  padding: 5px;
 }
 .l-small-vertical-padding {
   @include vertical-padding(20px);
