@@ -5,6 +5,7 @@ describe "connect zone", type: :feature do
   before do
     create_posts_and_tags "blog"
     create_posts_and_tags "tutorial"
+    create_setting
   end
 
   context "home page" do

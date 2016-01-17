@@ -33,6 +33,6 @@ describe Page do
   end
 
   it ".available_names" do
-    expect(Page.available_names).to eq ["home", "about", "tutorials", "portfolio", "blog", "connect", "404"]
+    expect(Page.available_names).to eq ["home", "about", "tutorials", "portfolio", "blog", "contact", "404"]
   end
 end

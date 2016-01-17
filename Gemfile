@@ -15,7 +15,11 @@ gem "rails_12factor", group: :production
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'redcarpet'
-gem 'grids_lite', '~> 1.0.1'
+gem 'grids_lite'
+gem 'formtastic'
+gem 'email_validator'
+gem 'shadow_controller'
+gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 
 group :assets do
   gem 'sprite-factory'
@@ -39,6 +43,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'webmock'
   gem 'vcr'
   gem 'excon', '<0.39.0'
   gem 'capybara', '> 2.3.0'

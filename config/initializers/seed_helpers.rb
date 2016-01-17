@@ -1,4 +1,14 @@
 module SeedHelpers
+  def create_setting
+    Setting.create(
+      stack_overflow: "http://stackoverflow.com/users/3123370/milesstanfield",
+      github: "https://github.com/milesstanfield",
+      facebook: "/contact",
+      twitter: "https://twitter.com/milesua",
+      email: "mailto:miles@madebymiles.com"
+    )
+  end
+
   def create_posts_and_tags(use = "blog")
     tags.each_with_index do |tag_name, index|
       post = Post.create(
@@ -30,7 +40,7 @@ module SeedHelpers
     Page.create name: "home", active_nav_tab: "home", title_tag: "home"
     Page.create name: "about", active_nav_tab: "about", title_tag: "about"
     Page.create name: "portfolio", active_nav_tab: "portfolio", title_tag: "portfolio"
-    Page.create name: "connect", active_nav_tab: "connect", title_tag: "connect"
+    Page.create name: "contact", active_nav_tab: "contact", title_tag: "contact"
     Page.create name: "tagged"
     Page.create name: "blog", active_nav_tab: "blog", title_tag: "blog"
     Page.create name: "tutorials", active_nav_tab: "tutorials", title_tag: "tutorials"

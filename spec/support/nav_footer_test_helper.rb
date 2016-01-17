@@ -49,10 +49,6 @@ module NavFooterTestHelper
   end
 
   def tab_texts
-    ["about", "portfolio", "connect", "tutorials", "blog"]
-  end
-
-  def footer_tab_texts
-    tab_texts.unshift "home"
+    ["home", "about", "portfolio", "contact", "tutorials", "blog"]
   end
 end

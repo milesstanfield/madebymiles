@@ -1,6 +1,7 @@
 class SpriteBuilder
   require 'rmagick'
   require 'sprite_factory'
+  require 'sprite_style_formatter'
   attr_reader :options
 
   def initialize(options = default_options)

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :load_settings
+
   def tagged
     @title_tag = "#{params[:tag_name]} posts"
     @posts = Post.by_tag_name(params[:tag_name]).limit(25)

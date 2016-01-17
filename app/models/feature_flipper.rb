@@ -3,7 +3,7 @@ class FeatureFlipper < ActiveRecord::Base
   belongs_to :page
 
   def self.available_names
-    ["home", "about", "portfolio", "connect", "tutorials", "blog", "testimonials", "404"]
+    ["home", "about", "portfolio", "contact", "tutorials", "blog", "testimonials", "404"]
   end
 
   def self.active_names

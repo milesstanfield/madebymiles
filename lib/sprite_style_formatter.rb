@@ -65,7 +65,7 @@ class SpriteStyleFormatter
   end
 
   def excluded_selectors
-    [".arrow_blue", ".a-hover-circle-blue:hover"]
+    [".arrow_blue", ".a-hover-circle-blue:hover", ".no-touch"]
   end
 
   def individual_styles
@@ -74,6 +74,16 @@ class SpriteStyleFormatter
         case image_name.to_s
         when "arrow_dark_blue"
           "div.arrow_dark_blue { #{indivdual_style(@images[:arrow_dark_blue])} }\n .no-touch .a-hover-circle-blue:hover .arrow_dark_blue { #{indivdual_style(@images[:arrow_white])} }"
+        when "github_blue"
+          "div.github_blue { #{indivdual_style(@images[:github_blue])} }\n .no-touch .a-hover-circle-white:hover .github_blue { #{indivdual_style(@images[:github])} }"
+        when "stack_overflow_blue"
+          "div.stack_overflow_blue { #{indivdual_style(@images[:stack_overflow_blue])} }\n .no-touch .a-hover-circle-white:hover .stack_overflow_blue { #{indivdual_style(@images[:stack_overflow])} }"
+        when "facebook_blue"
+          "div.facebook_blue { #{indivdual_style(@images[:facebook_blue])} }\n .no-touch .a-hover-circle-white:hover .facebook_blue { #{indivdual_style(@images[:facebook])} }"
+        when "twitter_blue"
+          "div.twitter_blue { #{indivdual_style(@images[:twitter_blue])} }\n .no-touch .a-hover-circle-white:hover .twitter_blue { #{indivdual_style(@images[:twitter])} }"
+        when "email_icon_blue"
+          "div.email_icon_blue { #{indivdual_style(@images[:email_icon_blue])} }\n .no-touch .a-hover-circle-white:hover .email_icon_blue { #{indivdual_style(@images[:email_icon])} }"
         else
           default_style(image_name, image_data, "div")
         end

@@ -9,3 +9,13 @@ img {
 a {
   text-decoration: none;
 }
+fieldset, input, textarea {
+  border: none;
+  resize: none;
+}
+input:focus, textarea:focus {
+  outline: none;
+}
+ol {
+  padding: 0;
+}

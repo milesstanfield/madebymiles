@@ -5,6 +5,7 @@ describe "the footer", type: :feature do
   before do
     create_posts_and_tags "blog"
     create_posts_and_tags "tutorial"
+    create_setting
   end
 
   context "home page" do
@@ -37,13 +38,13 @@ describe "the footer", type: :feature do
     end
   end
 
-  context "connect page" do
+  context "contact page" do
     it "has clickable tabs" do
-      clickable_nav_tabs_expectations "/connect"
+      clickable_nav_tabs_expectations "/contact"
     end
 
     it "has legal copy" do
-      legal_copy_expectations "/connect"
+      legal_copy_expectations "/contact"
     end
   end
 

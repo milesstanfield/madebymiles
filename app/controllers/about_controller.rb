@@ -1,4 +1,6 @@
 class AboutController < ApplicationController
+  before_action :load_settings
+
   def index
     page = Page.by_name_or_create "about"
     @active_nav_tab = page.active_nav_tab

@@ -19,7 +19,7 @@
     border: 2px solid $blue;
   }
   .a-hover-circle-blue:hover, .a-hover-circle-white:hover {
-    .m-circle-stroke-dark-blue, .m-circle-stroke-white {
+    .m-circle-stroke-dark-blue, .m-circle-stroke-blue, .m-circle-stroke-white {
       @include circle-stroke($blue);
       background: $blue;
     }

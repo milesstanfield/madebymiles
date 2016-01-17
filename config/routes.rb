@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   root to: "home#index", as: :root
 
   get "/about", to: "about#index", as: :about
-  get "/connect", to: "connect#index", as: :connect
+  get "/contact", to: "contact#index", as: :contact
+  post "/contact", to: "contact#message", as: :messages
   get "/portfolio", to: "portfolio#index", as: :portfolio
 
   scope "/posts" do

@@ -1,5 +1,5 @@
 %footer.m-bg-dark-grey
-  .m-font-small.l-large-vertical-padding.l-text-center
+  .m-small.l-large-vertical-padding.l-text-center
     .l-medium-bottom-margin
       - nav_tabs(@active_nav_tab).each do |tab|
         - if FeatureFlipper.active_names.include? tab.text
@@ -7,6 +7,6 @@
             %div{class: tab.classes}
               = tab.text
 
-    .l-inline.m-color-medium-grey.m-font-thin= "This site was designed and"
-    .l-inline.m-color-white.m-font-bold= "MadeByMiles"
-    .m-font-bold.l-small-top-margin= "© 2015 MadeByMiles.com"
+    .l-inline.m-color-medium-grey.m-thin= "This site was designed and"
+    .l-inline.m-color-white.m-bold= "MadeByMiles"
+    .m-bold.l-small-top-margin= "© 2015 MadeByMiles.com"

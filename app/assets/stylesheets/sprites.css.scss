@@ -1,27 +1,37 @@
 @import 'variables';
 .about_head { width: 127px; height: 127px; background-position: 0px 0px; }
 div.arrow_dark_blue { width: 12px; height: 17px; background-position: -127px -55px; }
- .a-hover-circle-blue:hover .arrow_dark_blue { width: 12px; height: 17px; background-position: -139px -55px; }
+ .no-touch .a-hover-circle-blue:hover .arrow_dark_blue { width: 12px; height: 17px; background-position: -139px -55px; }
 .arrow_white { width: 12px; height: 17px; background-position: -139px -55px; }
 .cog_orange { width: 18px; height: 19px; background-position: -151px -54px; }
-.email { width: 23px; height: 15px; background-position: -169px -56px; }
-.facebook { width: 13px; height: 22px; background-position: -192px -52px; }
-.github { width: 23px; height: 22px; background-position: -205px -52px; }
-.hamburger { width: 28px; height: 20px; background-position: -228px -53px; }
-.madebymiles_logo { width: 165px; height: 45px; background-position: -256px -41px; }
-.stack_overflow { width: 20px; height: 22px; background-position: -421px -52px; }
-.tag { width: 21px; height: 20px; background-position: -441px -53px; }
-.twitter { width: 23px; height: 19px; background-position: -462px -54px; }
-      .about_head, div.arrow_dark_blue, .arrow_white, .cog_orange, .email, .facebook, .github, .hamburger, .madebymiles_logo, .stack_overflow, .tag, .twitter {
+.email_icon { width: 23px; height: 15px; background-position: -169px -56px; }
+div.email_icon_blue { width: 23px; height: 15px; background-position: -192px -56px; }
+ .no-touch .a-hover-circle-white:hover .email_icon_blue { width: 23px; height: 15px; background-position: -169px -56px; }
+.facebook { width: 13px; height: 22px; background-position: -215px -52px; }
+div.facebook_blue { width: 13px; height: 22px; background-position: -228px -52px; }
+ .no-touch .a-hover-circle-white:hover .facebook_blue { width: 13px; height: 22px; background-position: -215px -52px; }
+.github { width: 23px; height: 22px; background-position: -241px -52px; }
+div.github_blue { width: 23px; height: 22px; background-position: -264px -52px; }
+ .no-touch .a-hover-circle-white:hover .github_blue { width: 23px; height: 22px; background-position: -241px -52px; }
+.hamburger { width: 28px; height: 20px; background-position: -287px -53px; }
+.madebymiles_logo { width: 165px; height: 45px; background-position: -315px -41px; }
+.stack_overflow { width: 20px; height: 22px; background-position: -480px -52px; }
+div.stack_overflow_blue { width: 20px; height: 22px; background-position: -500px -52px; }
+ .no-touch .a-hover-circle-white:hover .stack_overflow_blue { width: 20px; height: 22px; background-position: -480px -52px; }
+.tag { width: 21px; height: 20px; background-position: -520px -53px; }
+.twitter { width: 23px; height: 19px; background-position: -541px -54px; }
+div.twitter_blue { width: 23px; height: 19px; background-position: -564px -54px; }
+ .no-touch .a-hover-circle-white:hover .twitter_blue { width: 23px; height: 19px; background-position: -541px -54px; }
+      .about_head, div.arrow_dark_blue, .arrow_white, .cog_orange, .email_icon, div.email_icon_blue, .facebook, div.facebook_blue, .github, div.github_blue, .hamburger, .madebymiles_logo, .stack_overflow, div.stack_overflow_blue, .tag, .twitter, div.twitter_blue {
         background-repeat: no-repeat;
         background-image: url(image_path('sprites.png'));
         @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
           background-image: url(image_path('sprites_2x.png'));
-          -webkit-background-size: 485px 127px;
-          -moz-background-size: 485px 127px;
-          -ms-background-size: 485px 127px;
-          -o-background-size: 485px 127px;
-          background-size: 485px 127px;
+          -webkit-background-size: 587px 127px;
+          -moz-background-size: 587px 127px;
+          -ms-background-size: 587px 127px;
+          -o-background-size: 587px 127px;
+          background-size: 587px 127px;
         }
       }
     

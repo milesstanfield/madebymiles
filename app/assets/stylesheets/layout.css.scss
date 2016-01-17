@@ -70,11 +70,14 @@
 .l-medium-padding {
   padding: 20px;
 }
-.l-circle-padding {
-  padding: 15px;
-}
 .l-button-padding {
   padding: 10px 25px;
+}
+.l-smallest-padding {
+  padding: 5px;
+}
+.l-smallest-vertical-padding {
+  @include vertical-padding(10px);
 }
 .l-small-vertical-padding {
   @include vertical-padding(20px);
@@ -112,7 +115,12 @@
 .l-school-logo-height {
   height: 80px
 }
-
+.l-form-body-height {
+  height: auto;
+  @include respond-to($med) {
+    height: 300px;
+  }
+}
 
 // OTHER
 .l-nav-tab-text {
