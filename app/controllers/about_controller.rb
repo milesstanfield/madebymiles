@@ -4,5 +4,6 @@ class AboutController < ApplicationController
     @active_nav_tab = page.active_nav_tab
     @title_tag = page.title_tag
     @meta_tags = page.meta_tags
+    @this_year = Time.now.year
   end
 end

@@ -29,14 +29,14 @@ describe "about page", type: :feature do
     it "has background copy and link" do
       within "[data-area='background']" do
         expect(page).to have_link "Vizrt"
-        expect(page).to have_text "I started out as a painter, not a great one but with a fine arts degree I learned good design
-          principles. That helped me get a job right out of college as a graphic designer working for HLN -- A Time Warner Company.
-          Two years later I was immersed in specialized 3d animating software called Vizrt which happened to require a lot of
-          programming knowledge to make the most of it. From that point on, I was all developer. I quickly gravitated towards
-          front-end development because of my strong design background. Needless to say, CSS became my life. I started aimlessly
-          making Flash and PHP websites for work without any framework or guidance and then I got solid, on-the-job Ruby on
-          Rails training everyday from a veteren programmer. Years later, I'm definitely one of those developers preaching
-          convention over configuration and saying did you write a test for that?"
+        expect(page).to have_text "I started out as a painter, not a great one but with a fine arts degree I learned good
+          design principles. That helped me get a job right as a graphic designer working at CNN International and then
+          subsequently working at HLN. Years later I was immersed in specialized 3d animating software called Vizrt which
+          happened to require a lot of programming knowledge to make the most of it. From that point on, I was all developer.
+          I quickly gravitated towards front-end development because of my strong design background. Needless to say,
+          CSS became my life. I started aimlessly developing PHP and Flash websites for work without any framework or
+          guidance and then I got solid, on-the-job Ruby on Rails training everyday from a veteren programmer. Years later,
+          I'm definitely one of those developers preaching convention over configuration and saying did you write a test for that?"
       end
     end
   end
@@ -56,7 +56,6 @@ describe "about page", type: :feature do
       within "[data-area='education']" do
         expect(page).to have_text "University of Alabama"
         expect(page).to have_text "Bachelor of Fine Arts (B.F.A.)"
-        expect(page).to have_text "2009 Alumni"
       end
     end
   end
@@ -93,14 +92,16 @@ describe "about page", type: :feature do
 
     it "has blurb copy" do
       within "[data-area='skills']" do
-        expect(page).to have_text "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
+        expect(page).to have_text "skills I've had the opportunity to work with many languages and technologies in
+          my career. Here are the ones that I use on a regular basis and also how strong & knowledgable I am at each of
+          them. HTML / HAML Ruby on Rails Javascript & jQuery Rspec & Capybara TDD Coffeescript CSS / SASS Photoshop &
+          Illustrator Swift / Xcode Postgresql / ActiveRecord"
       end
     end
 
     it "has bar skills" do
       within "[data-area='skills']" do
-        expect(page.all("[data-name='bar']").count).to eq 8
+        expect(page.all("[data-name='bar']").count).to eq 9
         within first("[data-name='bar']") do
           expect(page).to have_text "HTML / HAML"
         end
@@ -121,7 +122,12 @@ describe "about page", type: :feature do
           expect(page).to have_text "Data Manager"
           expect(page).to have_text "HLNtv.com"
           expect(page).to have_text "2014 - 2016"
-          expect(page).to have_text "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the"
+          expect(page).to have_text "HLNtv.com 2014 - 2016 HLNtv.com 2014 - 2016 Data Manager Developed HLN’s
+            award-winning social media trending algorithm The HLN Social Index Developed nearly all front-end code
+            for the company’s website HLNtv.com Developed a web-based mobile application/game namethistweet.com
+            Developed an API to feed data and control multiple Art Installations on the CNN tour in Atlanta, GA
+            HLN's data-driven art installations Taught Rails conventions and industry standard development practices,
+            especially TDD Agile work environment with code review, retrospectives, backlog and prioritization sessions"
         end
       end
     end
