@@ -1,4 +1,5 @@
-.l-width-100.m-large.m-color-darkest-grey= flash[:notice]
+- if flash[:notice].present?
+  .l-width-100.m-large.m-color-darkest-grey= flash[:notice]
 .m-bg-light-grey
   .l-max-content-width.l-horizontal-center.l-content-padding.l-large-vertical-padding
     .columns.gutters

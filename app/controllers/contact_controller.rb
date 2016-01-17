@@ -8,7 +8,8 @@ class ContactController < ApplicationController
   end
 
   def message
-    Message.create(message_params) ? flash_success_notice : flash_error_notice
+    message = Message.new message_params
+    message.save ? flash_success_notice : flash_error_notice
     redirect_to contact_path
   end
 
