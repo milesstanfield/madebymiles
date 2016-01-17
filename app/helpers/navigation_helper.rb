@@ -6,7 +6,7 @@ module NavigationHelper
       tab("tutorials", "/posts/tutorials", active_tab),
       tab("portfolio", "/portfolio", active_tab),
       tab("blog", "/posts/blog", active_tab),
-      tab("connect", "/connect", active_tab),
+      tab("contact", "/contact", active_tab),
     ]
   end
 

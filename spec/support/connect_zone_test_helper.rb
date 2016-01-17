@@ -1,7 +1,7 @@
 module ConnectZoneTestHelper
   def connect_zone_expectations(path)
     visit path
-    within "[data-area='connect']" do
+    within "[data-area='connect_zone']" do
       expect(page).to have_css ".stack_overflow"
       expect(page).to have_css "a[href='http://stackoverflow.com/users/3123370/milesstanfield']"
       expect(page).to have_css ".github"

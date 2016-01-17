@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
   has_and_belongs_to_many :meta_tags
 
   def self.available_names
-    ["home", "about", "tutorials", "portfolio", "blog", "connect", "404"]
+    ["home", "about", "tutorials", "portfolio", "blog", "contact", "404"]
   end
 
   def self.by_name_or_create(name)

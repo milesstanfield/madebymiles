@@ -35,10 +35,10 @@ describe "meta content", type: :feature do
     end
   end
 
-  context "connect page" do
+  context "contact page" do
     it "has a title tag" do
-      visit "/connect"
-      expect(page).to have_title "MadeByMiles | connect"
+      visit "/contact"
+      expect(page).to have_title "MadeByMiles | contact"
     end
   end
 

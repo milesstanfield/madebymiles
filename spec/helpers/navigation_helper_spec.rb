@@ -4,8 +4,8 @@ include ApplicationHelper
 describe NavigationHelper, type: :helper do
   context ".nav_tabs(active_tab)" do
     it "has tabs and their respective paths in order" do
-      expect(nav_tabs("home").map(&:text)).to eq ["home", "about", "tutorials", "portfolio", "blog", "connect"]
-      expect(nav_tabs("home").map(&:path)).to eq ["/", "/about", "/posts/tutorials", "/portfolio", "/posts/blog", "/connect"]
+      expect(nav_tabs("home").map(&:text)).to eq ["home", "about", "tutorials", "portfolio", "blog", "contact"]
+      expect(nav_tabs("home").map(&:path)).to eq ["/", "/about", "/posts/tutorials", "/portfolio", "/posts/blog", "/contact"]
     end
 
     it "returns inactive classes for tabs that are inactive" do
@@ -24,8 +24,8 @@ describe NavigationHelper, type: :helper do
   end
 
   def active_tab_expectations
-    @active_nav_tab = "connect"
-    expect(nav_tabs("connect").last.text).to eq "connect"
-    expect(nav_tabs("connect").last.classes).to eq "m-font-bold m-underline-white m-color-white m-font-medium l-relative"
+    @active_nav_tab = "contact"
+    expect(nav_tabs("contact").last.text).to eq "contact"
+    expect(nav_tabs("contact").last.classes).to eq "m-font-bold m-underline-white m-color-white m-font-medium l-relative"
   end
 end

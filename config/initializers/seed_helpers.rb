@@ -30,7 +30,7 @@ module SeedHelpers
     Page.create name: "home", active_nav_tab: "home", title_tag: "home"
     Page.create name: "about", active_nav_tab: "about", title_tag: "about"
     Page.create name: "portfolio", active_nav_tab: "portfolio", title_tag: "portfolio"
-    Page.create name: "connect", active_nav_tab: "connect", title_tag: "connect"
+    Page.create name: "contact", active_nav_tab: "contact", title_tag: "contact"
     Page.create name: "tagged"
     Page.create name: "blog", active_nav_tab: "blog", title_tag: "blog"
     Page.create name: "tutorials", active_nav_tab: "tutorials", title_tag: "tutorials"

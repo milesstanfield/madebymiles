@@ -31,6 +31,6 @@ describe FeatureFlipper do
   end
 
   it ".available_names" do
-    expect(FeatureFlipper.available_names).to eq ["home", "about", "portfolio", "connect", "tutorials", "blog", "testimonials", "404"]
+    expect(FeatureFlipper.available_names).to eq ["home", "about", "portfolio", "contact", "tutorials", "blog", "testimonials", "404"]
   end
 end

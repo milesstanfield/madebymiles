@@ -49,17 +49,17 @@ describe "the nav", type: :feature do
     end
   end
 
-  context "connect page" do
+  context "contact page" do
     it "has a clickable logo" do
-      clickable_logo_expectations "/connect"
+      clickable_logo_expectations "/contact"
     end
 
     it "has clickable tabs" do
-      clickable_nav_tabs_expectations "/connect"
+      clickable_nav_tabs_expectations "/contact"
     end
 
     xit "has a clickable hamgurger to open nav menu", js: true, driver: :selenium do
-      hamburger_expectations "/connect"
+      hamburger_expectations "/contact"
     end
   end
 
