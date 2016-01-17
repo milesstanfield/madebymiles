@@ -20,7 +20,7 @@
           - nav_tabs(@active_nav_tab).each do |tab|
             - if FeatureFlipper.active_names.include? tab.text
               .l-block.l-small-vertical-padding
-                = link_to tab.text, tab.path, class: "m-font-bold m-font-medium m-color-white"
+                = link_to tab.text, tab.path, class: "m-bold m-medium m-color-white"
 
 :javascript
   new Hamburger

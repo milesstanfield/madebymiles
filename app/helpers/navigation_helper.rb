@@ -25,10 +25,10 @@ module NavigationHelper
   end
 
   def active_tab_classes
-    "m-font-bold m-underline-white m-color-white m-font-medium l-relative"
+    "m-bold m-underline-white m-color-white m-medium l-relative"
   end
 
   def inactive_tab_classes
-    "m-font-thin m-color-white m-font-medium l-relative"
+    "m-thin m-color-white m-medium l-relative"
   end
 end

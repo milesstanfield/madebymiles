@@ -101,6 +101,8 @@ GEM
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
       railties (~> 4.0)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     excon (0.38.0)
     execjs (2.6.0)
@@ -315,8 +317,10 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv-rails
+  email_validator
   excon (< 0.39.0)
   factory_girl_rails
+  formtastic
   friendly_id (~> 5.0.0)
   git-pairing
   grids_lite (~> 1.0.1)
@@ -345,4 +349,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

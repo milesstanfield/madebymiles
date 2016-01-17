@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get "/about", to: "about#index", as: :about
   get "/contact", to: "contact#index", as: :contact
+  post "/contact", to: "contact#message", as: :messages
   get "/portfolio", to: "portfolio#index", as: :portfolio
 
   scope "/posts" do

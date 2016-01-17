@@ -16,6 +16,8 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'redcarpet'
 gem 'grids_lite', '~> 1.0.1'
+gem 'formtastic'
+gem 'email_validator'
 
 group :assets do
   gem 'sprite-factory'

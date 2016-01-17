@@ -2,14 +2,14 @@
 @import "mixins";
 
 // FONTS
-.m-font-thin, .m-font-bold {
+.m-thin, .m-bold {
   font-family: sans-serif;
   font-style: normal;
 }
-.m-font-thin {
+.m-thin {
   font-weight: 300;
 }
-.m-font-bold {
+.m-bold {
   font-weight: 700;
 }
 
@@ -33,20 +33,20 @@
 .m-bg-blue {
   background: $blue;
 }
+.m-bg-dark-blue {
+  background: $dark-blue;
+}
 .m-bg-active-blue {
   background: $active-blue;
-}
-.m-bg-dark-grey {
-  background: $dark-grey;
 }
 .m-bg-orange {
   background: $orange;
 }
-.m-bg-light-grey {
-  background: $light-grey;
+.m-bg-darkest-grey {
+  background: $darkest-grey;
 }
-.m-bg-dark-blue {
-  background: $dark-blue;
+.m-bg-dark-grey {
+  background: $dark-grey;
 }
 .m-bg-medium-grey {
   background: $medium-grey;
@@ -54,13 +54,13 @@
 .m-bg-medium-grey2 {
   background: $medium-grey2;
 }
-.m-bg-darkest-grey {
-  background: $darkest-grey;
+.m-bg-light-grey {
+  background: $light-grey;
 }
 
 
 // FONT SIZES
-.m-font-largest {
+.m-largest {
   letter-spacing: -2px;
   font-size: 59px;
   line-height: 53px;
@@ -69,22 +69,22 @@
     font-size: 45px;
   }
 }
-.m-font-larger, .m-font-large, .m-font-medium {
+.m-larger, .m-large, .m-medium {
   letter-spacing: -0.5px;
 }
-.m-font-larger {
+.m-larger {
   font-size: 35px;
   line-height: 45px;
 }
-.m-font-large {
+.m-large {
   font-size: 25px;
   line-height: 35px;
 }
-.m-font-medium {
+.m-medium {
   font-size: 19px;
   line-height: 28px;
 }
-.m-font-small {
+.m-small {
   font-size: 13px;
 }
 
