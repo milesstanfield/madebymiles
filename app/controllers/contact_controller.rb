@@ -10,9 +10,9 @@ class ContactController < ApplicationController
   end
 
   def message
-    message = Message.new message_params
-    message.save ? flash_success_notice : flash_error_notice
-    redirect_to contact_path
+    saved_message = Message.new(message_params).save
+    saved_message ? flash_success_notice : flash_error_notice
+    redirect_to contact_path message_params.merge(success: saved_message)
   end
 
   private
@@ -26,6 +26,6 @@ class ContactController < ApplicationController
   end
 
   def flash_error_notice
-    flash[:notice] = "Oops there was a problem"
+    flash[:notice] = "Oops! There was a problem with the email address you provided"
   end
 end

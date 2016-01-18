@@ -28,7 +28,7 @@ describe "contact page", type: :feature do
       fill_in "message_body", with: "this is my question"
       click_button "Submit"
     end
-    expect(page).to have_text "Oops there was a problem"
+    expect(page).to have_text "Oops! There was a problem with the email address you provided"
   end
 
   it "fails to submit a message with empty email" do
@@ -36,6 +36,6 @@ describe "contact page", type: :feature do
       fill_in "message_sender_name", with: "Jo Biden"
       click_button "Submit"
     end
-    expect(page).to have_text "Oops there was a problem"
+    expect(page).to have_text "Oops! There was a problem with the email address you provided"
   end
 end

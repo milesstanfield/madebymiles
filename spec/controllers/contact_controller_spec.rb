@@ -39,7 +39,7 @@ describe ContactController, type: :controller do
       expect(controller).to receive(:flash_success_notice)
       expect(Setting).to receive(:first_or_create).and_return(double(:setting))
       post :message, message_params
-      expect(response).to redirect_to "/contact"
+      expect(response).to redirect_to "/contact?body=there+is+no+cake&sender_email=jo%40jo.com&sender_name=Jo&subject=Talky+talky&success=true"
     end
 
     it "errors on saving message and redirects to contact page" do
@@ -55,7 +55,7 @@ describe ContactController, type: :controller do
       expect(controller).to receive(:flash_error_notice)
       expect(Setting).to receive(:first_or_create).and_return(double(:setting))
       post :message, message_params
-      expect(response).to redirect_to "/contact"
+      expect(response).to redirect_to "/contact?sender_name=Jo&success=false"
     end
   end
 end
