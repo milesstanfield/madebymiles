@@ -1,11 +1,11 @@
 .m-bg-medium-grey.l-text-center.l-medium-vertical-padding{data: {area: "connect_zone"}}
   .l-inline-block.l-circle-padding
-    = render "shared/circle_button", color: "white", hover_color: "white", path: "http://stackoverflow.com/users/3123370/milesstanfield", icon: "stack_overflow", target: "_blank"
+    = render "shared/circle_button", color: "white", hover_color: "white", path: @settings.stack_overflow, icon: "stack_overflow", target: "_blank"
   .l-inline-block.l-circle-padding
-    = render "shared/circle_button", color: "white", hover_color: "white", path: "mailto:miles@madebymiles.com", icon: "email_icon"
+    = render "shared/circle_button", color: "white", hover_color: "white", path: @settings.email, icon: "email_icon"
   .l-inline-block.l-circle-padding
-    = render "shared/circle_button", color: "white", hover_color: "white", path: "https://github.com/milesstanfield", icon: "github", target: "_blank"
+    = render "shared/circle_button", color: "white", hover_color: "white", path: @settings.github, icon: "github", target: "_blank"
   .l-inline-block.l-circle-padding
-    = render "shared/circle_button", color: "white", hover_color: "white", path: root_path, icon: "facebook"
+    = render "shared/circle_button", color: "white", hover_color: "white", path: @settings.facebook, icon: "facebook"
   .l-inline-block.l-circle-padding
-    = render "shared/circle_button", color: "white", hover_color: "white", path: "https://twitter.com/milesua", icon: "twitter", target: "_blank"
+    = render "shared/circle_button", color: "white", hover_color: "white", path: @settings.twitter, icon: "twitter", target: "_blank"

@@ -1,18 +1,10 @@
 require "spec_helper"
 
 describe ApplicationController, type: :controller do
-  controller do
-    def missing_page
-      page = Page.by_name_or_create "404"
-      @active_nav_tab = page.active_nav_tab
-      @title_tag = page.title_tag
-      @meta_tags = page.meta_tags
-      render 'layouts/missing_page', status: 404
-    end
-  end
+  shadow_controller
 
   before do
-    routes.draw { get '/anonymous/missing_page' }
+    FeatureFlipper.create name: "404", active: true
   end
 
   it "#missing_page" do

@@ -5,6 +5,7 @@ describe "meta content", type: :feature do
     create_posts_and_tags "blog"
     create_posts_and_tags "tutorial"
     create_pages_and_associated
+    create_setting
   end
 
   context "home page" do

@@ -8,12 +8,13 @@ describe ContactController, type: :controller do
     expect(page).to receive(:title_tag).and_return(page.title_tag)
     expect(page).to receive(:meta_tags).and_return(page.meta_tags)
     expect(Message).to receive(:new)
+    expect(Setting).to receive(:first_or_create).and_return(double(:setting))
     get :index
+    expect(response).to render_template :index
     expect(assigns(:active_nav_tab)).to eq "contact"
     expect(assigns(:title_tag)).to eq "contact"
     expect(assigns(:meta_tags)).to eq []
     expect(assigns(:new_message)).to eq nil
-    expect(response).to render_template :index
   end
 
   context "post #message" do
@@ -32,8 +33,11 @@ describe ContactController, type: :controller do
         subject: "Talky talky",
         body: "there is no cake"
       }
-      expect(Message).to receive(:create).with(record_params).and_return(true)
+      message = double(:message)
+      expect(Message).to receive(:new).with(record_params).and_return(message)
+      expect(message).to receive(:save).and_return(true)
       expect(controller).to receive(:flash_success_notice)
+      expect(Setting).to receive(:first_or_create).and_return(double(:setting))
       post :message, message_params
       expect(response).to redirect_to "/contact"
     end
@@ -45,8 +49,11 @@ describe ContactController, type: :controller do
         }
       }
       record_params = { sender_name: "Jo" }
-      expect(Message).to receive(:create).with(record_params).and_return(nil)
+      message = double(:message)
+      expect(Message).to receive(:new).with(record_params).and_return(message)
+      expect(message).to receive(:save).and_return(false)
       expect(controller).to receive(:flash_error_notice)
+      expect(Setting).to receive(:first_or_create).and_return(double(:setting))
       post :message, message_params
       expect(response).to redirect_to "/contact"
     end

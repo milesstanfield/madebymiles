@@ -27,6 +27,8 @@
 .m-color-medium-grey {
   color: $medium-grey;
 }
+@include placeholder-color($medium-grey);
+
 
 
 // BACKGROUND COLORS
@@ -104,6 +106,9 @@
 }
 .m-circle-stroke-dark-blue {
   @include circle-stroke($dark-blue)
+}
+.m-circle-stroke-blue {
+  @include circle-stroke($blue)
 }
 .m-circle-stroke-white {
   @include circle-stroke(white)

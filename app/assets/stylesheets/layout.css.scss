@@ -112,7 +112,12 @@
 .l-school-logo-height {
   height: 80px
 }
-
+.l-form-body-height {
+  height: auto;
+  @include respond-to($med) {
+    height: 300px;
+  }
+}
 
 // OTHER
 .l-nav-tab-text {

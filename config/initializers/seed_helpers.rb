@@ -1,4 +1,14 @@
 module SeedHelpers
+  def create_setting
+    Setting.create(
+      stack_overflow: "http://stackoverflow.com/users/3123370/milesstanfield",
+      github: "https://github.com/milesstanfield",
+      facebook: "http://localhost:3000/contact",
+      twitter: "https://twitter.com/milesua",
+      email: "http://localhost:3000/mailto:miles@madebymiles.com"
+    )
+  end
+
   def create_posts_and_tags(use = "blog")
     tags.each_with_index do |tag_name, index|
       post = Post.create(

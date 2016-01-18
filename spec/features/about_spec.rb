@@ -1,6 +1,10 @@
 require "spec_helper"
 
 describe "about page", type: :feature do
+  before do
+    create_setting
+  end
+
   context "splash area" do
     before :each do
       visit "/about"

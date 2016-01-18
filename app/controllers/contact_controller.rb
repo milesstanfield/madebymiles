@@ -1,4 +1,6 @@
 class ContactController < ApplicationController
+  before_action :load_settings
+
   def index
     page = Page.by_name_or_create "contact"
     @active_nav_tab = page.active_nav_tab

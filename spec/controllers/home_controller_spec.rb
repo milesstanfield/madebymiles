@@ -7,17 +7,15 @@ describe HomeController, type: :controller do
     expect(page).to receive(:active_nav_tab).and_return(page.active_nav_tab)
     expect(page).to receive(:title_tag).and_return(page.title_tag)
     expect(page).to receive(:meta_tags).and_return(page.meta_tags)
-
     blog_posts = double(:blog_posts)
     expect(Post).to receive(:blog).and_return(blog_posts)
     expect(blog_posts).to receive(:recent).and_return(blog_posts)
     expect(blog_posts).to receive(:limit).with(6).and_return(blog_posts)
-
     tutorial_posts = double(:tutorial_posts)
     expect(Post).to receive(:tutorials).and_return(tutorial_posts)
     expect(tutorial_posts).to receive(:recent).and_return(tutorial_posts)
     expect(tutorial_posts).to receive(:limit).with(6).and_return(tutorial_posts)
-
+    expect(Setting).to receive(:first_or_create).and_return(double(:setting))
     get :index
     expect(response).to render_template(:index)
     expect(assigns(:active_nav_tab)).to eq "home"

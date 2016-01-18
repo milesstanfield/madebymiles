@@ -124,7 +124,7 @@ GEM
       trollop (>= 2.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    grids_lite (1.0.1)
+    grids_lite (1.0.2)
       rails
     haml (4.0.7)
       tilt
@@ -271,6 +271,8 @@ GEM
       rubyzip (~> 1.0)
       websocket (~> 1.0)
     sexp_processor (4.6.0)
+    shadow_controller (0.1.1)
+      rspec-rails (~> 3.4.0)
     shoulda-matchers (3.0.1)
       activesupport (>= 4.0.0)
     slop (3.6.0)
@@ -323,7 +325,7 @@ DEPENDENCIES
   formtastic
   friendly_id (~> 5.0.0)
   git-pairing
-  grids_lite (~> 1.0.1)
+  grids_lite
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -340,6 +342,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver
+  shadow_controller
   shoulda-matchers
   spring
   spring-commands-rspec
