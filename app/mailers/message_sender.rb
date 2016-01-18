@@ -1,7 +1,7 @@
 class MessageSender
   class << self
     def send(messages)
-      send_with_payload message_params(string_messages(messages))
+      send_with_payload message_params(string_messages(messages)) if messages.present?
     end
 
     private
