@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :finders, :history]
   scope :blog, -> { where use: "blog" }
   scope :tutorials, -> { where use: "tutorial" }
+  scope :recent, -> { order("created_at").reverse_order }
   has_and_belongs_to_many :tags
   validates :title, presence: true
   validates :use, presence: true
@@ -18,10 +19,6 @@ class Post < ActiveRecord::Base
   end
 
   class << self
-    def recent
-      order("created_at").reverse_order
-    end
-
     def by_tag_name(tag_name)
       includes(:tags).where(tags: { name: tag_name })
     end
