@@ -39,16 +39,7 @@
 
 - if FeatureFlipper.active_names.include? "portfolio"
   = render layout: "shared/section", locals: {name: "portfolio", path: "/portfolio", button_text: "more of my portfolio"} do
-    / = render "shared/portfolio_cards", portfolio_items: @portfolio_items
-    .l-medium-bottom-margin
-      .columns.gutters
-        .col-1-2
-          = image_tag "google_bar_graph.png", class: "l-width-100"
-        .col-1-2.m-medium.m-thin.l-v-align-top
-          = "RSpec is a behavior-driven development (BDD) framework for the Ruby programming language, inspired by JBehave. It contains its own mocking framework that is fully integrated into the framework based upon JMock. The framework can be considered a domain-specific language (DSL) and resembles a natural ..."
-          = inline_link "click for more on this", "/"
-
-
+    = render "shared/portfolio_cards", portfolios: @portfolios
 
 
 - if FeatureFlipper.active_names.include? "blog"

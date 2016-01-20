@@ -4,6 +4,7 @@ class CreateImages < ActiveRecord::Migration
       t.string :title
       t.string :file
       t.integer :portfolio_id
+      t.integer :post_id
     end
   end
 end

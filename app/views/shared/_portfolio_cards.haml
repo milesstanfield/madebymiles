@@ -1,0 +1,12 @@
+- portfolios.each do |portfolio|
+  .l-medium-bottom-margin
+    .columns.gutters
+      .col-1-1.m-color-dark-grey.m-large.m-bold
+        .l-hide-on-desktop.l-smallest-vertical-padding= portfolio.title
+      .col-1-1.col-1-2-lrg.l-medium-bottom-margin
+        = image_tag portfolio.cover_image_url, class: "l-width-100"
+      .col-1-1.col-1-2-lrg.l-v-align-top.m-color-dark-grey
+        .l-hide-on-mobile.l-hide-on-tablet.m-large.m-bold= portfolio.title
+        .m-medium.m-thin
+          = portfolio.teaser + "..."
+          = inline_link "see & read more on this", "/"

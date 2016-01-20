@@ -1,5 +1,5 @@
-ActiveAdmin.register Image do
-  permit_params :title, :file, :portfolio_id, :post_id
+ActiveAdmin.register CoverImage do
+  permit_params :title, :file, :portfolio_id
   menu parent: 'All Images'
 
   index do
@@ -21,7 +21,6 @@ ActiveAdmin.register Image do
       f.input :title
       f.input :file, :hint => "current uploaded file <br> <a href='#{f.object.file.url}'><img style='height:200px;' src='#{f.object.file.url}'/></a>".html_safe
       f.input :portfolio, as: :select, collection: Portfolio.all
-      f.input :post, as: :select, collection: Post.all
     end
     f.actions
   end

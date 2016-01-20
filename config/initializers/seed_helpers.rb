@@ -1,4 +1,17 @@
+require "#{Rails.root}/spec/support/test_files.rb"
+
 module SeedHelpers
+  def create_portfolio
+    portfolio = Portfolio.create(
+      title: "my portfolio title",
+      teaser: "RSpec is a behavior-driven development (BDD) framework for the Ruby programming language, inspired by JBehave. It contains its own mocking framework that is fully integrated into the framework based upon JMock. The framework can be considered a domain-specific language (DSL) and resembles a natural",
+      body: "RSpec is a behavior-driven development (BDD) framework for the Ruby programming language, inspired by JBehave. It contains its own mocking framework that is fully integrated into the framework based upon JMock. The framework can be considered a domain-specific language (DSL) and resembles a natural",
+    )
+    file = Rack::Test::UploadedFile.new(test_image_path(:google))
+    portfolio.cover_image = CoverImage.create(title: "my cover image", file: file)
+    portfolio.save
+  end
+
   def create_setting
     Setting.create(
       stack_overflow: "http://stackoverflow.com/users/3123370/milesstanfield",

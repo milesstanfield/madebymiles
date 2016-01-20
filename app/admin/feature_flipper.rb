@@ -1,6 +1,7 @@
 ActiveAdmin.register FeatureFlipper do
   permit_params :name, :active
   before_filter :skip_sidebar!, only: :index
+  menu parent: 'Administrative'
 
   form do |f|
     f.inputs do

@@ -6,5 +6,6 @@ create_activate_flippers
 create_pages_and_associated
 create_setting
 create_admin_user
+create_portfolio
 
 puts "done"

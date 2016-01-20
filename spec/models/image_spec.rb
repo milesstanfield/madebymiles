@@ -2,12 +2,10 @@ require "spec_helper"
 
 describe Image do
   it "has a title" do
-    pi = Image.new
-    pi.title = "foo"
-    expect(pi.title).to eq "foo"
+    string_attributes_expectations "title"
   end
 
-  it "has an image" do
+  it "has a file" do
     image_file = Rack::Test::UploadedFile.new(test_image_path)
     image = Image.new(file: image_file)
     expect(image.save).to be_truthy

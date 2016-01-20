@@ -2,16 +2,30 @@ require "spec_helper"
 
 describe Portfolio do
   it "has string/text attributes" do
-    ["title", "teaser", "body"].each do |attribute|
-      record = described_class.new
-      record.send("#{attribute}=", "some string")
-      expect(record.send("#{attribute}")).to eq "some string"
-    end
+    string_attributes_expectations "title", "teaser", "body"
   end
 
   it "has many images" do
-    FactoryGirl.create :portfolio
-    expect(Portfolio.first.images).to eq []
+    portfolio = FactoryGirl.create :portfolio
+    expect(portfolio.images).to eq []
+  end
+
+  it ".cover_image" do
+    portfolio = FactoryGirl.create :portfolio
+    file = Rack::Test::UploadedFile.new(test_image_path)
+    cover_image1 = CoverImage.create(file: file)
+    cover_image2 = CoverImage.create(file: file)
+    portfolio.cover_image = cover_image1
+    portfolio.save
+    portfolio.cover_image = cover_image2
+    portfolio.save
+    expect(portfolio.cover_images.count).to eq 1
+    expect(portfolio.cover_image_url).to include "test-image-file-google.jpg"
+  end
+
+  it "can't make more than 300 cc teaser" do
+    teaser = "x" * 301
+    expect {FactoryGirl.create :portfolio, teaser: teaser}.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it "has timestamps" do
@@ -29,7 +43,7 @@ describe Portfolio do
     expect(Portfolio.recent.map(&:title)).to eq ["new", "older", "oldest"]
   end
 
-  it "has images" do
+  it "can save an image file" do
     image_file = Rack::Test::UploadedFile.new(test_image_path)
     image = Image.new(file: image_file)
     expect(image.save).to be_truthy
