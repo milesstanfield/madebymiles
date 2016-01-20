@@ -52,6 +52,24 @@ describe "admin", type: :feature do
     end
   end
 
+  context "images" do
+    before do
+      login
+    end
+
+    it "uploads and saves an image" do
+      click_link "All Images"
+      click_link "Images"
+      click_link "New Image"
+      fill_in "Title", with: "image title"
+      within "#image_file_input" do
+        find("#image_file", visible: false).set(test_image_path)
+      end
+      click_button "Create Image"
+      expect(page).to have_text "successfully created"
+    end
+  end
+
   context "tags" do
     before do
       login

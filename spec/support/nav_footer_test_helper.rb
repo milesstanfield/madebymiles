@@ -43,6 +43,8 @@ module NavFooterTestHelper
       expect(current_path).to eq "/posts/#{tab_text}"
     elsif tab_text == "home"
       expect(current_path).to eq "/"
+    elsif tab_text == "portfolio"
+      expect(current_path).to eq "/portfolios"
     else
       expect(current_path).to eq "/#{tab_text}"
     end

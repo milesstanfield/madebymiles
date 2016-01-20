@@ -2,12 +2,22 @@ require "spec_helper"
 
 describe Portfolio do
   it "has string/text attributes" do
-    string_attributes_expectations "title", "teaser", "body"
+    string_attributes_expectations "title", "teaser", "body", "slug"
   end
 
   it "has many images" do
     portfolio = FactoryGirl.create :portfolio
     expect(portfolio.images).to eq []
+  end
+
+  it "creates friendly id slug from title with date prepended" do
+    portfolio = FactoryGirl.create :portfolio, title: "This is my #title"
+    expect(portfolio.slug). to eq "#{slug_date_portion1}/this-is-my-title"
+  end
+
+  it ".path" do
+    portfolio = FactoryGirl.create(:portfolio, title: "foo")
+    expect(portfolio.path).to eq "/portfolios/#{portfolio.slug}"
   end
 
   it ".cover_image" do

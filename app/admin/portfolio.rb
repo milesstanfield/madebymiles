@@ -7,15 +7,6 @@ ActiveAdmin.register Portfolio do
     actions
   end
 
-  # show do
-  #   attributes_table do
-  #     row :title
-  #     row :images do |image|
-  #       "<img style='height:200px;' src='#{image.file.url}'/>".html_safe
-  #     end
-  #   end
-  # end
-  #
   form do |f|
     f.inputs do
       f.input :title

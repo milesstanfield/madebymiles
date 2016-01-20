@@ -38,7 +38,7 @@
 
 
 - if FeatureFlipper.active_names.include? "portfolio"
-  = render layout: "shared/section", locals: {name: "portfolio", path: "/portfolio", button_text: "more of my portfolio"} do
+  = render layout: "shared/section", locals: {name: "portfolios", path: "/portfolios", button_text: "more of my portfolio"} do
     = render "shared/portfolio_cards", portfolios: @portfolios
 
 

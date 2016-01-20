@@ -52,6 +52,7 @@ module SeedHelpers
     create_activate_flippers
     Page.create name: "home", active_nav_tab: "home", title_tag: "home"
     Page.create name: "about", active_nav_tab: "about", title_tag: "about"
+    Page.create name: "portfolios", active_nav_tab: "portfolio", title_tag: "portfolio"
     Page.create name: "portfolio", active_nav_tab: "portfolio", title_tag: "portfolio"
     Page.create name: "contact", active_nav_tab: "contact", title_tag: "contact"
     Page.create name: "tagged"

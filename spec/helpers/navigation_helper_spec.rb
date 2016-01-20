@@ -1,11 +1,10 @@
 require "spec_helper"
-include ApplicationHelper
 
 describe NavigationHelper, type: :helper do
   context ".nav_tabs(active_tab)" do
     it "has tabs and their respective paths in order" do
       expect(nav_tabs("home").map(&:text)).to eq ["home", "about", "tutorials", "portfolio", "blog", "contact"]
-      expect(nav_tabs("home").map(&:path)).to eq ["/", "/about", "/posts/tutorials", "/portfolio", "/posts/blog", "/contact"]
+      expect(nav_tabs("home").map(&:path)).to eq ["/", "/about", "/posts/tutorials", "/portfolios", "/posts/blog", "/contact"]
     end
 
     it "returns inactive classes for tabs that are inactive" do

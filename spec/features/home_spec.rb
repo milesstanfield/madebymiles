@@ -177,16 +177,16 @@ describe "home page", type: :feature do
     end
 
     it "has a header" do
-      within "[data-area='portfolio']" do
+      within "[data-area='portfolios']" do
         expect(page).to have_text "portfolio"
         expect(page).to have_css ".cog_orange"
       end
     end
 
     it "more button" do
-      within "[data-area='portfolio']" do
+      within "[data-area='portfolios']" do
         expect(page).to have_text "more of my portfolio"
-        find("a[href='/portfolio']").click
+        find("a[href='/portfolios']").click
       end
       expect(page).to have_text "portfolio page"
     end

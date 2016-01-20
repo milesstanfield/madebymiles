@@ -31,7 +31,7 @@ describe SeedHelpers, type: :helper do
     # create records
     create_pages_and_associated
 
-    expect(Page.count).to eq 9
+    expect(Page.count).to eq 10
     expect(FeatureFlipper.count).to eq 8
     expect(MetaTag.count).to eq 9
   end

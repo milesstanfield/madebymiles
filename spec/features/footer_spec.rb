@@ -30,11 +30,11 @@ describe "the footer", type: :feature do
 
   context "portfolio page" do
     it "has clickable tabs" do
-      clickable_nav_tabs_expectations "/portfolio"
+      clickable_nav_tabs_expectations "/portfolios"
     end
 
     it "has legal copy" do
-      legal_copy_expectations "/portfolio"
+      legal_copy_expectations "/portfolios"
     end
   end
 

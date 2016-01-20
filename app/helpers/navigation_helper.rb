@@ -4,7 +4,7 @@ module NavigationHelper
       tab("home", "/", active_tab),
       tab("about", "/about", active_tab),
       tab("tutorials", "/posts/tutorials", active_tab),
-      tab("portfolio", "/portfolio", active_tab),
+      tab("portfolio", "/portfolios", active_tab),
       tab("blog", "/posts/blog", active_tab),
       tab("contact", "/contact", active_tab),
     ]

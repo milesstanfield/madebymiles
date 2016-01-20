@@ -31,7 +31,7 @@ describe "meta content", type: :feature do
 
   context "portfolio page" do
     it "has a title tag" do
-      visit "/portfolio"
+      visit "/portfolios"
       expect(page).to have_title "MadeByMiles | portfolio"
     end
   end

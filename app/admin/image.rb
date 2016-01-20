@@ -1,6 +1,6 @@
 ActiveAdmin.register Image do
   permit_params :title, :file, :portfolio_id, :post_id
-  menu parent: 'All Images'
+  menu parent: "All Images"
 
   index do
     column :title
