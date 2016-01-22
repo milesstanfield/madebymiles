@@ -23,6 +23,7 @@
  *= require "grids_lite/col-3"
  *= require "grids_lite/col-5"
  *= require "grids_lite/col-8"
+ *= require "grids_lite/col-12"
 
  *= require_self
  */

@@ -8,5 +8,6 @@ class HomeController < ApplicationController
     @meta_tags = page.meta_tags
     @blog_posts = Post.blog.recent.limit(6)
     @tutorial_posts = Post.tutorials.recent.limit(6)
+    @portfolios = Portfolio.recent.limit(3)
   end
 end

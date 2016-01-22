@@ -32,6 +32,9 @@
 
 
 // BACKGROUND COLORS
+.m-bg-quote {
+  background: $quote;
+}
 .m-bg-blue {
   background: $blue;
 }
@@ -59,6 +62,10 @@
 .m-bg-light-grey {
   background: $light-grey;
 }
+.m-bg-lightest-grey {
+  background: $lightest-grey;
+}
+
 
 
 // FONT SIZES

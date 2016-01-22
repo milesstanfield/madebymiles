@@ -20,7 +20,7 @@ class SpriteBuilder
 
   def default_options
     {
-      sprite_stylesheet_path: "app/assets/stylesheets/sprites.css.scss",
+      sprite_stylesheet_path: "app/assets/stylesheets/sprites.scss",
       sprite_png_image_path: "app/assets/images/sprites.png",
       sprites_rails_helper: "url(image_path('sprites.png'))",
       retina_sprites_rails_helper: "url(image_path('sprites_2x.png'))",

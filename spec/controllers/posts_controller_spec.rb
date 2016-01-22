@@ -56,7 +56,7 @@ describe PostsController, type: :controller do
     title = "How to do foobar"
     presented_post = double(:presented_post, use: use, title: title)
     expect(Post).to receive(:find_by_slug).with(slug).and_return(post)
-    expect(PostPresenter).to receive(:new).with(post, @controller).and_return(presented_post)
+    expect(PostPresenter).to receive(:new).with(post).and_return(presented_post)
     expect(presented_post).to receive(:use).and_return(use)
     expect(presented_post).to receive(:title).and_return(title)
     expect(Setting).to receive(:first_or_create).and_return(double(:setting))

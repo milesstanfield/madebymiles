@@ -1,11 +1,10 @@
 %footer.m-bg-dark-grey
   .m-small.l-large-vertical-padding.l-text-center
-    .l-medium-bottom-margin
-      - nav_tabs(@active_nav_tab).each do |tab|
+    .l-medium-bottom-margin{data: {name: "footer-tabs"}}
+      - all_tabs(@active_nav_tab).each do |tab|
         - if FeatureFlipper.active_names.include? tab.text
-          = link_to tab.path, class: "l-nav-tab-padding l-inline-block a-hover-opacity" do
-            %div{class: tab.classes}
-              = tab.text
+          = link_to tab.path, class: "l-smallest-side-padding l-inline-block a-hover-opacity" do
+            %div{class: tab.classes}= tab.text
 
     .l-inline.m-color-medium-grey.m-thin= "This site was designed and"
     .l-inline.m-color-white.m-bold= "MadeByMiles"

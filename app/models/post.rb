@@ -3,10 +3,12 @@ class Post < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :finders, :history]
   scope :blog, -> { where use: "blog" }
   scope :tutorials, -> { where use: "tutorial" }
+  scope :recent, -> { order("created_at").reverse_order }
   has_and_belongs_to_many :tags
   validates :title, presence: true
   validates :use, presence: true
   validates :body, presence: true
+  has_many :images
 
   def normalize_friendly_id(string)
     date = (created_at || Time.now).strftime("%Y/%m/%d")
@@ -17,17 +19,11 @@ class Post < ActiveRecord::Base
     "/posts/#{slug}"
   end
 
-  class << self
-    def recent
-      order("created_at").reverse_order
-    end
+  def self.by_tag_name(tag_name)
+    where(id: includes(:tags).where(tags: { name: tag_name }).map(&:id))
+  end
 
-    def by_tag_name(tag_name)
-      includes(:tags).where(tags: { name: tag_name })
-    end
-
-    def available_uses
-      ["blog", "tutorial"]
-    end
+  def self.available_uses
+    ["blog", "tutorial"]
   end
 end

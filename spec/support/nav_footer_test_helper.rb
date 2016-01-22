@@ -8,9 +8,17 @@ module NavFooterTestHelper
   end
 
   def clickable_nav_tabs_expectations(path)
+    tab_expectations path, nav_tab_texts, "nav"
+  end
+
+  def clickable_all_tabs_expectations(path)
+    tab_expectations path, footer_tab_texts, "footer"
+  end
+
+  def tab_expectations(path, tab_texts, type)
     visit path
     tab_texts.each do |tab_text|
-      within "[data-name='nav-tabs']" do
+      within "[data-name='#{type}-tabs']" do
         click_link tab_text
       end
       next_page_expectations tab_text
@@ -28,7 +36,7 @@ module NavFooterTestHelper
   def hamburger_expectations(path)
     visit path
     resize_window :mobile
-    tab_texts.each do |tab_text|
+    nav_tab_texts.each do |tab_text|
       within "nav" do
         expect(page).not_to have_text "about"
         find(".hamburger").click
@@ -43,12 +51,18 @@ module NavFooterTestHelper
       expect(current_path).to eq "/posts/#{tab_text}"
     elsif tab_text == "home"
       expect(current_path).to eq "/"
+    elsif tab_text == "portfolio"
+      expect(current_path).to eq "/portfolios"
     else
       expect(current_path).to eq "/#{tab_text}"
     end
   end
 
-  def tab_texts
-    ["home", "about", "portfolio", "contact", "tutorials", "blog"]
+  def footer_tab_texts
+    ["home", "about", "portfolio", "contact", "tutorials", "blog", "search"]
+  end
+
+  def nav_tab_texts
+    ["about", "portfolio", "contact", "tutorials", "blog"]
   end
 end

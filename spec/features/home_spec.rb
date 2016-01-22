@@ -16,8 +16,7 @@ describe "home page", type: :feature do
 
     it "has short splash info text" do
       within "[data-area='splash']" do
-        expect(page).to have_text "DEVELOPER DESIGNER TEACHER When I'm not writing tests, refactoring code,
-          teaching or building websites ... I'm dreaming up ways to change the world through code."
+        expect(page).to have_text "DEVELOPER DESIGNER TEACHER When I'm not writing tests, refactoring, teaching, designing"
       end
     end
   end
@@ -39,7 +38,7 @@ describe "home page", type: :feature do
         expect(page).to have_text "more about me"
         find("a[href='/about']").click
       end
-      expect(page).to have_text "A Ruby-on-Rails Developer with a background in design, living/working in Atlanta, GA"
+      expect(page).to have_text "Software Developer with a background in design, living/working in Atlanta, GA"
     end
 
     it "has a head img and caption" do
@@ -172,23 +171,27 @@ describe "home page", type: :feature do
   end
 
   context "portfolio area" do
+    before do
+      create_portfolio_and_related
+    end
+
     before :each do
       visit "/"
     end
 
     it "has a header" do
-      within "[data-area='portfolio']" do
+      within "[data-area='portfolios']" do
         expect(page).to have_text "portfolio"
         expect(page).to have_css ".cog_orange"
       end
     end
 
     it "more button" do
-      within "[data-area='portfolio']" do
+      within "[data-area='portfolios']" do
         expect(page).to have_text "more of my portfolio"
-        find("a[href='/portfolio']").click
+        find("a[href='/portfolios']").click
       end
-      expect(page).to have_text "portfolio page"
+      expect(page).to have_text "RSpec is a behavior-driven development"
     end
   end
 

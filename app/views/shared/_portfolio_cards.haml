@@ -1,0 +1,21 @@
+- teaser_limit ||= 300
+- size ||= "normal"
+- normal_size_grid_class = "col-1-2-lrg" if size == "normal"
+
+- portfolios.each do |portfolio|
+  .l-medium-bottom-margin
+    .columns.gutters
+      .col-1-1.m-color-dark-grey.m-large.m-bold
+        .l-hide-on-desktop.l-smallest-vertical-padding= portfolio.title
+      .col-1-1.l-medium-bottom-margin{class: normal_size_grid_class}
+        = link_to portfolio.path do
+          = image_tag portfolio.cover_image_url, class: "l-width-100"
+      .col-1-1.l-v-align-top.m-color-dark-grey{class: normal_size_grid_class}
+        - if size == "normal"
+          .l-hide-on-mobile.l-hide-on-tablet.m-large.m-bold= portfolio.title
+        .m-medium.m-thin
+          = portfolio.teaser.truncate(teaser_limit)
+          = inline_link "goto this project", portfolio.path
+        .l-smallest-vertical-padding
+          - portfolio.roles.each do |role|
+            = link_to role.title, roles_portfolios_path(role.title), class: "l-inline-block l-tag-text-spacing m-thin m-small m-color-white m-bg-medium-grey a-hover-bg-blue"

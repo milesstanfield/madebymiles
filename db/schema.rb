@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118163730) do
+ActiveRecord::Schema.define(version: 20160120151929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 20160118163730) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
+  create_table "cover_images", force: :cascade do |t|
+    t.string  "file"
+    t.string  "title"
+    t.integer "portfolio_id"
+  end
+
   create_table "feature_flippers", force: :cascade do |t|
     t.boolean "active"
     t.string  "name"
@@ -49,6 +55,13 @@ ActiveRecord::Schema.define(version: 20160118163730) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string  "title"
+    t.string  "file"
+    t.integer "portfolio_id"
+    t.integer "post_id"
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string  "sender_name"
@@ -78,6 +91,15 @@ ActiveRecord::Schema.define(version: 20160118163730) do
     t.string "active_nav_tab"
   end
 
+  create_table "portfolios", force: :cascade do |t|
+    t.string   "title"
+    t.text     "teaser"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
@@ -97,6 +119,11 @@ ActiveRecord::Schema.define(version: 20160118163730) do
 
   add_index "posts_tags", ["post_id"], name: "index_posts_tags_on_post_id", using: :btree
   add_index "posts_tags", ["tag_id"], name: "index_posts_tags_on_tag_id", using: :btree
+
+  create_table "roles", force: :cascade do |t|
+    t.string  "title"
+    t.integer "portfolio_id"
+  end
 
   create_table "settings", force: :cascade do |t|
     t.string "github"

@@ -5,9 +5,14 @@ describe Post do
     string_attributes_expectations "title", "use", "body", "slug", "teaser"
   end
 
+  it "has many images" do
+    post = Post.new
+    expect(post.images).to eq []
+  end
+
   it "has many tags" do
     post = Post.new
-    expect(post.tags).to be_empty
+    expect(post.tags).to eq []
   end
 
   it "creates friendly id slug from title with date prepended" do

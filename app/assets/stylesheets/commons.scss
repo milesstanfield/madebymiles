@@ -114,17 +114,17 @@
 
 // hides
 .l-hide-on-desktop {
-  @media only screen and (min-width: $lrg) {
+  @include respond-to($lrg) {
     display: none;
   }
 }
 .l-hide-on-tablet {
-  @media only screen and (min-width: $med) and (max-width: $lrg) {
+  @include respond-to($med, $lrg) {
     display: none;
   }
 }
 .l-hide-on-mobile {
-  @media only screen and (max-width: $med) {
+  @include respond-to(0px, $med) {
     display: none;
   }
 }

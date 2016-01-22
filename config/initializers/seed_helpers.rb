@@ -1,4 +1,19 @@
+require "#{Rails.root}/spec/support/test_files.rb"
+
 module SeedHelpers
+  def create_portfolio_and_related(image = :google, title = "my portfolio title")
+    portfolio = Portfolio.create(
+      title: title,
+      teaser: "RSpec is a behavior-driven development (BDD) framework for the Ruby programming language, inspired by JBehave. It contains its own mocking framework that is fully integrated into the framework based upon JMock. The framework can be considered a domain-specific language (DSL) and resembles a natural",
+      body: "first you do this\r\n \r\n> this is a quote \r\n\r\nthen you embed an image ![Alt text](https://s3.amazonaws.com/assets.madebymiles.com/uploads/google_bars.jpg) \r\n\r\nalso inline link here [my link](www.google.com) i can also **bold** text"
+    )
+    file = Rack::Test::UploadedFile.new(test_image_path(image))
+    portfolio.cover_image = CoverImage.create(title: title, file: file)
+    role = Role.create(title: "Developer")
+    portfolio.roles << role
+    portfolio.save
+  end
+
   def create_setting
     Setting.create(
       stack_overflow: "http://stackoverflow.com/users/3123370/milesstanfield",
@@ -39,6 +54,7 @@ module SeedHelpers
     create_activate_flippers
     Page.create name: "home", active_nav_tab: "home", title_tag: "home"
     Page.create name: "about", active_nav_tab: "about", title_tag: "about"
+    Page.create name: "portfolios", active_nav_tab: "portfolio", title_tag: "portfolio"
     Page.create name: "portfolio", active_nav_tab: "portfolio", title_tag: "portfolio"
     Page.create name: "contact", active_nav_tab: "contact", title_tag: "contact"
     Page.create name: "tagged"
@@ -46,6 +62,7 @@ module SeedHelpers
     Page.create name: "tutorials", active_nav_tab: "tutorials", title_tag: "tutorials"
     Page.create name: "post"
     Page.create name: "404", title_tag: "404"
+    Page.create name: "search"
 
     Page.all.each do |page|
       page.meta_tags << MetaTag.create(attr: "name", attr_value: "description", content: "this is the description of this page")

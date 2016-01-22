@@ -44,11 +44,64 @@ describe "admin", type: :feature do
       expect(Post.count).to eq 1
 
       visit Post.first.path
-      within "blockquote" do
-        within "p" do
-          expect(page).to have_text "with quote"
-        end
+      within "p[class='l-medium-padding m-bg-quote']" do
+        expect(page).to have_text "quote"
       end
+    end
+  end
+
+  context "images" do
+    before do
+      login
+    end
+
+    it "uploads and saves an image" do
+      click_link "All Images"
+      click_link "Images"
+      click_link "New Image"
+      fill_in "Title", with: "image title"
+      within "#image_file_input" do
+        find("#image_file", visible: false).set(test_image_path)
+      end
+      click_button "Create Image"
+      expect(page).to have_text "successfully created"
+      expect(page).to have_css "img[src$='test-image-file-google.jpg']"
+    end
+
+    it "uploads and saves an cover image" do
+      click_link "All Images"
+      click_link "Cover Images"
+      click_link "New Cover Image"
+      fill_in "Title", with: "image title"
+      within "#cover_image_file_input" do
+        find("#cover_image_file", visible: false).set(test_image_path)
+      end
+      click_button "Create Cover image"
+      expect(page).to have_text "successfully created"
+      expect(page).to have_css "img[src$='test-image-file-google.jpg']"
+    end
+  end
+
+  context "portfolio" do
+    before do
+      login
+    end
+
+    it "creates a new portfolio with markdown" do
+      click_link "Portfolios"
+      click_link "New Portfolio"
+      fill_in "Title", with: "title of portfolio"
+      fill_in "Teaser", with: "teaser of portfolio"
+      fill_in "Body", with: "first you do this \n
+        > this is a quote
+        \n\n
+        then you embed an image ![Alt text](https://s3.amazonaws.com/assets.madebymiles.com/uploads/google_bars.jpg)
+        \n\n
+        also inline link here [my link](www.google.com)
+        \n\n
+        i can also **bold** text"
+      click_button "Create Portfolio"
+      expect(page).to have_text "successfully created"
     end
   end
 

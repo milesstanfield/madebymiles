@@ -1,23 +1,29 @@
 %nav.m-bg-blue.l-relative
   .l-max-content-width.l-horizontal-center.l-content-padding
     .l-relative.l-nav-height
-      .hamburger.l-hide-on-tablet.l-hide-on-desktop.m-clickable.l-absolute-vertical-center.a-hover-opacity{data: {hook: "hamburger"}}
+      .hamburger.l-hide-on-tablet.l-hide-on-desktop.m-clickable.l-absolute-vertical-center.a-hover-opacity.l-z-index-5{data: {hook: "hamburger"}}
 
-      = link_to root_path, class: "a-hover-opacity l-nav-logo-position l-absolute" do
+      = link_to root_path, class: "a-hover-opacity l-nav-logo-position l-absolute l-z-index-5" do
         .madebymiles_logo
 
-      .l-hide-on-mobile.l-absolute.l-right.l-height-100{data: {name: "nav-tabs"}}
-        - nav_tabs(@active_nav_tab).each do |tab|
-          - if FeatureFlipper.active_names.include? tab.text
-            = link_to tab.path, class: "l-nav-tab-padding l-height-100 l-inline-block a-hover-nav-tab" do
-              %div{class: "#{tab.classes} l-nav-tab-text" }
-                = tab.text
+      .l-relative.l-height-100
+        .l-absolute.l-right.l-height-100{data: {name: "nav-tabs"}}
+          .l-hide-on-mobile.l-inline-block.l-v-align-top.l-height-100
+            - nav_tabs(@active_nav_tab).each do |tab|
+              - if FeatureFlipper.active_names.include? tab.text
+                = link_to tab.path, class: "l-nav-tab-padding l-height-100 l-inline-block a-hover-nav-tab" do
+                  %div{class: "#{tab.classes} l-nav-tab-text" }
+                    = tab.text
+
+          - if FeatureFlipper.active_names.include? "search"
+            = link_to "/search", class: "l-height-100 l-search-icon a-hover-opacity l-inline-block l-relative l-v-align-top" do
+              .search_icon.l-absolute-center
 
   .l-hide-on-tablet
     .l-hide{data: {hook: "nav-menu"}}
       .col-1-2.l-nav-menu.l-top.l-absolute.m-bg-darkest-grey.l-z-index-5
         .l-max-content-width.l-horizontal-center.l-content-padding
-          - nav_tabs(@active_nav_tab).each do |tab|
+          - all_tabs(@active_nav_tab).each do |tab|
             - if FeatureFlipper.active_names.include? tab.text
               .l-block.l-small-vertical-padding
                 = link_to tab.text, tab.path, class: "m-bold m-medium m-color-white"

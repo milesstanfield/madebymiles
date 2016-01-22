@@ -1,13 +1,17 @@
 module NavigationHelper
   def nav_tabs(active_tab)
     [
-      tab("home", "/", active_tab),
       tab("about", "/about", active_tab),
       tab("tutorials", "/posts/tutorials", active_tab),
-      tab("portfolio", "/portfolio", active_tab),
+      tab("portfolio", "/portfolios", active_tab),
       tab("blog", "/posts/blog", active_tab),
       tab("contact", "/contact", active_tab),
     ]
+  end
+
+  def all_tabs(active_tab)
+    tabs_with_home = nav_tabs(active_tab).unshift tab("home", "/", active_tab)
+    tabs_with_home << tab("search", "/search", active_tab)
   end
 
   private

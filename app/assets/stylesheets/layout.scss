@@ -5,9 +5,6 @@
 .l-max-content-width {
   max-width: 1050px;
 }
-.l-max-reading-width {
-  max-width: 800px;
-}
 .l-z-index-5 {
   z-index: 5;
 }
@@ -47,6 +44,9 @@
 .l-medium-bottom-margin {
   margin-bottom: 20px;
 }
+.l-large-bottom-margin {
+  margin-bottom: $large-vertical-spacing;
+}
 .l-post-card-bottom-margin {
   margin-bottom: 40px;
 }
@@ -61,6 +61,8 @@
 .l-small-margin-right {
   margin-right: 5px;
 }
+
+
 
 
 // PADDING
@@ -94,8 +96,14 @@
 .l-nav-tab-padding {
   @include side-padding(15px);
 }
-.l-circle-padding {
+.l-smallest-side-padding {
   @include side-padding(10px);
+}
+.l-reading-padding {
+  padding: 55px 20px;
+  @include respond-to(950.05px) {
+    padding: 55px 90px;
+  }
 }
 
 
@@ -122,6 +130,13 @@
   }
 }
 
+
+// WIDTH
+.l-line-width {
+  width: 1px;
+}
+
+
 // OTHER
 .l-nav-tab-text {
   top: 20px;
@@ -137,9 +152,6 @@
 .l-nav-menu {
   margin-top: $nav-height;
   height: calc(100% - $nav-height);
-}
-.l-line-width {
-  width: 1px;
 }
 .l-about-head {
   @include respond-to($med) {
@@ -157,4 +169,12 @@
 .l-circle-size {
   width: 45px;
   height: 45px;
+}
+.l-search-icon {
+  top: 2px;
+  margin-left: 10px;
+  width: 25px;
+}
+.l-cog-adj {
+  top: 1px;
 }

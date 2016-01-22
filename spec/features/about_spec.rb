@@ -18,7 +18,7 @@ describe "about page", type: :feature do
 
     it "has splash copy" do
       within "[data-area='splash']" do
-        expect(page).to have_text "A Ruby-on-Rails Developer with a background in design, living/working in Atlanta, GA"
+        expect(page).to have_text "Software Developer with a background in design, living/working in Atlanta, GA"
         expect(page).to have_text "Code review and refactoring in an agile environment is by far my favorite aspect of
           being a developer because I get to teach others how to improve their code and learn new ways to improve my own."
       end

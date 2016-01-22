@@ -21,6 +21,10 @@ gem 'email_validator'
 gem 'shadow_controller'
 gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 
+# carrierwave and related
+gem 'carrierwave'
+gem 'mini_magick'
+
 group :assets do
   gem 'sprite-factory'
   gem 'rmagick'

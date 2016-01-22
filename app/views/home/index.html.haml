@@ -5,11 +5,11 @@
         .l-block= word
       .m-bg-orange.l-line-width.l-height-100.l-absolute.l-right.l-top.l-hide-on-mobile
     .col-1-1.col-1-2-med.l-v-align-middle
-      .col-1-8-med.l-hide-on-mobile
-      .col-1-1.col-6-8-med
+      .col-1-12-med.l-hide-on-mobile
+      .col-1-1.col-10-12-med
         .m-medium.m-thin.m-color-light-grey
-          = "When I'm not writing tests, refactoring code, teaching or building websites ... I'm dreaming up ways to change the world through code."
-      .col-1-8-med.l-hide-on-mobile
+          = "When I'm not writing tests, refactoring, teaching, designing or developing websites...I'm dreaming up ways to change the world through creating coding."
+      .col-1-12-med.l-hide-on-mobile
 
 
 - if FeatureFlipper.active_names.include? "about"
@@ -33,14 +33,13 @@
 
 
 - if FeatureFlipper.active_names.include? "tutorials"
-  = render layout: "shared/section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials", line_off: true} do
+  = render layout: "shared/section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials"} do
     = render "shared/post_cards", posts: @tutorial_posts
 
 
 - if FeatureFlipper.active_names.include? "portfolio"
-  .m-bg-dark-blue
-    = render layout: "shared/section", locals: {name: "portfolio", path: "/portfolio", button_text: "more of my portfolio", color: "white", line_off: true} do
-      "foo"
+  = render layout: "shared/section", locals: {name: "portfolios", path: "/portfolios", button_text: "more of my portfolio"} do
+    = render "shared/portfolio_cards", portfolios: @portfolios
 
 
 - if FeatureFlipper.active_names.include? "blog"

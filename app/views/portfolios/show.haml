@@ -1,0 +1,22 @@
+.l-max-content-width.l-horizontal-center.l-large-vertical-padding.l-content-padding
+  .columns.gutters
+    .col-1-1
+      %h1.m-larger.m-color-dark-grey.m-bold= @presented_portfolio.title
+    .col-1-1.col-8-12-lrg.l-v-align-top
+      .l-block.l-smallest-vertical-padding
+        .l-inline-block.m-small.m-thin.m-color-dark-grey.l-v-align-top
+          .l-inline-block.m-thin.l-small-margin-right= "My roles:"
+          - @presented_portfolio.roles.each do |role|
+            = link_to role.title, roles_portfolios_path(role.title), class: "l-inline-block l-tag-text-spacing m-thin m-small m-color-white m-bg-medium-grey a-hover-bg-blue"
+      .m-medium.m-thin.m-color-dark-grey
+        = @presented_portfolio.markdown_body
+
+
+    .col-4-12-lrg.l-v-align-top
+      .l-hide-on-mobile.l-hide-on-tablet
+        = render layout: "shared/small_card", locals: {header_text: "about me"} do
+          .m-thin.m-medium.m-color-dark-grey.l-medium-bottom-margin.l-inline.l-small-margin-right= "My name is Miles and I'm a Software Developer, Data Scientist and  Designer. When I'm not writing tests, refactoring, teaching, designing or developing websites...I'm dreaming up ways to change the world through creating coding."
+          = inline_link "read more", "/about"
+
+        = render layout: "shared/small_card", locals: {header_text: "recent projects"} do
+          = render "shared/portfolio_cards", portfolios: @portfolios, teaser_limit: 100, size: "small"
