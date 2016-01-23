@@ -1,4 +1,4 @@
 class Role < ActiveRecord::Base
-  belongs_to :portfolio
+  has_and_belongs_to_many :portfolios
   validates :title, uniqueness: true
 end

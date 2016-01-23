@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120151929) do
+ActiveRecord::Schema.define(version: 20160123170511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,14 @@ ActiveRecord::Schema.define(version: 20160120151929) do
     t.string   "slug"
   end
 
+  create_table "portfolios_roles", id: false, force: :cascade do |t|
+    t.integer "portfolio_id"
+    t.integer "role_id"
+  end
+
+  add_index "portfolios_roles", ["portfolio_id"], name: "index_portfolios_roles_on_portfolio_id", using: :btree
+  add_index "portfolios_roles", ["role_id"], name: "index_portfolios_roles_on_role_id", using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
@@ -121,8 +129,7 @@ ActiveRecord::Schema.define(version: 20160120151929) do
   add_index "posts_tags", ["tag_id"], name: "index_posts_tags_on_tag_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
-    t.string  "title"
-    t.integer "portfolio_id"
+    t.string "title"
   end
 
   create_table "settings", force: :cascade do |t|

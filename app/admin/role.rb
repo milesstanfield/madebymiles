@@ -10,7 +10,7 @@ ActiveAdmin.register Role do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :portfolio, as: :select, collection: Portfolio.all
+      f.input :portfolio, as: :check_boxes, collection: Portfolio.all
     end
     f.actions
   end

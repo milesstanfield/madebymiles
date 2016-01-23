@@ -5,9 +5,15 @@ describe Portfolio do
     string_attributes_expectations "title", "teaser", "body", "slug"
   end
 
-  it "has many roles" do
-    portfolio = FactoryGirl.create :portfolio
-    expect(portfolio.roles).to eq []
+  it "has and belongs to many roles" do
+    portfolio1 = FactoryGirl.create :portfolio
+    portfolio2 = FactoryGirl.create :portfolio
+    role = FactoryGirl.create :role
+    portfolio1.roles << role
+    expect(portfolio1.roles.first).to eq role
+    portfolio2.roles << role
+    expect(portfolio2.roles.first).to eq role
+    expect(portfolio1.roles.first).to eq role
   end
 
   it "has many images" do
