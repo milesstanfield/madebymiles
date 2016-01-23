@@ -4,6 +4,12 @@ ActiveAdmin.register Image do
 
   index do
     column :title
+    column :usage do |image|
+      "![](internal #{image.title})"
+    end
+    column :file do |image|
+      "<img style='height:200px;' src='#{image.file.url}'/>".html_safe
+    end
     actions
   end
 

@@ -7,7 +7,7 @@ describe CoverImage do
 
   it "has a cover" do
     image_file = Rack::Test::UploadedFile.new(test_image_path)
-    cover_image = CoverImage.new(file: image_file)
+    cover_image = CoverImage.new(file: image_file, title: "test image")
     expect(cover_image.save).to be_truthy
     expect(cover_image.reload.file.length).to be > 0
   end

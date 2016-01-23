@@ -99,6 +99,11 @@
 
 
 // OTHER
+.m-list-inside {
+  ol, ul {
+    list-style-position: inside;
+  }
+}
 .m-underline-white {
   @include underline(white);
 }

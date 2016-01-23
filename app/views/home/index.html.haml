@@ -33,14 +33,14 @@
 
 
 - if FeatureFlipper.active_names.include? "tutorials"
-  = render layout: "shared/section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials"} do
+  = render layout: "shared/section", locals: {name: "tutorials", path: "/posts/tutorials", button_text: "more tutorials", line_off: true} do
     = render "shared/post_cards", posts: @tutorial_posts
 
 
 - if FeatureFlipper.active_names.include? "portfolio"
-  = render layout: "shared/section", locals: {name: "portfolios", path: "/portfolios", button_text: "more of my portfolio"} do
-    = render "shared/portfolio_cards", portfolios: @portfolios
-
+  .m-bg-lightest-grey
+    = render layout: "shared/section", locals: {name: "portfolios", path: "/portfolios", button_text: "more of my portfolio", line_off: true} do
+      = render "shared/portfolio_cards", portfolios: @portfolios
 
 - if FeatureFlipper.active_names.include? "blog"
   = render layout: "shared/section", locals: {name: "blog", path: "/posts/blog", button_text: "more blog posts", line_off: true} do

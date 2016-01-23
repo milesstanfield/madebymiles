@@ -8,7 +8,7 @@ module SeedHelpers
       body: "first you do this\r\n \r\n> this is a quote \r\n\r\nthen you embed an image ![Alt text](https://s3.amazonaws.com/assets.madebymiles.com/uploads/google_bars.jpg) \r\n\r\nalso inline link here [my link](www.google.com) i can also **bold** text"
     )
     file = Rack::Test::UploadedFile.new(test_image_path(image))
-    portfolio.cover_image = CoverImage.create(title: title, file: file)
+    portfolio.cover_images << CoverImage.create(title: title, file: file)
     role = Role.create(title: "Developer")
     portfolio.roles << role
     portfolio.save

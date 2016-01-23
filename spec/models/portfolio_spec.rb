@@ -31,16 +31,11 @@ describe Portfolio do
     expect(portfolio.path).to eq "/portfolios/#{portfolio.slug}"
   end
 
-  it ".cover_image" do
+  it ".cover_image_url" do
     portfolio = FactoryGirl.create :portfolio
     file = Rack::Test::UploadedFile.new(test_image_path)
-    cover_image1 = CoverImage.create(file: file)
-    cover_image2 = CoverImage.create(file: file)
-    portfolio.cover_image = cover_image1
-    portfolio.save
-    portfolio.cover_image = cover_image2
-    portfolio.save
-    expect(portfolio.cover_images.count).to eq 1
+    cover_image = CoverImage.create(file: file)
+    portfolio.cover_images << cover_image
     expect(portfolio.cover_image_url).to include "test-image-file-google.jpg"
   end
 
@@ -62,13 +57,6 @@ describe Portfolio do
     FactoryGirl.create :portfolio, title: "new", created_at: Time.now
     FactoryGirl.create :portfolio, title: "older", created_at: (Time.now - 5.minutes)
     expect(Portfolio.recent.map(&:title)).to eq ["new", "older", "oldest"]
-  end
-
-  it "can save an image file" do
-    image_file = Rack::Test::UploadedFile.new(test_image_path)
-    image = Image.new(file: image_file)
-    expect(image.save).to be_truthy
-    expect(image.reload.file.length).to be > 0
   end
 
   it ".by_role" do

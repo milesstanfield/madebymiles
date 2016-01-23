@@ -85,6 +85,8 @@ describe "admin", type: :feature do
   context "portfolio" do
     before do
       login
+      image_file = Rack::Test::UploadedFile.new(test_image_path)
+      CoverImage.create(file: image_file, title: "test image")
     end
 
     it "creates a new portfolio with markdown" do
@@ -100,6 +102,9 @@ describe "admin", type: :feature do
         also inline link here [my link](www.google.com)
         \n\n
         i can also **bold** text"
+      within "#portfolio_cover_images_input" do
+        page.check('test image')
+      end
       click_button "Create Portfolio"
       expect(page).to have_text "successfully created"
     end
