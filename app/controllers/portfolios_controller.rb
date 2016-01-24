@@ -16,7 +16,7 @@ class PortfoliosController < ApplicationController
     @active_nav_tab = "portfolio"
     @title_tag = @presented_portfolio.title
     @meta_tags = []
-    return missing_page unless portfolio.published?
+    return missing_page unless portfolio.published? || user_signed_in?
   end
 
   def roles

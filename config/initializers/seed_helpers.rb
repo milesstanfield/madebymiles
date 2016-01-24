@@ -2,16 +2,10 @@ require "#{Rails.root}/spec/support/test_files.rb"
 
 module SeedHelpers
   def create_portfolio_and_related(image = :google, title = "my portfolio title")
-    portfolio = Portfolio.new(
-      title: title,
-      teaser: "RSpec is a behavior-driven development (BDD) framework for the Ruby programming language, inspired by JBehave. It contains its own mocking framework that is fully integrated into the framework based upon JMock. The framework can be considered a domain-specific language (DSL) and resembles a natural",
-      body: "first you do this\r\n \r\n> this is a quote \r\n\r\nthen you embed an image ![Alt text](https://s3.amazonaws.com/assets.madebymiles.com/uploads/google_bars.jpg) \r\n\r\nalso inline link here [my link](www.google.com) i can also **bold** text"
-    )
-    file = Rack::Test::UploadedFile.new(test_image_path(image))
-    portfolio.cover_images << CoverImage.create(title: title, file: file)
-    role = Role.create(title: "Developer")
-    portfolio.roles << role
-    portfolio.save
+    teaser = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis"
+    body = "first you do this\r\n \r\n> this is a quote \r\n\r\nthen you embed an image ![Alt text](https://s3.amazonaws.com/assets.madebymiles.com/uploads/google_bars.jpg) \r\n\r\nalso inline link here [my link](www.google.com) i can also **bold** text"
+    portfolio = FactoryGirl.create :portfolio, title: title, teaser: teaser, body: body, published: true
+    portfolio.roles.create(title: "Developer")
   end
 
   def create_setting

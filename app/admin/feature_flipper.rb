@@ -6,7 +6,7 @@ ActiveAdmin.register FeatureFlipper do
 
   form do |f|
     f.inputs do
-      f.input :name, as: :select, collection: FeatureFlipper.available_names
+      f.input :name, as: :select, collection: FeatureFlipper.available_names.reject! {|name| FeatureFlipper.all.map(&:name).any?{|n| name == n } }
       f.input :active, as: :boolean
     end
     f.actions

@@ -30,6 +30,6 @@ class PostsController < ApplicationController
     @active_nav_tab = @presented_post.use == "tutorial" ? "tutorials" : "blog"
     @title_tag = @presented_post.title
     @meta_tags = []
-    return missing_page unless post.published?
+    return missing_page unless post.published? || user_signed_in?
   end
 end
