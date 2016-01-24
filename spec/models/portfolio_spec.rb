@@ -73,9 +73,9 @@ describe Portfolio do
   end
 
   it "has a published scope" do
-    factory = FactoryGirl.create :portfolio, title: "f1"
-    published_factory = FactoryGirl.create :portfolio, title: "f2", published: true
+    FactoryGirl.create :portfolio, title: "f1"
+    published_portfolio = FactoryGirl.create :portfolio, title: "f2", published: true
     expect(Portfolio.published.count).to eq 1
-    expect(Portfolio.published.first).to eq published_factory
+    expect(Portfolio.published.first).to eq published_portfolio
   end
 end

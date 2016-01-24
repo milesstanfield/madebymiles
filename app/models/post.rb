@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   scope :blog, -> { where use: "blog" }
   scope :tutorials, -> { where use: "tutorial" }
   scope :recent, -> { order("created_at").reverse_order }
+  scope :published, -> { where(published: true) }
   has_and_belongs_to_many :tags
   validates :title, presence: true
   validates :use, presence: true

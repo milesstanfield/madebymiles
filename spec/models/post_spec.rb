@@ -83,4 +83,16 @@ describe Post do
   it "must have a use" do
     expect { FactoryGirl.create(:post, use: nil) }.to raise_error(ActiveRecord::RecordInvalid)
   end
+
+  it "has a published attribute and is false by default" do
+    FactoryGirl.create :post
+    expect(Post.first.published).to eq false
+  end
+
+  it "has a published scope" do
+    FactoryGirl.create :post, title: "f1"
+    published_post = FactoryGirl.create :post, title: "f2", published: true
+    expect(Post.published.count).to eq 1
+    expect(Post.published.first).to eq published_post
+  end
 end
