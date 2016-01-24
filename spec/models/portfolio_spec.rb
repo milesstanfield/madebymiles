@@ -6,8 +6,8 @@ describe Portfolio do
   end
 
   it "has and belongs to many roles" do
-    portfolio1 = FactoryGirl.create :portfolio
-    portfolio2 = FactoryGirl.create :portfolio
+    portfolio1 = FactoryGirl.create :portfolio, title: "1"
+    portfolio2 = FactoryGirl.create :portfolio, title: "2"
     role = FactoryGirl.create :role
     portfolio1.roles << role
     expect(portfolio1.roles.first).to eq role

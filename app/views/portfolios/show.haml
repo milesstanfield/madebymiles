@@ -18,5 +18,5 @@
           .m-thin.m-medium.m-color-dark-grey.l-medium-bottom-margin.l-inline.l-small-margin-right= "My name is Miles and I'm a Software Developer, Data Scientist and  Designer. When I'm not writing tests, refactoring, teaching, designing or developing websites...I'm dreaming up ways to change the world through creating coding."
           = inline_link "read more", "/about"
 
-        = render layout: "shared/small_card", locals: {header_text: "recent projects"} do
-          = render "shared/portfolio_cards", portfolios: @portfolios, teaser_limit: 100, size: "small"
+      = render layout: "shared/small_card", locals: {header_text: "recent projects"} do
+        = render "shared/portfolio_cards", portfolios: @portfolios, teaser_limit: 100, size: "small"
