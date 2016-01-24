@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160123170511) do
+ActiveRecord::Schema.define(version: 20160124182622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20160123170511) do
     t.string  "name"
     t.integer "page_id"
   end
+
+  add_index "feature_flippers", ["name"], name: "index_feature_flippers_on_name", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -91,6 +93,8 @@ ActiveRecord::Schema.define(version: 20160123170511) do
     t.string "active_nav_tab"
   end
 
+  add_index "pages", ["name"], name: "index_pages_on_name", using: :btree
+
   create_table "portfolios", force: :cascade do |t|
     t.string   "title"
     t.text     "teaser"
@@ -98,7 +102,11 @@ ActiveRecord::Schema.define(version: 20160123170511) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.boolean  "published",  default: false
   end
+
+  add_index "portfolios", ["published"], name: "index_portfolios_on_published", using: :btree
+  add_index "portfolios", ["slug"], name: "index_portfolios_on_slug", using: :btree
 
   create_table "portfolios_roles", id: false, force: :cascade do |t|
     t.integer "portfolio_id"
@@ -143,6 +151,8 @@ ActiveRecord::Schema.define(version: 20160123170511) do
   create_table "tags", force: :cascade do |t|
     t.string "name"
   end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -66,4 +66,16 @@ describe Portfolio do
     expect(Portfolio.by_role("designer").count).to eq 1
     expect(Portfolio.by_role("designer").first).to eq p1
   end
+
+  it "has a published attribute and is false by default" do
+    FactoryGirl.create :portfolio
+    expect(Portfolio.first.published).to eq false
+  end
+
+  it "has a published scope" do
+    factory = FactoryGirl.create :portfolio, title: "f1"
+    published_factory = FactoryGirl.create :portfolio, title: "f2", published: true
+    expect(Portfolio.published.count).to eq 1
+    expect(Portfolio.published.first).to eq published_factory
+  end
 end

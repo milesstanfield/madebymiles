@@ -5,6 +5,7 @@ class Portfolio < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_many :cover_images
   scope :recent, -> { order("created_at").reverse_order }
+  scope :published, -> { where(published: true) }
   validates :teaser, length: {maximum: 300}
   validates :cover_images, presence: true
 
