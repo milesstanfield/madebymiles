@@ -18,7 +18,7 @@ ActiveAdmin.register Page do
 
   form do |f|
     f.inputs do
-      f.input :name, as: :select, collection: Page.available_names.sort
+      f.input :name, as: :select, collection: Page.available_names.reject! {|name| Page.all.map(&:name).any?{|n| name == n } }
       f.input :active_nav_tab
       f.input :title_tag
     end
