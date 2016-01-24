@@ -1,7 +1,9 @@
 %nav.m-bg-blue.l-relative
   .l-max-content-width.l-horizontal-center.l-content-padding
     .l-relative.l-nav-height
-      .hamburger.l-hide-on-tablet.l-hide-on-desktop.m-clickable.l-absolute-vertical-center.a-hover-opacity.l-z-index-5{data: {hook: "hamburger"}}
+      .l-height-100.l-hamburger-width.m-clickable.l-hide-on-tablet.l-hide-on-desktop.l-absolute.l-z-index-5.a-hover-opacity{data: {hook: "hamburger"}}
+        .l-relative.l-height-100
+          .hamburger.l-absolute-vertical-center
 
       = link_to root_path, class: "a-hover-opacity l-nav-logo-position l-absolute l-z-index-5" do
         .madebymiles_logo
@@ -21,12 +23,10 @@
 
   .l-hide-on-tablet
     .l-hide{data: {hook: "nav-menu"}}
-      .col-1-2.l-nav-menu.l-top.l-absolute.m-bg-darkest-grey.l-z-index-5
-        .l-max-content-width.l-horizontal-center.l-content-padding
+      .col-1-2.l-nav-menu.l-top.l-absolute.m-bg-lightest-grey.l-z-index-10
+        .l-max-content-width.l-horizontal-center.m-bold.m-medium
           - all_tabs(@active_nav_tab).each do |tab|
             - if FeatureFlipper.active_names.include? tab.text
-              .l-block.l-small-vertical-padding
-                = link_to tab.text, tab.path, class: "m-bold m-medium m-color-white"
-
-:javascript
-  new Hamburger
+              = link_to tab.path do
+                .a-hover-bg-dark-blue.l-block.l-small-vertical-padding.l-content-padding.m-color-blue= tab.text
+              = render "shared/line", color_class: "m-bg-dark-blue"

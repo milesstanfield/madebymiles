@@ -27,4 +27,8 @@
   .a-hover-opacity:hover {
     opacity: 0.75;
   }
+  .a-hover-bg-dark-blue:hover {
+    background: $dark-blue;
+    color: white;
+  }
 }

@@ -11,6 +11,11 @@
       = meta_tag(meta_tag_record)
   %body
     = render "shared/nav"
-    = yield
-    = render "shared/connect_zone"
-    = render "shared/footer"
+    .l-relative.l-width-100
+      = render "shared/content_shade"
+      = yield
+      = render "shared/connect_zone"
+      = render "shared/footer"
+
+    :javascript
+      new Hamburger

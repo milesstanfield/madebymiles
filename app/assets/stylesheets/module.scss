@@ -122,3 +122,6 @@
 .m-circle-stroke-white {
   @include circle-stroke(white)
 }
+.m-opacity-50 {
+  opacity: 0.5;
+}
