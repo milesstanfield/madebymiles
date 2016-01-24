@@ -4,6 +4,7 @@ describe "meta content", type: :feature do
   before do
     create_posts_and_tags "blog"
     create_posts_and_tags "tutorial"
+    Post.update_all(published: true)
     create_pages_and_associated
     create_setting
   end

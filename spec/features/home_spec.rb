@@ -65,6 +65,7 @@ describe "home page", type: :feature do
   context "blog area" do
     before do
       create_posts_and_tags "blog"
+      Post.update_all(published: true)
     end
 
     before :each do
@@ -119,6 +120,7 @@ describe "home page", type: :feature do
   context "tutorial area" do
     before do
       create_posts_and_tags "tutorial"
+      Post.update_all(published: true)
     end
 
     before :each do

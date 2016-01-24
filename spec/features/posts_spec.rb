@@ -7,6 +7,7 @@ describe "posts pages", type: :feature do
 
   before do
     create_and_associate_tags
+    Post.update_all(published: true)
   end
 
   context "/posts/tagged" do

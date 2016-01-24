@@ -38,6 +38,7 @@ describe "admin", type: :feature do
       fill_in "Title", with: "How to write an rspec controller test"
       fill_in "Teaser", with: "How to write a controller test"
       select("tutorial", from: "Use")
+      page.check("Published")
       fill_in "Body", with: "first you do this \n > with quote"
       click_button "Create Post"
       expect(page).to have_text "successfully created"
