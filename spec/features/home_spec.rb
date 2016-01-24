@@ -172,7 +172,7 @@ describe "home page", type: :feature do
 
   context "portfolio area" do
     before do
-      create_portfolio_and_related
+      FactoryGirl.create :portfolio, published: true
     end
 
     before :each do
@@ -191,7 +191,7 @@ describe "home page", type: :feature do
         expect(page).to have_text "more of my portfolio"
         find("a[href='/portfolios']").click
       end
-      expect(page).to have_text "RSpec is a behavior-driven development"
+      expect(page).to have_text "title of portfolio"
     end
   end
 

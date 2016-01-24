@@ -95,4 +95,9 @@ describe Post do
     expect(Post.published.count).to eq 1
     expect(Post.published.first).to eq published_post
   end
+
+  it ".published?" do
+    post = FactoryGirl.create :post, title: "f1"
+    expect(post.published?).to eq false
+  end
 end

@@ -3,7 +3,8 @@ class PostsController < ApplicationController
 
   def tagged
     @title_tag = "#{params[:tag_name]} posts"
-    @posts = Post.by_tag_name(params[:tag_name]).limit(25)
+    posts_by_tag_names = Post.by_tag_name(params[:tag_name])
+    @posts = posts_by_tag_names.recent.published.limit(25)
     @meta_tags = []
   end
 
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
     @active_nav_tab = page.active_nav_tab
     @title_tag = page.title_tag
     @meta_tags = page.meta_tags
-    @posts = Post.blog.limit(25)
+    @posts = Post.blog.recent.published.limit(25)
   end
 
   def tutorials
@@ -20,7 +21,7 @@ class PostsController < ApplicationController
     @active_nav_tab = page.active_nav_tab
     @title_tag = page.title_tag
     @meta_tags = page.meta_tags
-    @posts = Post.tutorials.limit(25)
+    @posts = Post.tutorials.recent.published.limit(25)
   end
 
   def show
@@ -29,5 +30,6 @@ class PostsController < ApplicationController
     @active_nav_tab = @presented_post.use == "tutorial" ? "tutorials" : "blog"
     @title_tag = @presented_post.title
     @meta_tags = []
+    return missing_page unless post.published?
   end
 end

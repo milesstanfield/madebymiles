@@ -78,4 +78,9 @@ describe Portfolio do
     expect(Portfolio.published.count).to eq 1
     expect(Portfolio.published.first).to eq published_portfolio
   end
+
+  it ".published?" do
+    portfolio = FactoryGirl.create :portfolio, title: "f1"
+    expect(portfolio.published?).to eq false
+  end
 end

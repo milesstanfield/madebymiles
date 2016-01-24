@@ -2,7 +2,7 @@ require "#{Rails.root}/spec/support/test_files.rb"
 
 module SeedHelpers
   def create_portfolio_and_related(image = :google, title = "my portfolio title")
-    portfolio = Portfolio.create(
+    portfolio = Portfolio.new(
       title: title,
       teaser: "RSpec is a behavior-driven development (BDD) framework for the Ruby programming language, inspired by JBehave. It contains its own mocking framework that is fully integrated into the framework based upon JMock. The framework can be considered a domain-specific language (DSL) and resembles a natural",
       body: "first you do this\r\n \r\n> this is a quote \r\n\r\nthen you embed an image ![Alt text](https://s3.amazonaws.com/assets.madebymiles.com/uploads/google_bars.jpg) \r\n\r\nalso inline link here [my link](www.google.com) i can also **bold** text"

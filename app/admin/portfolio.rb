@@ -1,8 +1,9 @@
 ActiveAdmin.register Portfolio do
-  permit_params :title, :teaser, :body, image_ids: [], cover_image_ids: [], role_ids: []
+  permit_params :title, :teaser, :body, :published, image_ids: [], cover_image_ids: [], role_ids: []
 
   index do
     column :title
+    column :published
     column :link do |portfolio|
       link_to portfolio.slug, portfolio.path
     end
@@ -11,6 +12,7 @@ ActiveAdmin.register Portfolio do
 
   show do
     attributes_table do
+      row :published
       row :title
       row :teaser
       row :body do |portfolio|
@@ -38,6 +40,7 @@ ActiveAdmin.register Portfolio do
 
   form do |f|
     f.inputs do
+      f.input :published
       f.input :title
       f.input :teaser
       f.input :body

@@ -2,13 +2,15 @@ require "spec_helper"
 
 describe PostsController, type: :controller do
   it "#taggged" do
-    posts_by_tag = double(:posts_by_tag)
-    expect(Post).to receive(:by_tag_name).with("rspec").and_return(posts_by_tag)
-    expect(posts_by_tag).to receive(:limit).with(25).and_return(posts_by_tag)
+    posts = double(:posts)
+    expect(Post).to receive(:by_tag_name).with("rspec").and_return(posts)
+    expect(posts).to receive(:recent).and_return(posts)
+    expect(posts).to receive(:published).and_return(posts)
+    expect(posts).to receive(:limit).with(25).and_return(posts)
     expect(Setting).to receive(:first_or_create).and_return(double(:setting))
     get :tagged, tag_name: "rspec"
     expect(response).to render_template :tagged
-    expect(assigns(:posts)).to eq(posts_by_tag)
+    expect(assigns(:posts)).to eq(posts)
     expect(assigns(:title_tag)).to eq "rspec posts"
     expect(assigns(:meta_tags)).to eq []
   end
@@ -21,6 +23,8 @@ describe PostsController, type: :controller do
     expect(page).to receive(:meta_tags).and_return(page.meta_tags)
     blog_posts = double(:blog_posts)
     expect(Post).to receive(:blog).and_return(blog_posts)
+    expect(blog_posts).to receive(:recent).and_return(blog_posts)
+    expect(blog_posts).to receive(:published).and_return(blog_posts)
     expect(blog_posts).to receive(:limit).with(25).and_return(blog_posts)
     expect(Setting).to receive(:first_or_create).and_return(double(:setting))
     get :blog
@@ -39,6 +43,8 @@ describe PostsController, type: :controller do
     expect(page).to receive(:meta_tags).and_return(page.meta_tags)
     tutorial_posts = double(:tutorial_posts)
     expect(Post).to receive(:tutorials).and_return(tutorial_posts)
+    expect(tutorial_posts).to receive(:recent).and_return(tutorial_posts)
+    expect(tutorial_posts).to receive(:published).and_return(tutorial_posts)
     expect(tutorial_posts).to receive(:limit).with(25).and_return(tutorial_posts)
     expect(Setting).to receive(:first_or_create).and_return(double(:setting))
     get :tutorials
@@ -50,7 +56,7 @@ describe PostsController, type: :controller do
   end
 
   it "#show" do
-    post = double(:post)
+    post = double(:post, published: true)
     slug = "2015/12/19/how-to-do-foobar"
     use = "blog"
     title = "How to do foobar"
@@ -60,6 +66,7 @@ describe PostsController, type: :controller do
     expect(presented_post).to receive(:use).and_return(use)
     expect(presented_post).to receive(:title).and_return(title)
     expect(Setting).to receive(:first_or_create).and_return(double(:setting))
+    expect(post).to receive(:published?).and_return(true)
     get :show, slug: slug
     expect(response).to render_template :show
     expect(assigns(:presented_post)).to eq presented_post

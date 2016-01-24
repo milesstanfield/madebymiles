@@ -9,6 +9,10 @@ class Portfolio < ActiveRecord::Base
   validates :teaser, length: {maximum: 300}
   validates :cover_images, presence: true
 
+  def self.by_role(role)
+    where(id: includes(:roles).where(roles: { title: role }).map(&:id))
+  end
+
   def cover_image_url
     cover_images.first.file.url
   end
@@ -20,9 +24,5 @@ class Portfolio < ActiveRecord::Base
 
   def path
     "/portfolios/#{slug}"
-  end
-
-  def self.by_role(role)
-    where(id: includes(:roles).where(roles: { title: role }).map(&:id))
   end
 end
