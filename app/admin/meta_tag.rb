@@ -7,7 +7,9 @@ ActiveAdmin.register MetaTag do
     column :attr
     column :attr_value
     column :content_type
-    column :content
+    column :content do |meta_tag|
+      meta_tag.content.truncate(75)
+    end
     column :pages do |meta_tag|
       meta_tag.pages.pluck(:name).join ", "
     end
