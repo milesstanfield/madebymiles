@@ -12,7 +12,7 @@ describe TagHelpers, type: :helper do
   end
 
   it ".meta_tag" do
-    meta_tag_record = MetaTag.create tag_type: "meta", attr: "name", attr_value: "miles", content: "foo"
+    meta_tag_record = MetaTag.create tag_type: "meta", attr: "name", attr_value: "miles", content_type: "content", content: "foo"
     meta_tag_style = "<meta name='miles' content='foo'></meta>"
     expect(meta_tag(meta_tag_record)).to eq meta_tag_style
   end

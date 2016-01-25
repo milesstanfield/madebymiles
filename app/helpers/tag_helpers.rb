@@ -8,7 +8,7 @@ module TagHelpers
   end
 
   def meta_tag(meta_tag_record)
-    "<#{meta_tag_record.tag_type} #{meta_tag_record.attr}='#{meta_tag_record.attr_value}' content='#{meta_tag_record.content}'></#{meta_tag_record.tag_type}>".html_safe
+    "<#{meta_tag_record.tag_type} #{meta_tag_record.attr}='#{meta_tag_record.attr_value}' #{meta_tag_record.content_type}='#{meta_tag_record.content}'></#{meta_tag_record.tag_type}>".html_safe
   end
 
   def quote_tag(quote)

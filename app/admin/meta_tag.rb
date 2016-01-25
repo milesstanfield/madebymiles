@@ -1,11 +1,12 @@
 ActiveAdmin.register MetaTag do
-  permit_params :attr, :attr_value, :content, :tag_type, page_ids: []
+  permit_params :attr, :attr_value, :content, :tag_type, :content_type, page_ids: []
 
   index do
     selectable_column
     column :tag_type
     column :attr
     column :attr_value
+    column :content_type
     column :content
     column :pages do |meta_tag|
       meta_tag.pages.pluck(:name).join ", "
@@ -19,6 +20,7 @@ ActiveAdmin.register MetaTag do
       f.input :tag_type
       f.input :attr
       f.input :attr_value
+      f.input :content_type
       f.input :content, as: :string
       f.input :pages, as: :check_boxes, collection: Page.all
     end
@@ -30,6 +32,7 @@ ActiveAdmin.register MetaTag do
       row :tag_type
       row :attr
       row :attr_value
+      row :content_type
       row :content
       row :pages do |meta_tag|
         meta_tag.pages.map(&:name).join(", ")
