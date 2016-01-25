@@ -2,13 +2,12 @@ ActiveAdmin.register MetaTag do
   permit_params :attr, :attr_value, :content, :tag_type, :content_type, page_ids: []
 
   index do
-    selectable_column
     column :tag_type
     column :attr
     column :attr_value
     column :content_type
     column :content do |meta_tag|
-      meta_tag.content.truncate(75)
+      meta_tag.content.truncate(50)
     end
     column :pages do |meta_tag|
       meta_tag.pages.pluck(:name).join ", "
