@@ -1,8 +1,9 @@
 ActiveAdmin.register MetaTag do
-  permit_params :attr, :attr_value, :content, page_ids: []
+  permit_params :attr, :attr_value, :content, :tag_type, page_ids: []
 
   index do
     selectable_column
+    column :tag_type
     column :attr
     column :attr_value
     column :content
@@ -15,6 +16,7 @@ ActiveAdmin.register MetaTag do
 
   form do |f|
     f.inputs do
+      f.input :tag_type
       f.input :attr
       f.input :attr_value
       f.input :content, as: :string
@@ -25,6 +27,7 @@ ActiveAdmin.register MetaTag do
 
   show do
     attributes_table do
+      row :tag_type
       row :attr
       row :attr_value
       row :content

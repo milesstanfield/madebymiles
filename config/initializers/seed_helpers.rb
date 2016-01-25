@@ -59,7 +59,7 @@ module SeedHelpers
     Page.create name: "search"
 
     Page.all.each do |page|
-      page.meta_tags << MetaTag.create(attr: "name", attr_value: "description", content: "this is the description of this page")
+      page.meta_tags << MetaTag.create(tag_type: "meta", attr: "name", attr_value: "description", content: "this is the description of this page")
       FeatureFlipper.all.each do |feature_flipper|
         page.feature_flippers << feature_flipper
       end

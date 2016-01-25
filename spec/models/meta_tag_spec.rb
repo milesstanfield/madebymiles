@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe MetaTag do
   it "has string attributes" do
-    string_attributes_expectations "attr", "attr_value", "content"
+    string_attributes_expectations "attr", "attr_value", "content", "tag_type"
   end
 
   it "has many pages" do
