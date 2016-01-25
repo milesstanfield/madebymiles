@@ -4,9 +4,6 @@ ActiveAdmin.register CoverImage do
 
   index do
     column :title
-    column :usage do |image|
-      "![](internal #{image.title})"
-    end
     column :image do |image|
       "<img style='height:200px;' src='#{image.file.url}'/>".html_safe
     end

@@ -16,6 +16,7 @@
         .m-medium.m-thin
           = portfolio.teaser.truncate(teaser_limit)
           = inline_link "goto this project", portfolio.path
-        .l-smallest-vertical-padding
-          - portfolio.roles.each do |role|
-            = link_to role.title, roles_portfolios_path(role.title), class: "l-inline-block l-tag-text-spacing m-thin m-small m-color-white m-bg-medium-grey a-hover-bg-blue"
+        - if size == "normal"
+          .l-smallest-vertical-padding
+            - portfolio.roles.each do |role|
+              = link_to role.title, roles_portfolios_path(role.title), class: "l-inline-block l-tag-text-spacing m-thin m-small m-color-white m-bg-medium-grey a-hover-bg-blue"
