@@ -7,6 +7,8 @@
     = favicon_link_tag "favicon.ico.png"
     = csrf_meta_tags
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+    %meta{property: "og:url", content: request.url}
+    %link{property: "canonical", href: request.url}
     - @meta_tags.each do |meta_tag_record|
       = meta_tag(meta_tag_record)
   %body
