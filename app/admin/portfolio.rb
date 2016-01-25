@@ -1,6 +1,10 @@
 ActiveAdmin.register Portfolio do
   permit_params :title, :teaser, :body, :published, image_ids: [], cover_image_ids: [], role_ids: []
 
+  controller do
+    helper_method :render_to_string
+  end
+
   index do
     column :title
     column :published
@@ -38,7 +42,7 @@ ActiveAdmin.register Portfolio do
       f.input :published
       f.input :title
       f.input :teaser, as: :string
-      f.input :body
+      f.input :body, hint: render_to_string("admin/shared/_images_hint")
       if CoverImage.count > 0
         f.input :cover_images, as: :check_boxes, collection: CoverImage.all
       end
