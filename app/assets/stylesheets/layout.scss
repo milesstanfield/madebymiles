@@ -184,3 +184,11 @@
 .l-cog-adj {
   top: 1px;
 }
+.l-min-height {
+  @include respond-to(0px, $med) {
+    min-height: 200px;
+  }
+  @include respond-to($med) {
+    min-height: 400px;
+  }
+}
