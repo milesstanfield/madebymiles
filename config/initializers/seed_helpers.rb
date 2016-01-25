@@ -56,7 +56,7 @@ module SeedHelpers
     Page.create name: "tutorials", active_nav_tab: "tutorials", title_tag: "tutorials"
     Page.create name: "post"
     Page.create name: "404", title_tag: "404"
-    Page.create name: "search"
+    Page.create name: "search", title_tag: "search"
 
     Page.all.each do |page|
       page.meta_tags << MetaTag.create(tag_type: "meta", attr: "name", attr_value: "description", content_type: "content", content: "this is the description of this page")
