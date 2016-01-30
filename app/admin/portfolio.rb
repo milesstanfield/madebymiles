@@ -17,6 +17,9 @@ ActiveAdmin.register Portfolio do
   show do
     attributes_table do
       row :published
+      row :link do |portfolio|
+        link_to portfolio.slug, portfolio.path
+      end
       row :title
       row :teaser
       row :body do |portfolio|
@@ -27,9 +30,6 @@ ActiveAdmin.register Portfolio do
         if portfolio.cover_images.present?
           "<img style='height:200px;' src='#{portfolio.cover_image_url}'/>".html_safe
         end
-      end
-      row :link do |portfolio|
-        link_to portfolio.slug, portfolio.path
       end
       row :roles do |portfolio|
         portfolio.roles.map(&:title).join(", ")
