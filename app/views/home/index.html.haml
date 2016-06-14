@@ -13,7 +13,7 @@
 
 
 - if FeatureFlipper.active_names.include? "about"
-  = render layout: "shared/section", locals: {name: "about", path: "/about", button_text: "more about me"} do
+  = render layout: "shared/section", locals: {name: "about", path: "/about", button_text: "more about me", line_off: true} do
     .l-medium-bottom-margin
       .gutters.columns
         .col-1-1.col-1-5-med.l-v-align-top.l-text-center
@@ -21,15 +21,14 @@
           .m-small.m-thin.m-color-dark-grey.l-small-top-margin.l-medium-bottom-margin= "Miles Stanfield"
         .col-1-1.col-4-5-med.l-v-align-top
           .m-medium.m-thin.m-color-dark-grey
-            .l-inline= "Everyday I'm immersed in code. I love it. And what's even better is I get paid to it. Currently, I'm the Data Manager for HLN - A Time Warner Company, in Atlanta, GA. One of my main responsibilities as Data Manager is continually improving and maintaining a product I developed called"
-            = inline_link "The HLN Social Index", "/portfolios/2016/01/25/hln-social-index"
-            .l-inline="which is a proprietary trending algorithm that aggregates data from Facebook, Twitter and Google into a real-time all-screens experience. It's promoted on TV every weekday on HLN and it also won a"
-            = inline_link "2016 CES Innovation Award.", "http://www.cesweb.org/Events-Programs/Innovation", target: "_blank"
+            .l-inline= "Everyday I'm immersed in code. I love it. And what's even better is I get paid to it. I am currently developing software at"
+            = inline_link "CallRail", "http://www.callrail.com/", target: "_blank"
+            .l-inline= "in Atlanta, GA. CallRail’s software tracks, records, and analyzes phone calls so you can identify the marketing channels that make your phone ring."
             %br
             %br
-            .l-inline="As the developer who built nearly all the front-end for the"
-            = inline_link "HLNtv.com", "http://www.hlntv.com/", target: "_blank"
-            .l-inline="site, I also find myself from time-to-time providing support on that project but my primary role is to continue innovating, designing and developing new products to better our company's brand."
+            .l-inline= "Lately, in my free time I have been developing with the Angular2 beta framework and preparing for the future of Angular2 apps. I've done this by creating a guide to setting up a production ready MEAN web-app with Angular2 on Heroku. You can check it out"
+            = inline_link "here.", "https://github.com/milesstanfield/ng2mean", target: "_blank"
+
 
 
 - if FeatureFlipper.active_names.include? "tutorials"
