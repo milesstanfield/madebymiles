@@ -20,6 +20,7 @@ gem 'email_validator'
 gem 'shadow_controller'
 gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 gem 'rack-cors', require: 'rack/cors'
+gem 'alexa_ruby'
 
 # carrierwave and related
 gem 'carrierwave'
