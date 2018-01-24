@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.1'
 
 gem 'rails', '4.2.4'
 gem 'pg'
@@ -20,6 +19,7 @@ gem 'formtastic'
 gem 'email_validator'
 gem 'shadow_controller'
 gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
+gem 'rack-cors', require: 'rack/cors'
 
 # carrierwave and related
 gem 'carrierwave'
@@ -28,7 +28,7 @@ gem 'carrierwave-aws'
 
 group :assets do
   gem 'sprite-factory'
-  gem 'rmagick'
+  # gem 'rmagick'
 end
 
 group :development do
