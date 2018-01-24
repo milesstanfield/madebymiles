@@ -3,8 +3,16 @@ class AlexaController < ApplicationController
   protect_from_forgery with: :null_session
 
   def say_hello
+    Rails.logger.info(headers)
+    puts headers
 
-    alexa = AlexaRuby.new(request.body.read, disable_validations: true)
+    parsed_body = JSON.parse(request.body.read)
+
+    unless parsed_body['context']['System']['device']['deviceId']
+      parsed_body['context']['System']['device']['deviceId'] = 'TEST'
+    end
+
+    alexa = AlexaRuby.new(parsed_body.to_json, disable_validations: true)
 
     speech = 'You are awesome!'
 
@@ -13,7 +21,6 @@ class AlexaController < ApplicationController
     alexa.response.tell(speech, speech, true) # outputSpeech node, reprompt node and both will be converted into SSML
 
     response = alexa.response.tell!(speech)              # will add outputSpeech node and return JSON encoded response object
-
 
     render json: response
   end

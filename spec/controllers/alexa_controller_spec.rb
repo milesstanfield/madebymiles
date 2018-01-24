@@ -44,7 +44,6 @@ describe AlexaController, type: :controller do
             "userId": "amzn1.account.AM3B00000000000000000000000"
           },
           "device": {
-            "deviceId": "TEST",
             "supportedInterfaces": {}
           }
         }
@@ -55,13 +54,15 @@ describe AlexaController, type: :controller do
 
   it "#say_hello" do
     post :say_hello, payload.to_json, headers
-    expect(JSON.parse(response.body)).to eq({"version"=>"1.0",
-    "sessionAttributes"=>{},
-    "response"=>
-     {"shouldEndSession"=>true,
-      "outputSpeech"=>{"type"=>"PlainText", "text"=>"You are awesome!"},
-      "reprompt"=>
-       {"outputSpeech"=>
-         {"type"=>"SSML", "ssml"=>"<speak>You are awesome!</speak>"}}}})
+    expect(JSON.parse(response.body)).to eq(
+      {"version"=>"1.0",
+        "sessionAttributes"=>{},
+        "response"=>
+        {"shouldEndSession"=>true,
+          "outputSpeech"=>{"type"=>"PlainText", "text"=>"You are awesome!"},
+          "reprompt"=>
+          {"outputSpeech"=>
+            {"type"=>"SSML", "ssml"=>"<speak>You are awesome!</speak>"}}}}
+    )
   end
 end
