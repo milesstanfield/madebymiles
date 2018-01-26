@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/search", to: "search#index", as: :search
 
   post "/alexa/say-hello", to: "alexa#say_hello"
-  post "/mobile_debug", to: "home#mobile_debug"
+  get "/mobile_debug", to: "home#mobile_debug"
 
   scope "/portfolios" do
     get "/", to: "portfolios#index", as: :portfolios
