@@ -29,6 +29,7 @@ module Madebymiles
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
         origins '*'
+        resource '/mobile_debug/*', headers: :any, methods: [:get, :post, :put, :delete]
         resource '/alexa/*', headers: :any, methods: [:get, :post, :put, :delete]
       end
     end
