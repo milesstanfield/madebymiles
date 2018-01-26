@@ -10,4 +10,8 @@ class HomeController < ApplicationController
     @tutorial_posts = Post.tutorials.recent.limit(6)
     @portfolios = Portfolio.recent.published.limit(3)
   end
+
+  def mobile_debug
+    render nothing: true
+  end
 end
