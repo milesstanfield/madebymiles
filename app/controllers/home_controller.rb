@@ -12,7 +12,9 @@ class HomeController < ApplicationController
   end
 
   def mobile_debug
+    Rails.logger.info('*' * 500)
     Rails.logger.info(params)
+    Rails.logger.info('*' * 500)
     render nothing: true
   end
 end
