@@ -4,11 +4,13 @@ class AlexaController < ApplicationController
 
   def home
     Rails.logger.info(headers)
+    puts '*' * 1000
     puts headers
 
-    if parsed_body.dig('request', 'intent', 'name') == 'SayHelloIntent'
+    case intent_name
+    when 'SayHelloIntent'
       speech = 'hello miles!'
-    elsif parsed_body.dig('request', 'intent', 'name') == 'SayGoodbyeIntent'
+    when 'SayGoodbyeIntent'
       speech = 'goodbye miles!'
     end
 
@@ -23,6 +25,10 @@ class AlexaController < ApplicationController
 
   def parsed_body
     @parsed_body ||= with_device_id(JSON.parse(request.body.read))
+  end
+
+  def intent_name
+    parsed_body['request']['intent']['name']
   end
 
   def with_device_id(body)
