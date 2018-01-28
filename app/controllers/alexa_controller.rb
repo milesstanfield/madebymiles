@@ -2,26 +2,34 @@ class AlexaController < ApplicationController
   skip_before_action :verify_authenticity_token
   protect_from_forgery with: :null_session
 
-  def say_hello
+  def home
     Rails.logger.info(headers)
     puts headers
 
-    parsed_body = JSON.parse(request.body.read)
-
-    unless parsed_body['context']['System']['device']['deviceId']
-      parsed_body['context']['System']['device']['deviceId'] = 'TEST'
+    if parsed_body.dig('request', 'intent', 'name') == 'SayHelloIntent'
+      speech = 'hello miles!'
+    elsif parsed_body.dig('request', 'intent', 'name') == 'SayGoodbyeIntent'
+      speech = 'goodbye miles!'
     end
 
-    alexa = AlexaRuby.new(parsed_body.to_json, disable_validations: true)
+    render json: alexa.response.tell!(speech)
+  end
 
-    speech = 'You are awesome!'
+  private
 
-    alexa.response.tell(speech)               # will add outputSpeech node
-    alexa.response.tell(speech, speech)       # outputSpeech node and reprompt node
-    alexa.response.tell(speech, speech, true) # outputSpeech node, reprompt node and both will be converted into SSML
+  def alexa
+    @alexa ||= AlexaRuby.new(parsed_body.to_json, disable_validations: false)
+  end
 
-    response = alexa.response.tell!(speech)              # will add outputSpeech node and return JSON encoded response object
+  def parsed_body
+    @parsed_body ||= with_device_id(JSON.parse(request.body.read))
+  end
 
-    render json: response
+  def with_device_id(body)
+    # deviceId is required. but if your using the json tester it doesnt have one. so add it here
+    unless body['context']['System']['device']['deviceId']
+      body['context']['System']['device']['deviceId'] = 'TEST'
+    end
+    body
   end
 end

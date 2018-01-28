@@ -9,7 +9,7 @@ describe AlexaController, type: :controller do
     }
   end
 
-  let(:payload) do
+  let(:say_hello_payload) do
     {
       "session": {
         "new": true,
@@ -52,17 +52,39 @@ describe AlexaController, type: :controller do
     }
   end
 
-  it "#say_hello" do
-    post :say_hello, payload.to_json, headers
-    expect(JSON.parse(response.body)).to eq(
-      {"version"=>"1.0",
-        "sessionAttributes"=>{},
-        "response"=>
-        {"shouldEndSession"=>true,
-          "outputSpeech"=>{"type"=>"PlainText", "text"=>"You are awesome!"},
-          "reprompt"=>
-          {"outputSpeech"=>
-            {"type"=>"SSML", "ssml"=>"<speak>You are awesome!</speak>"}}}}
-    )
+  context 'when intent name is SayHelloIntent' do
+    it "says hello" do
+      post :home, say_hello_payload.to_json, headers
+      expect(JSON.parse(response.body)).to eq(
+        {
+          "version"=>"1.0",
+          "sessionAttributes"=>{},
+          "response"=>{
+            "shouldEndSession"=>true, "outputSpeech"=>{"type"=>"PlainText", "text"=>'hello miles!'}
+          }
+        }
+      )
+    end
+  end
+
+  context 'when intent name is SayGoodbyeIntent' do
+    let(:payload) do
+      p = say_hello_payload
+      p[:request][:intent][:name] = 'SayGoodbyeIntent'
+      p
+    end
+
+    it "says hello" do
+      post :home, payload.to_json, headers
+      expect(JSON.parse(response.body)).to eq(
+        {
+          "version"=>"1.0",
+          "sessionAttributes"=>{},
+          "response"=>{
+            "shouldEndSession"=>true, "outputSpeech"=>{"type"=>"PlainText", "text"=>'goodbye miles!'}
+          }
+        }
+      )
+    end
   end
 end
