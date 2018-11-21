@@ -17,4 +17,7 @@ class HomeController < ApplicationController
     Rails.logger.info('*' * 500)
     render nothing: true
   end
+
+  def chat
+  end
 end

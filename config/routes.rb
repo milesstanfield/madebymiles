@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post "/contact", to: "contact#message", as: :messages
   get "/search", to: "search#index", as: :search
 
+  get "/chat", to: "home#chat"
+
   post "/alexa", to: "alexa#home"
   get "/mobile_debug", to: "home#mobile_debug"
 
