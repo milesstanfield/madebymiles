@@ -20,4 +20,7 @@ class HomeController < ApplicationController
 
   def chat
   end
+
+  def chat2
+  end
 end
