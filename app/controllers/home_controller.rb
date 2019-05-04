@@ -9,6 +9,7 @@ class HomeController < ApplicationController
     @blog_posts = Post.blog.recent.limit(6)
     @tutorial_posts = Post.tutorials.recent.limit(6)
     @portfolios = Portfolio.recent.published.limit(3)
+    @signed_in = user_signed_in?
   end
 
   def mobile_debug
