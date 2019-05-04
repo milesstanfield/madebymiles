@@ -46,6 +46,3 @@
 - if FeatureFlipper.active_names.include? "blog"
   = render layout: "shared/section", locals: {name: "blog", path: "/posts/blog", button_text: "more blog posts", line_off: true} do
     = render "shared/post_cards", posts: @blog_posts
-
-- if @signed_in
-  = link_to "chat", "http://madebymiles.com/chat"
