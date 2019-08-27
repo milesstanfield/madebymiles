@@ -22,5 +22,7 @@
 
     :javascript
       new Hamburger
-    - if user_signed_in?
+    - if user_signed_in? && params[:form-test].nil?
       %script(src="http://swappy.test/companies/472516365/552ad5493599a664f3ee/12/swap.js")
+    - if params[:form-test].present?
+      <script type="text/javascript" src="//js.staging-callrail.com/companies/824933009/f44a186b2024bbb8cf5e/12/swap.js"></script>
