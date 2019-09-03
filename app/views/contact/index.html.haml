@@ -43,5 +43,6 @@
         .l-inline-block.l-v-align-middle
           = render "shared/circle_button", color: "blue", hover_color: "white", path: @settings.twitter, icon: "twitter_blue", target: "_blank"
         .l-inline-block.m-bold.m-small.m-color-dark-grey.l-v-align-middle.l-smallest-side-padding= "Twitter"
-
+- if user_signed_in?
+  = "256-682-2144"
 %script(src="http://js.staging-callrail.com/companies/824933009/f44a186b2024bbb8cf5e/12/swap.js")
