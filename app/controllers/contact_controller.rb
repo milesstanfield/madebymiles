@@ -15,6 +15,20 @@ class ContactController < ApplicationController
     redirect_to contact_path message_params.merge(success: saved_message)
   end
 
+  def index_test
+    page = Page.by_name_or_create "contact"
+    @active_nav_tab = page.active_nav_tab
+    @title_tag = page.title_tag
+    @meta_tags = page.meta_tags
+    @message = Message.new
+  end
+
+  def message_test
+    saved_message = Message.new(message_params).save
+    saved_message ? flash_success_notice : flash_error_notice
+    redirect_to contact_path message_params.merge(success: saved_message)
+  end
+
   private
 
   def message_params

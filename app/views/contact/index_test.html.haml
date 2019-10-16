@@ -1,0 +1,49 @@
+- if flash[:notice].present?
+  %div{style: "background: #{(params[:success] == "true" ? "#45cf65" : "#d83b3c")}"}
+    .l-max-content-width.l-horizontal-center.l-content-padding.l-smallest-vertical-padding
+      .m-thin.l-width-100.m-medium.m-color-white= flash[:notice]
+
+.l-max-content-width.l-horizontal-center.l-content-padding.l-large-vertical-padding
+  .l-medium-bottom-margin.m-larger.m-bold.m-color-dark-grey= "Contact me"
+  .columns.gutters
+    .col-1-1.col-5-8-med.l-v-align-top.m-thin
+      = semantic_form_for @message do |f|
+        = f.inputs do
+          = f.input :sender_name, placeholder: "Name", maxlength: 254, input_html: {class: "l-medium-bottom-margin l-width-100 l-pad-fix m-medium l-smallest-padding m-color-dark-grey m-bg-light-grey", value: params[:sender_name]}
+          = f.input :sender_email, placeholder: "Email Address", maxlength: 254, input_html: {class: "l-medium-bottom-margin l-width-100 l-pad-fix m-medium l-smallest-padding m-color-dark-grey m-bg-light-grey", value: params[:sender_email]}
+          = f.input :subject, placeholder: "Subject / Topic", maxlength: 254, input_html: {class: "l-medium-bottom-margin l-width-100 l-pad-fix m-medium l-smallest-padding m-color-dark-grey m-bg-light-grey", value: params[:subject]}
+          = f.input :body, placeholder: "Your message or question", maxlength: 65535, input_html: {class: "l-medium-bottom-margin l-width-100 l-pad-fix m-medium l-smallest-padding m-color-dark-grey l-form-body-height m-bg-light-grey", value: params[:body]}
+        = f.actions do
+          = f.action :submit, label: "Submit", button_html: {class: "m-clickable m-color-blue m-button-stroke-blue m-bg-white m-medium m-bold l-button-padding a-hover-bg-blue l-medium-bottom-margin"}
+    .col-1-1.col-3-8-med.l-v-align-top{data: {area: "other"}}
+      .m-bold.m-medium.m-color-dark-grey.l-medium-bottom-margin= "You can contact me using this form, alternatively you can use any of these methods below."
+
+
+      .l-width-100.l-medium-bottom-margin
+        .l-inline-block.l-v-align-middle
+          = render "shared/circle_button", color: "blue", hover_color: "white", path: @settings.stack_overflow, icon: "stack_overflow_blue", target: "_blank"
+        .l-inline-block.m-bold.m-small.m-color-dark-grey.l-v-align-middle.l-smallest-side-padding= "Stack Overflow"
+
+      .l-width-100.l-medium-bottom-margin
+        .l-inline-block.l-v-align-middle
+          = render "shared/circle_button", color: "blue", hover_color: "white", path: @settings.email, icon: "email_icon_blue"
+        .l-inline-block.m-bold.m-small.m-color-dark-grey.l-v-align-middle.l-smallest-side-padding= "Email"
+
+      .l-width-100.l-medium-bottom-margin
+        .l-inline-block.l-v-align-middle
+          = render "shared/circle_button", color: "blue", hover_color: "white", path: @settings.github, icon: "github_blue", target: "_blank"
+        .l-inline-block.m-bold.m-small.m-color-dark-grey.l-v-align-middle.l-smallest-side-padding= "Github"
+
+      .l-width-100.l-medium-bottom-margin
+        .l-inline-block.l-v-align-middle
+          = render "shared/circle_button", color: "blue", hover_color: "white", path: @settings.facebook, icon: "facebook_blue", target: "_blank"
+        .l-inline-block.m-bold.m-small.m-color-dark-grey.l-v-align-middle.l-smallest-side-padding= "Facebook"
+
+      .l-width-100.l-medium-bottom-margin
+        .l-inline-block.l-v-align-middle
+          = render "shared/circle_button", color: "blue", hover_color: "white", path: @settings.twitter, icon: "twitter_blue", target: "_blank"
+        .l-inline-block.m-bold.m-small.m-color-dark-grey.l-v-align-middle.l-smallest-side-padding= "Twitter"
+
+<a>256-682-2143</a>
+
+%script(src="//js.staging-callrail.com/companies/824933009/f44a186b2024bbb8cf5e/12/swap.js")

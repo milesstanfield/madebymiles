@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get "/about", to: "about#index", as: :about
   get "/contact", to: "contact#index", as: :contact
   post "/contact", to: "contact#message", as: :messages
+  get "/contact-test", to: "contact#index_test", as: :contact
+  post "/contact-test", to: "contact#message_test", as: :messages
   get "/search", to: "search#index", as: :search
 
   get "/chat", to: "home#chat"
