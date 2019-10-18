@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post "/contact", to: "contact#message", as: :messages
   get "/contact-test", to: "contact#index_test"
   post "/contact-test", to: "contact#message_test"
+  get "/contact-test2", to: "contact#index_test2"
+  post "/contact-test2", to: "contact#message_test2"
   get "/search", to: "search#index", as: :search
 
   get "/chat", to: "home#chat"
