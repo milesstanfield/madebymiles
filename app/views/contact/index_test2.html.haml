@@ -7,7 +7,7 @@
   .l-medium-bottom-margin.m-larger.m-bold.m-color-dark-grey= "Contact me"
   .columns.gutters
     .col-1-1.col-5-8-med.l-v-align-top.m-thin
-      = semantic_form_for @message do |f|
+      = semantic_form_for @message, :url => messages_test2_url do |f|
         = f.inputs do
           = f.input :sender_name, placeholder: "Name", maxlength: 254, input_html: {class: "l-medium-bottom-margin l-width-100 l-pad-fix m-medium l-smallest-padding m-color-dark-grey m-bg-light-grey", value: params[:sender_name]}
           = f.input :sender_email, placeholder: "Email Address", maxlength: 254, input_html: {class: "l-medium-bottom-margin l-width-100 l-pad-fix m-medium l-smallest-padding m-color-dark-grey m-bg-light-grey", value: params[:sender_email]}
