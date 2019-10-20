@@ -26,7 +26,7 @@ class ContactController < ApplicationController
   def message_test
     saved_message = Message.new(message_params).save
     saved_message ? flash_success_notice : flash_error_notice
-    redirect_to contact_path message_params.merge(success: saved_message)
+    redirect_to contact_test_path message_params.merge(success: saved_message)
   end
 
   def index_test2
@@ -40,7 +40,7 @@ class ContactController < ApplicationController
   def message_test2
     saved_message = Message.new(message_params).save
     saved_message ? flash_success_notice : flash_error_notice
-    redirect_to contact_path message_params.merge(success: saved_message)
+    redirect_to contact_test2_path message_params.merge(success: saved_message)
   end
 
   private
