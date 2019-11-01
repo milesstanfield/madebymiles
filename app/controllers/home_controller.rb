@@ -23,4 +23,7 @@ class HomeController < ApplicationController
 
   def chat2
   end
+
+  def live_chat
+  end
 end

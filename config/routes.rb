@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get "/chat", to: "home#chat"
   get "/chat2", to: "home#chat2"
+  get "/live-chat", to: "home#live_chat"
 
   post "/alexa", to: "alexa#home"
   get "/mobile_debug", to: "home#mobile_debug"
