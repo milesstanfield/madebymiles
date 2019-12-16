@@ -126,7 +126,7 @@ GEM
     email_validator (1.6.0)
       activemodel
     erubis (2.7.0)
-    excon (0.38.0)
+    excon (0.71.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -367,7 +367,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   email_validator
-  excon (< 0.39.0)
+  excon (< 0.72.0)
   factory_girl_rails
   formtastic
   friendly_id (~> 5.0.0)

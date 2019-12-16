@@ -51,7 +51,7 @@ end
 group :test do
   gem 'webmock'
   gem 'vcr'
-  gem 'excon', '<0.39.0'
+  gem 'excon', '<0.72.0'
   gem 'capybara', '> 2.3.0'
   gem 'capybara-webkit', '~> 1.1.0'
   gem 'selenium-webdriver'
